@@ -1,0 +1,73 @@
+.bindtop_hint3{
+  height: 82px;
+  padding-top: 12px;
+  line-height: 30px;
+  width:100%;
+  padding-left: 8%;
+  padding-right: 4%;
+  font-size: 24px;
+  background: #ffecf2 url(../img/apply/top_hint.png) no-repeat 3% 13px;
+  background-size: 24px 24px;
+  color: #666666;
+}
+.bind_content3{
+  width: 100%;
+  padding-left: 4%;
+  background: #ffffff;
+}
+.bind_content3 p{
+  height: 100px;
+  width: 100%;
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 28px;
+  color: #333333;
+  line-height: 100px;
+}
+.bind_loginpassword3 .bind_loginpasswordinput3{
+  width: 530px;
+  padding-left: 48px;
+  height: 98px;
+  font-size: 28px;
+  line-height:normal;
+  border: none;
+  outline: none;
+  display: inline-block;
+  vertical-align: baseline;
+  padding-top: 0;
+}
+.error_text3 {
+  font-size: 26px;
+  color: #FF366F;
+  margin-left:4%;
+}
+
+.registerBtn3 {
+  text-align: center;
+  line-height: 88px;
+  height: 88px;
+  width: 92%;
+  padding-left: 0;
+  background: #FF366F;
+  color: #FFFFFF;
+  margin-left: 4%;
+  margin-top: 152px;
+  font-size: 36px;
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  border: none;
+}
+.registerBtn33 {
+  text-align: center;
+  line-height: 88px;
+  height: 88px;
+  width: 92%;
+  padding-left: 0;
+  background: #666666;
+  color: #FFFFFF;
+  margin-left: 4%;
+  margin-top: 152px;
+  font-size: 36px;
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  border: none;
+}

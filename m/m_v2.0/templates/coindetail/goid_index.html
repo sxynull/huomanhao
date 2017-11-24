@@ -1,0 +1,50 @@
+<link rel="stylesheet" href="/../../m/m_v2.0/css/goidindex.css?366">
+<ion-view style="background: #f6f6f6">
+  <ion-content>
+<div class="remaining_sumb">
+  <div class="remaining_sumlb myfl">
+    <p class="remaining_sumltopb">历史获得</p>
+    <p class="remaining_sumlbutb">{{historycoin}}</p>
+  </div>
+  <div class="remaining_sumrb myfl">
+    <p class="remaining_sumrtopb">金币余额</p>
+    <p class="remaining_sumrbutb">{{nowcoin}}</p>
+  </div>
+  <a ui-sref="goldDeposits" class="atonce_rechargeb">立即充值</a>
+</div>
+<div class="fund_contentb" style="margin-bottom: 97px">
+  <ul class="fundtypeb">
+    <li class="myfl currentb" style="width: 33%" ng-click="pulldowngetdatafund()">全部</li>
+    <li class="myfl" style="width: 34%" ng-click="pulldowngetdatafund()">收入</li>
+    <li class="myfl" style="width: 33%" ng-click="pulldowngetdatafund()">支出</li>
+  </ul>
+  <div class="fundcontent_detailb clearfix" ng-repeat="coins in coindata">
+    <div class="myfl fundcontent_detailfb"><p>{{coins.remark}}<br><span>{{dateFunction(coins.gmt_created) |  date:'yyyy-MM-dd' }}</span></p></div>
+    <div class="myfr fundcontent_detailrb" ng-if="coins.deal_type==1" ng-style="setColor1(coins.deal_type)">-{{coins.coin_pay}}</div>
+    <div class="myfr fundcontent_detailrb" ng-if="coins.deal_type==2" ng-style="setColor1(coins.deal_type)">+{{coins.coin_pay}}</div>
+  </div>
+  <!--<div class="fundcontent_detailb clearfix">-->
+    <!--<div class="myfl fundcontent_detailfb"><p>粉丝充值返款<br><span>2017-12-21 12:22:12</span></p></div>-->
+    <!--<div class="myfr fundcontent_detailrb">+20.00</div>-->
+  <!--</div>-->
+  <!--<div class="fundcontent_detailb clearfix">-->
+    <!--<div class="myfl fundcontent_detailfb"><p>粉丝首单奖励<br><span>2017-12-21 12:22:12</span></p></div>-->
+    <!--<div class="myfr fundcontent_detailrb">+20.00</div>-->
+  <!--</div>-->
+  <!--<div class="fundcontent_detailb clearfix">-->
+    <!--<div class="myfl fundcontent_detailfb"><p>金币兑换商品<br><span>2017-12-21 12:22:12</span></p></div>-->
+    <!--<div class="myfr fundcontent_detailrb" style="color: #27ac2b">-20.00</div>-->
+  <!--</div>-->
+  <!--<div class="fundcontent_detailb clearfix">-->
+    <!--<div class="myfl fundcontent_detailfb"><p>金币兑换商品<br><span>2017-12-21 12:22:12</span></p></div>-->
+    <!--<div class="myfr fundcontent_detailrb" style="color: #27ac2b">-20.00</div>-->
+  <!--</div>-->
+</div>
+    <ion-infinite-scroll on-infinite="pulldowngetdatafund1()"  spinner="android" icon="icon ion-load-d " ng-if="total>current_page" immediate-check="false">
+    </ion-infinite-scroll>
+  </ion-content>
+  <div class="bar bar-footer apply_Btn20" ui-sref="coinIndex">
+    <div class="title"  style=" font-size: 30px; height: 97px; line-height: 97px;">金币必中</div>
+  </div>
+</ion-view>
+

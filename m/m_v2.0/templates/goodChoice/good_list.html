@@ -1,0 +1,146 @@
+<link rel="stylesheet" href="/../../m/m_v2.0/css/home.css?366">
+<style>
+  .sort{line-height: 73px;font-size: 28px;}
+  .sortActive{color: #ff366f}
+  .header_classify{
+    height: 160px;
+    background: #f6f6f6;
+    padding: 0;
+
+  }
+  .classifyul1{
+    height:88px;
+    width: 670px;
+    background: #F6F6F6;
+    line-height: 88px;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+  .classifyul1 li{
+    display: inline-block;
+    height: 88px;
+    font-size: 28px;
+    color: #333333;
+    padding-left: 17px;
+    padding-right: 16px;
+  }
+  .search_link{
+    height: 88px;
+    width: 80px;
+    background: #F6F6F6 url(../../m/m_v2.0/img/apply/grabble.png) no-repeat center;
+    box-shadow:-12px 0px 12px #F1F0F0,
+    0 0 0 #888888,
+    0 0 0 #888888,
+    0 0 0 #888888;
+    position: relative;
+    z-index: 99999;
+  }
+  .classifyul1 .current1{
+    color: #FF366F;
+  }
+  .classify_bottom_good{
+    background: #ffffff;
+    height: 72px;
+    width: 750px;
+    position: relative;
+    left: -750px;
+    top: 88px;
+    border-bottom: 1px solid #f6f6f6;
+  }
+  .classify_bottomul{
+    height:72px;
+    width: 100%;
+    background: #ffffff;
+  }
+  .classify_bottomul li{
+    display: inline-block;
+    height: 48px;
+    line-height: 48px;
+    color: #363636;
+    margin-top: 12px;
+    border: 1px solid #c2c2c2;
+    padding-left: 35px;
+    padding-right: 35px;
+    border-radius: 28px;
+    font-size: 28px;
+    background:#e1e1e1;
+  }
+  .cur{
+    color: #FF366F!important;
+    border: 1px solid #FF366F!important;
+    padding: 0px 20px !important;
+    background:#fff !important;
+  }
+  .cur::before{
+    content: '\2713'
+  }
+</style>
+<ion-view>
+  <ion-header class="bar bar-header header_classify" style="display:-webkit-box!important;">
+    <ion-scroll class="scrollxli" direction="x" scrollbar-x="false" scrollbar-y="false">
+      <ul class="classifyul1">
+        <li class="current1">精选</li>
+        <li>女装</li>
+        <li>男装</li>
+        <li>箱包</li>
+        <li>运动</li>
+        <li>配饰</li>
+        <li>数码</li>
+        <li>彩妆</li>
+        <li>母婴</li>
+        <li>保健</li>
+        <li>家装</li>
+        <li>日用</li>
+        <li>美食</li>
+        <li>车用</li>
+      </ul>
+    </ion-scroll>
+    <div class="search_link" ui-sref="search">
+    </div>
+    <div class="classify_bottom_good">
+      <ul class="classify_bottomul">
+        <li style="margin-left: 24px;" class="cur"> 全部</li>
+        <li style="margin-left: 10px;"> 高价值</li>
+        <li style="margin-left: 10px;"> 99%高中奖率</li>
+      </ul>
+    </div>
+  </ion-header>
+  <ion-content>
+    <form action="javascript:;" style="width: 100%;">
+    <div class="item-input-inset bar mtb15 search" style="margin-top: 102px;margin-bottom: 14px;visibility: hidden">
+
+                  <label class="item-input-wrapper">
+                    <i class="icon  ion-ios-search-strong pink" ui-sref="search" style="font-size: 28px"></i>
+                    <input  readOnly="readonly" class="icon ion-ios-search-strong searchInput" type="search" placeholder="搜索好货宝贝" ng-model="searchObj.searchValue" ng-value="{{searchObj.searchValue}}" ui-sref="search">
+                  </label>
+      <span class="icon bar-home" style="height: 40px;width: 40px;"  ui-sref="tabs.home"></span>
+
+        </div>
+    </form>
+    <div class="row row-no-padding border_b_6">
+      <div class="col text_center sort " ng-click="sortALL()"><span class="sortActive">综合排序</span></div>
+      <div class="col text_center sort" ng-click="sortSentiment()"><i class="ion-ios-arrow-up up" style="margin-top: -20px;margin-right: -17.5px;"></i><i class="ion-ios-arrow-down down" style="margin-bottom: -20px;margin-right:17.5px;"></i><span>人气排序</span></div>
+      <div class="col text_center sort" ng-click="sortPrice()"><i class="ion-ios-arrow-up up" style="margin-top: -20px;margin-right: -17.5px;"></i><i class="ion-ios-arrow-down down" style="margin-bottom: -20px;margin-right:17.5px;"></i><span>价格排序</span></div>
+        </div>
+    <div class="text-center itemDiv border_b_6 list-item" ng-repeat="goods in goodList track by $index">
+        <div class="itemList pt36 pb20">
+          <a  href="#/details?activityId={{goods.activity_id}}&newType=1" ng-click="statistic1('好货精选','免费申请',userId,goods.activity_id)"><img class="img80w" ng-src="{{goods.item_pic}}!325x315" alt=""></a>
+            <div class="itemName" ><a class="itemName" href="#/details?activityId={{goods.activity_id}}&newType=1" ng-click="statistic1('好货精选','免费申请',userId,goods.activity_id)">{{goods.item_name}}</a></div>
+            <div class="originalPriceText text_left">￥{{goods.item_price /100 | number:2}}</div>
+            <div class="text_left itemApply">{{goods.apply_member_count}}人已申请，还剩{{goods.sales_normal_stock}}份</div>
+            <div class="mt10">
+              <a class="home_shareMakeMoney_btn"  ng-if="$root.open_id==0 || $root.open_id==undefined" ng-href="#/details?activityId={{goods.activity_id}}&share=1" ng-click="statistic1('好货精选','领13元现金',userId,goods.activity_id)">领13元现金</a>
+              <a class="home_shareMakeMoney_btn"  ng-if="$root.open_id!=0 && $root.open_id!=undefined&&$root.isCode=='true'" ng-href="#/loginbind">领13元现金</a>
+              <a class="home_shareMakeMoney_btn"  ng-if="$root.open_id!=0 && $root.open_id!=undefined&&$root.isCode=='false'" ng-href="#/login?isState=1">领13元现金</a>
+            <a class="home_freeGet_btn"  href="#/details?activityId={{goods.activity_id}}&newType=1" ng-click="statistic1('好货精选','免费申请',userId,goods.activity_id)">免费申请</a>
+            </div>
+        </div>
+       <div class="highValue" ng-if="goods.activity_type==4"></div>
+       <div class="highawrd" ng-if="item_type==2"></div>
+    </div>
+    <!--无限滚动:如果所有的页面都加载完了(例如，共30页)，则不再出现此组件-->
+    <ion-infinite-scroll on-infinite="getRestaurants()"  spinner="android" icon="icon ion-load-c " ng-if="total>page" immediate-check="false">
+      
+    </ion-infinite-scroll>
+  </ion-content>
+</ion-view>

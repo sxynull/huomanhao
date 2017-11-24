@@ -1,0 +1,39 @@
+.center-top{height: 330px;background: url("../img/account/userCenterbj_02.png") no-repeat center }
+ .header-pic{padding: 40px 25px 40px 50px}
+ .header-pic img{width: 140px;height: 140px;border-radius: 50%;border: 5px solid #ffa9c1;}
+ .header-name{font-size: 28px;line-height: 30px;color: #fff;padding-top: 65px;font-family: "Hiragino Sans GB W3";padding-bottom: 24px;}
+ .user-level{width: 161px;height: 42px;line-height: 42px;border-radius: 18px;color: #fff;padding-left:55px;background: url("../img/account/vip_04.png") no-repeat left center;font-size: 22px;font-family: "Hiragino Sans GB W3";}
+  .renewal-btn{display: inline-block;width: 90px;line-height: 42px;border-radius: 18px;color: #fff;box-shadow: #6c8286 3px 3px 3px;margin-left: 12px;background-color: #22cbb4;text-align: center;font-size: 22px;font-family: "Hiragino Sans GB W3";}
+ .vip-time-end{font-size: 22px;line-height: 42px;color: #fff;margin-left: 20px;}
+
+  .alerts{font-size: 50px;color: #ffffff;margin-right:48px;float: right}
+ .alerts:before{width: 8px;height: 8px;background-color:#ff0b29;border-radius: 50%;margin: 20px 0 0 30px;}
+ .account-is{height:108px;font-size: 26px;font-family: "Hiragino Sans GB W3";color: #fff;text-align: center}
+ .account-is div{padding: 20px 0 15px 0}
+ .account-is div p{font-size: 26px;line-height: 36px;}
+ .user-normal{width: 161px;height: 42px;line-height: 42px;border-radius: 18px;color: #fff;padding-left:55px;background: url("../img/account/user_04.png") no-repeat left center;font-size: 24px;font-family: "Hiragino Sans GB W3";}
+ .open-btn{display: inline-block;width: 161px;line-height: 46px;border-radius: 18px;color: #fff;margin-left: 12px;background: url('../img/account/vip-open.png') no-repeat;text-align: center;font-size: 24px;font-family: "Hiragino Sans GB W3";}
+ .coin-notice{font-size: 24px;line-height: 42px;color: #fff;margin-top: 20px;}
+ .coin-notice em{color: #f4d23e;}
+
+ .new-notice{line-height: 88px;font-size: 24px;font-family: "Hiragino Sans GB W3";}
+ .account-list{height: 88px;line-height: 88px;font-family: "Hiragino Sans GB W3";padding: 0 24px 0 24px}
+ .account-list-left{font-size: 28px;text-align: left;float: left}
+ .account-list-right{font-size: 24px;text-align: right;color: #999999;float: right}
+ .account-list-right i{font-size: 30px;color: #999999;margin-left: 13px;}
+
+
+ .account-list-menu{height: 162px;text-align: center;font-family: "Hiragino Sans GB W3";}
+ .account-list-menu div{padding: 24px 0 20px 0;height: 137px;}
+ .menu-number{width: 28px;height: 28px;border: 2px solid #ff0b29;border-radius:50%;color:#ff0b29;margin-left: -10px;font-size: 18px;line-height: 27px;text-align: center;background-color: #fff;}
+ .menu-text{line-height: 46px;font-size:22px;height: 46px;}
+ .menu-price{font-size: 26px;line-height: 33px;color: #ff0b29;margin-top: 16px;}
+ .grade_rank{color: #FF366F;}
+ .ranklist{height: 200px;width: 92%;background: #ffffff;border-radius: 6px;margin-left: 4%;box-shadow:0 3px 0 rgba(155,155,155,.1);margin-bottom: 24px;}
+ .ranklist_img{width: 144px;height: 200px;text-align: right;}
+ .ranklist_img img{display: inline-block;margin-top: 60px; height: 80px;width: 112px;}
+ .ranklist_text{width: 528px;height: 200px;}
+ .text_top{height: 92px;line-height: 92px;color: #ff366f;margin-left: 34px; font-size: 28px;}
+ .text_top .fall{float: right; font-size: 24px;color: #999999;padding-right: 46px;background: url("../img/account/rankOk.png") no-repeat right center}
+ .text_top .notfall{float: right; font-size: 24px;color: #999999;}
+ .text_buttom{line-height: 40px;color:#666666;font-size: 26px;margin-left: 34px }

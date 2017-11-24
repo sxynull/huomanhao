@@ -1,0 +1,333 @@
+<style>
+  .tab_menu {
+    overflow: hidden;
+  }
+
+  .tab_menu li {
+    font-size: 28px;
+    border-top: 1px solid #EAEAEA;
+    width: 125px;
+    float: left;
+    height: 70px;
+    line-height: 70px;
+    color: #666666;
+    text-align: center;
+    cursor: pointer;
+    border-bottom: 1px solid #eaeaea;
+  }
+
+  .tab_menu .fristLi {
+    border-left: 1px solid #EAEAEA;
+  }
+
+  .tab_menu li.current {
+    color: #FF366F;
+    border-bottom: 2px solid #FF366F;
+    border-top: none;
+    border-right: 1px solid #EAEAEA;
+    border-left: 1px solid #EAEAEA;
+  }
+
+  .tab_menu li a {
+    color: #666666;
+    text-decoration: none;
+  }
+
+  .tab_menu li.current a {
+    color: #333;
+  }
+
+  .tab_box {
+    border-left: 1px solid #eaeaea;
+    border-right: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
+  }
+
+  .tab_box li {
+    height: 24px;
+    line-height: 24px;
+    overflow: hidden;
+  }
+
+  .tab_box .hide {
+    display: none;
+  }
+
+  .first_award {
+    line-height: 51px;
+    font-size: 26px;
+    color: #ccc;
+    padding-top: 27px;
+  }
+
+  .first_award_price {
+    font-size: 40px;
+    line-height: 55px;
+    color: #ff0b29;
+    padding-bottom: 38px;
+  }
+
+  .fans_tabs_bj {
+    background-color: #f6f6f6;
+    padding-top: 39px;
+    padding-bottom: 21px;
+  }
+
+  .fans_tabs {
+    border: 2px solid #ff366f;
+    border-radius: 10px;
+    background-color: #fff;
+    line-height: 55px;
+    font-size: 26px;
+    color: #ff366f
+  }
+
+  .fans_tabs_active {
+    background-color: #ff366f;
+    color: #fff
+  }
+
+  .award_time {
+    line-height: 70px;
+    font-size: 24px;
+    color: #666;
+    padding-left: 12%
+  }
+
+  .head_portrait {
+    width: 113px;
+    height: 113px;
+    border-radius: 50%;
+    margin-top: 28px;
+  }
+
+  .fans_name {
+    font-size: 28px;
+    line-height: 53px;
+    padding-top: 15px;
+    font-weight: bold;
+    color: #666666;
+    overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    width: 165px;
+  }
+
+  .fans_apply_time {
+    font-size: 22px;
+    color: #b3b3b3;
+    line-height: 45px;
+    width: 165px;
+  }
+
+  /*.fans_list{padding:0 6%;width: 100%}*/
+  .fans_coin {
+    font-size: 28px;
+    color: #e8e8e8;
+    line-height: 50px;
+    padding-top: 39px;
+    padding-left: 114px;
+  }
+
+  .fans_back_time {
+    color: #25c3b2;
+    font-size: 22px;
+    line-height: 47px;
+    padding-left: 114px
+  }
+
+  .fans_back_coin {
+    line-height: 50px;
+    color: #ff366f;
+    padding-left: 114px;
+    padding-top: 39px;
+    font-size: 28px;
+  }
+
+  .fans_back_coin img {
+    margin-top: 14px;
+  }
+
+  .fans_coin img {
+    margin-top: 14px
+  }
+
+  .fans_no {
+    line-height: 47px;
+    font-size: 22px;
+    padding-left: 114px;
+    color: #ff366f;
+  }
+
+  .fans_coin_price {
+    font-size: 28px;
+    color: #ff366f;
+    line-height: 50px;
+    padding-top: 39px;
+    padding-left: 114px;
+  }
+
+  .fans_coin_price img {
+    margin-top: 13px
+  }
+
+  .fans_coin_blue {
+    color: #7dc3ff
+  }
+</style>
+<ion-view>
+  <ion-content >
+
+    <div class="spokesmanDetailTabs">
+      <ul class="tab_menu row row-no-padding ">
+        <li class="current fristLi col" on-touch="first()">首单奖励</li>
+        <li class="process col" on-touch="coin()">金币奖励</li>
+        <li class="rule col" on-touch="backPrice()">提成奖励</li>
+      </ul>
+      <div class="tab_box ">
+        <!--首单奖励-->
+        <div class="Details">
+          <div class=" row row-no-padding">
+            <div class="col text_center"><p class="first_award">累计首单奖励</p>
+              <p class="font_size28"><span class="first_award_price">{{spokesmanData.accumulated_rebate /100 | number:2}}</span>元</p></div>
+            <div class="col text_center"><p class="first_award">累计邀请粉丝</p>
+              <p class="font_size28"><span class="first_award_price">{{spokesmanData.total_fans}}</span>人</p></div>
+          </div>
+          <div class="fans_tabs_bj">
+                        <div class="row row-no-padding itemList fans_tabs">
+                          <div class="col text_center fans_tabs_active one_fans" on-touch="firstOneFans($event)">一度粉丝({{spokesmanData.first_fans_count }})</div>
+                          <!--<div class="col text_center" on-touch="firstTwoFans($event)">二度粉丝({{spokesmanData.second_fans_count}})</div>-->
+                        </div>
+                      </div>
+             <div class="row row-no-padding  border_b_6" ng-repeat="spokesmanList in goodList">
+                        <div class="col">
+                          <p class="award_time">{{dateFunction(spokesmanList.gmt_created) |  date:'yyyy-MM-dd' }}</p>
+                          <div class="border_t_1">
+                            <div class="myfl " style="padding-left: 12%">
+                              <img class="head_portrait" ng-if="spokesmanList.avatar.length>2" ng-src="{{spokesmanList.avatar}}">
+                              <img class="head_portrait" ng-if="spokesmanList.avatar==''||spokesmanList.avatar==undefind" ng-src="../../m/m_v2.0/img/spokesman/avatar.png">
+                            </div>
+                            <div class="myfl pl15 pb15">
+                              <h3 class="fans_name">{{spokesmanList.fans_name}}</h3>
+                              <p class="fans_apply_time">{{dateFunction(spokesmanList.gmt_created) |  date:'yyyy-MM-dd' }} 注册</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <p class="award_time">　　　　　　　</p>
+                          <div class="border_t_1">
+                            <p class="fans_back_coin" ng-if="spokesmanList.is_newer==1&&spokesmanList.checkout_count >=4&&spokesmanList.relation_status>=0"><img src="../../m/m_v2.0/img/spokesman/coin_ok_03.png" alt=""> 7.00 + 3.00</p>
+                            <p class="fans_back_coin" ng-if="spokesmanList.is_newer==1&&spokesmanList.checkout_count <4&&spokesmanList.relation_status>=0"><img src="../../m/m_v2.0/img/spokesman/coin_ok_03.png" alt=""> {{price | number:2}}</p>
+                            <p class="fans_back_time" ng-if="spokesmanList.is_newer==1&&spokesmanList.checkout_count >=4&&spokesmanList.relation_status>=0">首单奖励+四单奖励</p>
+                            <!--<p class="fans_back_time" >预计2017-12-11日到账</p>-->
+                            <p class="fans_coin" ng-if="spokesmanList.is_newer==0&&spokesmanList.relation_status>=0"><img src="../../m/m_v2.0/img/spokesman/coin_no_03.png" alt=""> {{price | number:2}}</p>
+                            <p class="fans_no" ng-if="spokesmanList.is_newer==0&&spokesmanList.relation_status>=0">还没有下单，木有奖励哦~</p>
+                            <p class="fans_coin" ng-if="spokesmanList.is_newer==0&&spokesmanList.relation_status<0"><img src="../../m/m_v2.0/img/spokesman/coin_no_03.png" alt=""> {{price | number:2}}</p>
+                            <p class="fans_back_time" ng-if="spokesmanList.is_newer==0&&spokesmanList.relation_status<0">解除绑定</p>
+                          </div>
+                        </div>
+
+                      </div>
+
+
+        </div>
+        <!--金币奖励-->
+        <div class="hide Newbie clearfix" >
+          <div class=" row row-no-padding">
+            <div class="col text_center"><p class="first_award">累计金币奖励</p>
+              <p class="font_size28"><span class="first_award_price">{{spokesmanData.accumulated_coin}}</span>金币</p></div>
+          </div>
+          <div class="fans_tabs_bj">
+            <div class="row row-no-padding itemList fans_tabs">
+              <div class="col text_center fans_tabs_active one_fans"  on-touch="coinOneFans($event)">一度粉丝({{spokesmanData.first_fans_count }})</div>
+              <div class="col text_center"  on-touch="coinTwoFans($event)">二度粉丝({{spokesmanData.second_fans_count }})</div>
+            </div>
+          </div>
+          <div class="fans_one" ng-repeat="coinList in goodList">
+            <div class="row row-no-padding  border_b_6">
+              <div class="col">
+                <p class="award_time">{{dateFunction(coinList.gmt_created) |  date:'yyyy-MM-dd' }}</p>
+                <div class="border_t_1">
+                  <div class="myfl " style="padding-left: 12%">
+                    <img class="head_portrait" ng-if="coinList.avatar.length>2" ng-src="{{coinList.avatar}}">
+                    <img class="head_portrait" ng-if="coinList.avatar==''||coinList.avatar==undefind" ng-src="../../m/m_v2.0/img/spokesman/avatar.png">
+
+                  </div>
+                  <div class="myfl pl15 pb15">
+                    <h3 class="fans_name">{{coinList.fans_name}}</h3>
+                    <p class="fans_apply_time">{{dateFunction(coinList.gmt_created) |  date:'yyyy-MM-dd' }} 注册</p>
+                  </div>
+
+                </div>
+              </div>
+              <div class="col">
+                <p class="award_time">　　　　　　　</p>
+                <div class="border_t_1">
+                  <p class="fans_coin_price"><img src="../../m/m_v2.0/img/spokesman/coin_ok_03.png" alt=""> {{coinList.coin_award |  number:2 }}</p>
+                  <p class="fans_back_time fans_coin_blue">{{coinList.remark}}</p>
+
+                </div>
+              </div>
+
+            </div>
+
+
+          </div>
+
+
+
+        </div>
+        <!--返现奖励-->
+        <div class="hide application_regulation">
+          <div class=" row row-no-padding">
+            <div class="col text_center"><p class="first_award">累计返现奖励</p>
+              <p class="font_size28"><span class="first_award_price">{{spokesmanData.accumulated_reward_amount /100 | number:2}}</span>元</p></div>
+          </div>
+          <div class="fans_tabs_bj">
+            <div class="row row-no-padding itemList fans_tabs">
+              <div class="col text_center fans_tabs_active one_fans" on-touch="backPriceOneFans($event)">一度粉丝({{spokesmanData.first_fans_count }})</div>
+              <div class="col text_center"  on-touch="backPriceTwoFans($event)">二度粉丝({{spokesmanData.second_fans_count}})</div>
+            </div>
+          </div>
+          <div class="fans"></div>
+          <div class="row row-no-padding  border_b_6" ng-repeat="backPriceList in goodList">
+            <div class="col">
+              <div class="border_t_1">
+                <div class="myfl " style="padding-left: 12%">
+                  <img class="head_portrait" ng-if="backPriceList.avatar.length>2" ng-src="{{backPriceList.avatar}}">
+                    <img class="head_portrait" ng-if="backPriceList.avatar==''||backPriceList.avatar==undefind" ng-src="../../m/m_v2.0/img/spokesman/avatar.png">
+
+                </div>
+                <div class="myfl pl15 pb15">
+                  <h3 class="fans_name">{{backPriceList.fans_name}}</h3>
+                  <p class="fans_apply_time">{{dateFunction(backPriceList.gmt_created) |  date:'yyyy-MM-dd' }} 注册</p>
+                  <p class="fans_apply_time">订单价格：</p>
+                  <p class="fans_apply_time">{{backPriceList.order_amount /100 |  number:2 }}</p>
+                </div>
+
+              </div>
+            </div>
+            <div class="col">
+              <p class="award_time">　　　　　　　</p>
+              <div class="border_t_1">
+
+                <p class="fans_back_coin"><img src="../../m/m_v2.0/img/spokesman/coin_ok_03.png" alt="">{{backPriceList.amount_award /100 | number:2}}</p>
+                <!--<p class="fans_back_time">预计2017-12-11日到账</p>-->
+
+              </div>
+            </div>
+
+          </div>
+
+
+        </div>
+        <!--无限滚动:如果所有的页面都加载完了(例如，共30页)，则不再出现此组件-->
+               <ion-infinite-scroll  on-infinite="getRestaurants()"   icon="icon ion-load-c" ng-if="total>page"  immediate-check="false">
+
+                </ion-infinite-scroll>
+      </div>
+    </div>
+
+
+  </ion-content>
+</ion-view>

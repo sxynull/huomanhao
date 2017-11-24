@@ -1,0 +1,31 @@
+
+  <link rel="stylesheet" href="/../../m/m_v2.0/css/fundall.css?366">
+  <ion-view style="background: #f6f6f6">
+    <ion-content>
+   <div class="remaining_sum">
+     <p class="remaining_hint">可用余额（元）</p>
+     <p class="remaining_num">{{balance/100|number:2}}</p>
+   </div>
+<div class="fund_content">
+  <ul class="fundtype">
+    <li class="myfl current" style="width: 187px" ng-click="pulldowngetdatafund()">全部</li>
+    <li class="myfl" style="width: 188px" ng-click="pulldowngetdatafund()">收入</li>
+    <li class="myfl" style="width: 187px" ng-click="pulldowngetdatafund()">支出</li>
+    <li class="myfl" style="width: 188px" ng-click="pulldowngetdatafund()">提现中</li>
+  </ul>
+  <div class="fundcontent_detail clearfix" ng-repeat="coins in coindata">
+    <div class="myfl fundcontent_detailf"><p ng-style="setColor(coins.deal_type)">{{coins.remark}}<br><span>{{dateFunction(coins.gmt_created)|date:'yyyy-MM-dd'}}</span></p></div>
+    <div class="myfr fundcontent_detailr" ng-if="coins.deal_type==1" style="color: #ff9710">-{{coins.amount /100 | number:2}}</div>
+    <div class="myfr fundcontent_detailr" ng-if="coins.deal_type==2||coins.deal_type==4" style="color: #27ac2b">+{{coins.amount /100 | number:2}}</div>
+    <div class="myfr fundcontent_detailr" ng-if="coins.deal_type==5" style="color: #666666">{{coins.amount /100 | number:2}}</div>
+  </div>
+</div>
+      <ion-infinite-scroll on-infinite="pulldowngetdatafund1()"  spinner="android" icon="icon ion-load-d " ng-if="total>current_page" immediate-check="false">
+      </ion-infinite-scroll>
+    </ion-content>
+    <div class="bar bar-footer apply_Btn2" ng-click="jumpUrl()" >
+      <div class="title" style=" font-size: 30px; height: 97px; line-height: 97px;">提现</div>
+      <!--ui-sref="withdrawBind"-->
+    </div>
+  </ion-view>
+

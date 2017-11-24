@@ -1,0 +1,193 @@
+<style>
+   .coin_tabs{text-align: center;height: 113px;padding: 12px 0 5px 0;font-family: "Hiragino Sans GB W3";}
+   .coin_tabs p{font-size: 22px;line-height: 33px;}
+   .coin-title{width: 100%;margin: 0 auto;padding: 0 24px 0 24px;}
+  .hour,.minute,.second{width: 28px;height: 28px;line-height: 28px;font-size: 20px;color: #fff;background-color: #30353c;border-radius:3px;}
+  .coin-title-text{font-size: 24px;line-height: 66px;font-family: "Hiragino Sans GB W3";}
+   .coin-title-time{font-size: 20px;line-height:66px;font-family: "Hiragino Sans GB W3";text-align: right}
+  .coin-list{height: 243px;width: 100%;margin: 0 auto;padding: 28px 24px 30px 24px;}
+  .coin-price{margin-top: 60px;font-size: 24px;color: #666666}
+   .coin-price time{color: #ff366f;}
+  .coin-apply-btn{width: 160px;line-height: 48px;height: 48px;font-size:26px;font-family: "Hiragino Sans GB W3";color: #fff;background-color: #ff366f;text-align: center;float: right;margin-top: 32px;border-radius: 24px;background: -webkit-gradient(linear, 0 0, 0 bottom, from(#ff5a6a), to(#ff2463));letter-spacing: 2px;}
+  .coin-list-left{width: 75%;display: inline-block}
+  .price{font-size: 24px;margin-top: 15px;color: #666666}
+  .price time{ text-decoration: line-through;}
+  .coin-list-remaining{float: right;font-size: 18px;margin-top: 8px;}
+  .coin-list-already{float: right;font-size: 18px;margin-top: -8px;}
+   .goods_bar {
+       width: 160px;
+       height: 8px;
+       background: #e6e6e6;
+       border-radius: 8px;
+       -moz-border-radius: 8px;
+       -o-border-radius: 8px;
+       -webkit-border-radius: 8px;
+   }
+   .goods_bar_inner {
+       width: 60%;
+       height: 8px;
+       background: -ms-linear-gradient(left,#fd77a5,#b088fb);
+       background: -moz-linear-gradient(left,#fd77a5,#b088fb);
+       background: -webkit-gradient(linear, 0% 0%, 100% 0%,from(#fd77a5), to(#b088fb));
+       background: -webkit-gradient(linear, 0% 0%, 100% 0%, from(#fd77a5), to(#b088fb));
+       background: -webkit-linear-gradient(left,#fd77a5,#b088fb);
+       background: -o-linear-gradient(left,#fd77a5,#b088fb);
+       border-top-left-radius: 8px;
+       -moz-border-top-left-radius: 8px;
+       -o-border-top-left-radius: 8px;
+       -webkit-border-top-left-radius: 8px;
+       border-bottom-left-radius: 8px;
+       -moz-border-bottom-left-radius: 8px;
+       -o-border-bottom-left-radius: 8px;
+       -webkit-border-bottom-left-radius: 8px;
+   }
+   .header_classify{
+    height: 88px;
+    background: #f6f6f6;
+    padding: 0;
+
+  }
+  .classifyul1{
+    height:88px;
+    width: 670px;
+    background: #F6F6F6;
+    line-height: 88px;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+  .classifyul1 li{
+    display: inline-block;
+    height: 88px;
+    font-size: 28px;
+    color: #333333;
+    padding-left: 17px;
+    padding-right: 16px;
+  }
+  .search_link{
+    height: 88px;
+    width: 80px;
+    background: #F6F6F6 url(../../m/m_v2.0/img/apply/grabble.png) no-repeat center;
+    box-shadow:-12px 0px 12px #F1F0F0,
+    0 0 0 #888888,
+    0 0 0 #888888,
+    0 0 0 #888888;
+    position: relative;
+    z-index: 99999;
+  }
+  .classifyul1 .current1{
+    color: #FF366F;
+  }
+  .classify_bottom{
+    background: #ffffff;
+    height: 140px;
+    width: 750px;
+    position: relative;
+    left: -750px;
+    top: 88px;
+    border-bottom: 1px solid #f6f6f6;
+  }
+  .classify_bottomul{
+    height:72px;
+    width: 100%;
+    background: #ffffff;
+  }
+  .classify_bottomul li{
+    display: inline-block;
+    height: 48px;
+    line-height: 48px;
+    color: #999999;
+    margin-top: 12px;
+    border: 1px solid #c2c2c2;
+    padding-left: 35px;
+    padding-right: 35px;
+    border-radius: 4px;
+    font-size: 28px;
+  }
+  .cur{
+    color: #FF366F!important;
+    border: 1px solid #FF366F!important;
+    background: url(../../m/m_v2.0/img/apply/classify_buttom.png) no-repeat right bottom;
+  }
+   .top_hint1{
+     height: 80px;
+     line-height: 40px;
+     width:100%;
+     padding-left: 8%;
+     font-size: 24px;
+     background: #ffecf2 url(../../m/m_v2.0/img/apply/top_hint.png) no-repeat 3% center;
+     background-size: 24px 24px;
+     color: #666666;
+   }
+</style>
+<ion-view>
+  <ion-header class="bar bar-header header_classify" style="display:-webkit-box!important;">
+     <ion-scroll class="scrollxli" direction="x" scrollbar-x="false" scrollbar-y="false">
+       <ul class="classifyul1">
+         <li class="current1">精选</li>
+         <li>女装</li>
+         <li>男装</li>
+         <li>箱包</li>
+         <li>运动</li>
+         <li>配饰</li>
+         <li>数码</li>
+         <li>彩妆</li>
+         <li>母婴</li>
+         <li>保健</li>
+         <li>家装</li>
+         <li>日用</li>
+         <li>美食</li>
+         <li>车用</li>
+       </ul>
+     </ion-scroll>
+     <div class="search_link" ui-sref="search">
+     </div>
+    <div class="classify_bottom">
+         <ul class="classify_bottomul">
+           <p class="top_hint1">金币兑换的是必中资格，兑换后需要在24点前提交申请，次日开奖必中！</p>
+         </ul>
+      <div class="row row-no-padding coin-title border_b_1">
+             <div class="col coin-title-text">本场抢购进行中</div>
+             <div class="col coin-title-time end_time">{{timeText}} <em class="hour">00</em> : <em class="minute">00</em> : <em class="second">00</em></div>
+           </div>
+       </div>
+
+   </ion-header>
+  <ion-content>
+    <!--  <div class="row  coin_tabs row-no-padding border_b_25">
+         <div class="col"><h1>10:00</h1><p>已结束</p></div>
+         <div class="col"><h1>10:00</h1><p>已结束</p></div>
+         <div class="col"><h1>10:00</h1><p>已结束</p></div>
+         <div class="col"><h1>10:00</h1><p>已结束</p></div>
+         <div class="col"><p>抢购提醒</p><h1>(0)</h1></div>
+      </div>
+      <div class="row row-no-padding coin-title border_b_1">
+        <div class="col coin-title-text">本场抢购进行中</div>
+        <div class="col coin-title-time">距结束 <em class="hour">00</em> : <em class="minute">00</em> : <em class="second">00</em></div>
+      </div>-->
+
+    <div class="coin-list list border_b_1" style="top:226px;" ng-repeat="goods in goodList track by $index">
+      <a href="#/details?activityId={{goods.activity_id}}" ng-click="statistic1('金币必中','立即抢',userId,goods.activity_id)"  style="display: inline-block;height: 162px;width: 162px;vertical-align: top;"><img style="width: 162px;height: 162px;" ng-src="{{goods.item_pic}}!162x162" ></a>
+          <div class="coin-list-left">
+            <h3><a href="#/details?activityId={{goods.activity_id}}" ng-click="statistic1('金币必中','立即抢',userId,goods.activity_id)"></a>{{goods.item_name}}</h3>
+            <p>
+              <span class="coin-price">抢购价：<time>{{goods.coin_num}}金币</time></span>
+              <a class="coin-apply-btn" href="#/details?activityId={{goods.activity_id}}" ng-click="statistic1('金币必中','立即抢',userId,goods.activity_id)">立即抢</a>
+            </p>
+            <div>
+              <span class="price">价格：<time>￥{{goods.item_price /100 | number:2}}</time></span>
+              <span class="coin-list-remaining">剩余{{goods.sales_normal_stock}}份</span>
+
+            </div>
+            <div class="goods_bar myfr">
+                           <div class="goods_bar_inner" style="border-radius: 4px;" ng-style="{width:goods.sales_percent+'%'}"></div>
+                         </div>
+                         <div class="coin-list-already">已抢购{{goods.sales_percent}}%　</div>
+
+          </div>
+    </div>
+    <!--无限滚动:如果所有的页面都加载完了(例如，共30页)，则不再出现此组件-->
+    <ion-infinite-scroll  on-infinite="getRestaurants()"   icon="icon ion-load-c" ng-if="total>page"  immediate-check="false" style="margin-top:180px">
+
+    </ion-infinite-scroll>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,36 @@
+
+<link rel="stylesheet" href="/../../m/m_v2.0/css/apply.css?366">
+<ion-view style="background: #f6f6f6;">
+  <ion-content>
+    <p class="top_hint">平台80%高中奖率用户每天申请超过10次</p>
+    <div class="commodity_show">
+      <h2 class="show_title">店铺：{{shop_name}}</h2>
+      <dl>
+        <dd class="myfl"><img ng-src="{{items.item_b_o.item_pic}}">
+          <p class="pic_text">淘宝主图</p>
+        </dd>
+        <dt class="myfl">
+        <p class="goodsName">{{items.item_b_o.item_name}}</p>
+        <p class="wangwangname">掌柜旺旺：{{wangwang_name}}</p>
+        <p class="goodsSku">商品规格：{{sku1}}&nbsp;&nbsp;&nbsp;&nbsp;{{sku2}}</p>
+        <p class="goodsNum">商品数量：{{items.item_b_o.buy_number}}件</p>
+        <p class="goodsPrice">{{items.item_b_o.item_price/100.00|currency:'￥'}}</p>
+        </dt>
+      </dl>
+    </div>
+    <div class="applyStep clearfix" style="height:300px; text-align: center">
+      <img src="../../m/m_v2.0/img/apply/overtime.png" class="state">
+      <p class="state_hinta" style="color: #ffa04b">领奖已超时，无法领奖</p>
+    </div>
+    <div class="attention">
+      <span class="attention_notice">重要提醒：</span>
+      <p class="attention_text">1、请勿关闭微信公众号通知，以免错过中奖通知！<br>
+        2、通知中奖后，请及时按照步骤下单领取奖励，如未及时领取奖励的将取消中奖资格，系统将自动降低下次中奖几率！<br>
+        3、如果未中奖，可继续通过做任务的方式增加中奖几率，提交申请后即可获得抽奖资格！<br>
+        4、经过多次抽奖后仍未中的用户，同样可获得积分奖励，可用于积分商城商品兑换！<a href="javascript:;" ui-sref="integralTest" style="color: #FF366F; text-decoration: underline;">点击前往【积分商城】</a></p>
+    </div>
+  </ion-content>
+  <div class="bar bar-footer apply_Btn">
+    <div class="title" ui-sref="goodList" style=" font-size: 30px; height: 97px; line-height: 97px;">申请更多，中奖率更高</div>
+  </div>
+</ion-view>

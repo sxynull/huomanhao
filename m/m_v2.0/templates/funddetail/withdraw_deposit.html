@@ -1,0 +1,100 @@
+<link rel="stylesheet" href="/../../m/m_v2.0/css/withdrawdeposit.css?366">
+<style>
+  .button.button-positive{
+    background: #FF366F!important;
+    border-radius: 0 0 8px 8px;
+  }
+  .button.button-positive.activated{
+    background: #FF366F!important;
+  }
+  .hint_withdraw{
+    color: #FF366F;
+    padding-left: 40px;
+    margin-left: 2px!important;
+    background: url(../../m/m_v2.0/img/apply/wenhao.png) no-repeat 10px center;
+  }
+  .hint_withdrawtext{
+    position: absolute;
+    border: 1px solid #FF366F;
+    border-radius: 8px;
+    padding: 24px;
+    background: #ffffff;
+    /* overflow: overlay; */
+    left: 204px;
+    font-size: 24px;
+    top: 84px;
+  }
+
+  .hint_withdrawtext p{
+    font-size: 24px;
+    display: inline-block;
+    line-height: 40px;
+    color: #333333;
+  }
+  .withdraw_content4 .arrows{
+    position: absolute;
+    height: 15px;
+    width: 24px;
+    background: url(../../m/m_v2.0/img/apply/arrows1.png) no-repeat center;
+    left: 456px;
+    top: 71px;
+  }
+</style>
+<ion-view style="background: #f6f6f6">
+  <ion-content>
+    <form name="depositForm">
+<div class="withdraw_content4" style="margin-top: 24px;position: relative">
+  <div class="hint_withdrawtext" style="display: none">
+    <p style="border-bottom: none;">直接访问商品链接/搜索店铺名称进店<br>
+      中奖活动淘宝未付款，提交未付款/虚假单号<br>
+      下单使用淘宝客返利<br>
+      联系商家索要好评返现/赠品/发票<br>
+      擅自店铺申请售后，恶意投诉商家<br>
+      淘宝评价追评中差评</p>
+  </div>
+  <span class="arrows" style="display: none"></span>
+  <p class="withdraw_balance4">可提现余额<span>{{disposableAmount/100}}</span>&nbsp;元<span class="hint_withdraw" on-touch="hint_withdrawtextshow()">出现以下行为不予提现！</span></p>
+  <p class="bind_withdrawaccount4">提现账号<input type="text" class="bind_withdrawaccountinput4" value="{{payAccount}}" readonly="readonly" style="background: #ffffff"></p>
+  <p class="bind_withdrawmoney4">提现金额<input type="tel" ng-change="bindcheck()" ng-model="depositmoney" class="bind_withdrawmoneyinput4" name="withdrawmoney" required ng-pattern="/^(([1-9][0-9]*)|(([0]\.\d{1,2}|[1-9][0-9]*\.\d{1,2})))$/" placeholder="请输入提现金额" ng-focus/></p>
+  <p class="arrival_amount4" ng-if="flogE">到账金额<span >0</span>&nbsp;元</p>
+  <p class="arrival_amount4" ng-if="!flogE&&depositmoney<=20">到账金额<span >{{depositmoney-1|number:2}}</span>&nbsp;元</p>
+  <p class="arrival_amount4" ng-if="depositmoney>20">到账金额<span >{{depositmoney*95/100|number:2}}</span>&nbsp;元</p>
+  <p class="pay_password4" style="border-bottom: none">支付密码<input type="password" ng-model="paypassword" name="paypass" required ng-pattern="/^(?!(?:\d*$))[A-Za-z0-9]{6,8}$/"  class="pay_passwordinput4" placeholder="请填写支付密码" ng-focus/></p>
+</div>
+    </form>
+<div style="height: 30px;margin-top: 20px;" ng-if="flogA">
+  <p class="error_text4" ng-show="depositForm.withdrawmoney.$focused&&depositForm.withdrawmoney.$error.required" >请输入金额！</p>
+  <p class="error_text4" ng-show="depositForm.withdrawmoney.$focused&&depositForm.withdrawmoney.$error.pattern">请输入正确的金额！</p>
+  <p class="error_text4" ng-show="depositForm.paypass.$focused&&depositForm.paypass.$error.required">如未设置支付密码，网站登录密码即为支付密码！</p>
+  <p class="error_text4" ng-show="depositForm.paypass.$focused&&depositForm.paypass.$error.pattern">支付密码格式不正确！</p>
+</div>
+    <div style="height: 30px;margin-top: 20px;" ng-if="!flogA">
+      <p class="error_text4" ng-if="flogB">提现金额不能大于可提现金额！</p>
+      <p class="error_text4" ng-if="flogD">提现金额大于单日可提现金额！</p>
+      <p class="error_text4" ng-if="flogC">提现金额需要大于1元！</p>
+    </div>
+<div class="attention4">
+  <span class="attention_notice4">提现说明：</span>
+  <p class="attention_text4">1、每天提现次数最多1次，单日上限<em style="color: #FF366F">10000</em>元。<br>
+    2、提现到支付宝账户的，平台按提现金额收取<em style="color: #FF366F">5%</em>/笔的手续费，每笔手续费最低1元；由系统代收。<br>
+    3、在国家法定假日和双休日期间，用户可以申请提现，但会在假期后第一个工作日予以处理。由此造成的不便，请多多谅解!</p>
+</div>
+<button
+        ng-disabled="
+depositForm.withdrawmoney.$error.required||
+depositForm.withdrawmoney.$error.pattern||
+depositForm.paypass.$error.required||
+depositForm.paypass.$error.pattern||!flogA"
+        ng-class="{registerBtn4:
+!depositForm.withdrawmoney.$error.required&&
+!depositForm.withdrawmoney.$error.pattern&&
+!depositForm.paypass.$error.required&&
+!depositForm.paypass.$error.pattern&&flogA, registerBtn44:
+depositForm.withdrawmoney.$error.required||
+depositForm.withdrawmoney.$error.pattern||
+depositForm.paypass.$error.required||
+depositForm.paypass.$error.pattern||!flogA}"
+   ng-click="withdrawsubmit()" style="margin-top: 100px;">提交</button>
+</ion-content>
+</ion-view>
+

@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="/../../m/m_v2.0/css/withdrawintoaccount.css?366">
+<ion-view style="background: #f6f6f6">
+  <ion-content>
+<div class="remaining_sum5">
+  <p class="remaining_hint5">即将到账（元）</p>
+  <p class="remaining_num5">{{intoaccount/100|number:2}}</p>
+</div>
+<div class="fund_content5" >
+  <div class="fundcontent_detail5 clearfix" ng-repeat="coins in coindata">
+    <div class="myfl fundcontent_detailf5"><p>{{coins.remark}}<br><span>预计到账时间：{{dateFunction(coins.gmt_created)|date:'yyyy-MM-dd'}}</span></p></div>
+    <div class="myfr fundcontent_detailr5" style="color: #ff9600">+{{coins.rebate_amount/100|number:2}}</div>
+  </div>
+  <!--<div class="fundcontent_detail5 clearfix">-->
+    <!--<div class="myfl fundcontent_detailf5"><p>粉丝订单返款<br><span>2017-12-21 12:22:12</span></p></div>-->
+    <!--<div class="myfr fundcontent_detailr5" style="color: #ff9600">+20.00</div>-->
+  <!--</div>-->
+  <!--<div class="fundcontent_detail5 clearfix">-->
+    <!--<div class="myfl fundcontent_detailf5"><p>代言人邀请奖励<br><span>2017-12-21 12:22:12</span></p></div>-->
+    <!--<div class="myfr fundcontent_detailr5" style="color: #ff9600">+20.00</div>-->
+  <!--</div>-->
+</div>
+    <ion-infinite-scroll on-infinite="pulldowngetdatafund1()"  spinner="android" icon="icon ion-load-d " ng-if="total>current_page" immediate-check="false">
+    </ion-infinite-scroll>
+  </ion-content>
+</ion-view>
+

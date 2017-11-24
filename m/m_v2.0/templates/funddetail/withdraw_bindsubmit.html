@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="/../../m/m_v2.0/css/withdrawbindsubmit.css?366">
+<ion-view style="background: #f6f6f6">
+  <ion-content>
+<p class="bindtop_hint3">请注意：绑定的账号必须与支付宝账户一致，如提交的账户不一致导致无法打款，网站概不负责。</p>
+    <form name="withdrawbindForm">
+<div class="bind_content3">
+  <p class="bind_loginpassword3">填写登录密码<input type="password" name="text1" ng-model="bind_loginpasswordinputa" required ng-pattern="/^(?!(?:\d*$))[A-Za-z0-9]{6,16}$/" class="bind_loginpasswordinput3 loginpass" placeholder="请输入登录密码" ng-focus/></p>
+  <p class="bind_loginpassword3">设置支付密码<input type="password" name="text2" required ng-pattern="/^(?!(?:\d*$))[A-Za-z0-9]{6,8}$/" ng-model="bind_loginpasswordinputb" class="bind_loginpasswordinput3 paycode" placeholder="请设置支付密码"  ng-focus/></p>
+  <p class="bind_loginpassword3" style="border-bottom: none;">重复支付密码<input type="password" name="text3" required ng-pattern="/^(?!(?:\d*$))[A-Za-z0-9]{6,8}$/" ng-model="bind_loginpasswordinputc" class="bind_loginpasswordinput3 secondpass" placeholder="请重复支付密码" ng-focus/></p>
+</div>
+    </form>
+<div style="height: 30px;margin-top: 20px;" ng-if="!flog1">
+  <p class="error_text3" ng-show="withdrawbindForm.text1.$focused&&withdrawbindForm.text1.$error.required">登录密码不能为空</p>
+  <p class="error_text3" ng-show="withdrawbindForm.text1.$focused&&withdrawbindForm.text1.$error.pattern">登录密码6-16位数字，字母组合</p>
+  <p class="error_text3" ng-show="withdrawbindForm.text2.$focused&&withdrawbindForm.text2.$error.required">支付密码不能为空</p>
+  <p class="error_text3" ng-show="withdrawbindForm.text2.$focused&&withdrawbindForm.text2.$error.pattern">支付密码6-8位数字，字母组合</p>
+  <p class="error_text3" ng-show="withdrawbindForm.text3.$focused&&withdrawbindForm.text3.$error.required">重复支付密码不能为空</p>
+  <p class="error_text3" ng-show="withdrawbindForm.text3.$focused&&withdrawbindForm.text3.$error.pattern">支付密码6-8位数字，字母组合</p>
+</div>
+    <div style="height: 30px;margin-top: 20px;" ng-if="flog1">
+      <p class="error_text3" ng-if="flog2">登录密码不能与支付密码相同</p>
+      <p class="error_text3" ng-if="flog3">登录密码6-16位数字，字母组合</p>
+      <p class="error_text3" ng-if="flog4">支付密码6-8位数字，字母组合</p>
+      <p class="error_text3" ng-if="flog5">两次输入密码不一致</p>
+    </div>
+<button ng-class="{registerBtn33:withdrawbindForm.text1.$error.required||
+withdrawbindForm.text2.$error.required||
+withdrawbindForm.text3.$error.required,
+registerBtn3:
+!withdrawbindForm.text1.$error.required&&
+!withdrawbindForm.text2.$error.required&&
+!withdrawbindForm.text3.$error.required
+}"
+ng-click="sendpaypassword()">提交</button>
+  </ion-content>
+  </ion-view>

@@ -1,0 +1,214 @@
+<style>
+
+  .what-icon-q {
+    width: 31px;
+    height: 30px;
+    line-height: 30px;
+    /* border: 1px solid #ff366f; */
+    background: url('/m/m_v2.0/img/spokesman/Q.png') 0 0 no-repeat;
+    /* border-radius: 4px; */
+    /* color: #ff366f; */
+    margin: auto 0;
+  }
+
+  .what-icon-a {
+    width: 31px;
+    height: 30px;
+    line-height: 30px;
+    /* border: 1px solid #ffb72c; */
+    background: url('/m/m_v2.0/img/spokesman/A.png') 0 0 no-repeat;
+    /* border-radius: 4px; */
+    /* color: #ffb72c; */
+    margin-top: 24px;
+  }
+
+  .what-title {
+    height: 110px;
+    padding: 0 24px 0 24px;
+    margin: 0 auto
+  }
+
+  .what-title h3 {
+    line-height: 110px;
+    font-size: 28px;
+    width: 636px;
+  }
+
+  .what-title i {
+    line-height: 110px;
+    font-size: 28px;
+    width: 36px;
+    background: url('/m/m_v2.0/img/spokesman/slideDown.png') no-repeat left 37px;
+  }
+
+  .what-text {
+    background-color: #f6f6f6;
+  }
+  /* .what-text div{
+    padding-left: 20px;
+  } */
+  .what-text p {
+    line-height: 43px;
+    color: #666;
+    font-size: 24px;
+    padding: 17px 0 14px 0;
+    width: 636px;
+  }
+
+  .what-text h3 {
+    line-height: 43px;
+    /* padding-left: 20px; */
+  }
+
+  .what-p {
+    line-height: 43px;
+    color: #666;
+    font-size: 24px;
+  }
+  /*.ion-chevron-up::before {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    background: url('/m/m_v2.0/img/spokesman/slideDown.png') no-repeat;
+  }*/
+</style>
+<ion-view>
+  <ion-content>
+    <div class="row no-row-padding what-title" on-touch="toggleFunc($event)">
+      <span class="what-icon-q"></span>
+      <h3 class="spokes-title">　什么是货蛮好代言人？</h3><i class="icon  text_right" ></i>
+    </div>
+    <div class="row no-row-padding what-text inner">
+      <span class="what-icon-a"></span>　
+      <p>用户亲身体验并认可货蛮好的商品和服务，满足相应的条件且愿意分享给身边人（粉丝），称为货蛮好代言人。代言人只负责分享，不负责销售服务，所有的订单交易、售后服务、供应发货等服务全由货蛮好平台上的商家负责。</p>
+    </div>
+    <div class="row no-row-padding what-title" on-touch="toggleFunc($event)">
+      <span class="what-icon-q"></span>
+      <h3 class="spokes-title">　如何成为代言人？</h3><i class="icon text_right" ></i>
+    </div>
+    <div class="row no-row-padding what-text inner">
+      <span class="what-icon-a"></span>　<p>成功注册成为货蛮好网用户，阅读并同意《推广合作协议》并申请成为代言人即可。</p>
+    </div>
+    <div class="row no-row-padding what-title" on-touch="toggleFunc($event)">
+      <span class="what-icon-q"></span>
+      <h3 class="spokes-title">　代言人如何获得奖励？</h3><i class="icon text_right" ></i>
+    </div>
+    <div class="row no-row-padding what-text inner">
+      <span class="what-icon-a"></span>　<p>1、代言人通过货蛮好网申请专属二维码及邀请码；<br>2、通过社交媒体如微信朋友圈、微博等推广给自己身边的朋
+      友；<br>3、引导其关注公众号并注册成为货蛮好网用户；</p>
+    </div>
+    <div class="row no-row-padding what-title" on-touch="toggleFunc($event)">
+      <span class="what-icon-q"></span>
+      <h3 class="spokes-title">　奖励具体算法？</h3><i class="icon text_right" ></i>
+    </div>
+    <div class="row no-row-padding what-text inner">
+      <span class="what-icon-a" style="width:50px;"></span>
+      　
+      <div>
+        <h3 style="padding-top: 15px;">代言人奖励分为邀请奖、粉丝下单奖、粉丝充值奖<!--、代言人蜕变奖-->、代言人起步奖</h3>
+        <!--<h3>邀请奖</h3>-->
+        <!--<div class="what-p">代言人总奖金等于 一度粉丝首单奖励+二度粉丝首单奖励；</div>-->
+        <!--<h3>举例</h3>-->
+        <!--<div class="what-p">-->
+          <!--代言人总奖金13元+5金币= 一度粉丝首单奖励13元3金币-->
+          <!--+二度粉丝首单奖励3元2金币；-->
+        <!--</div>-->
+        <!--<h3>粉丝下单奖</h3>-->
+        <!--<div class="what-p">-->
+          <!--代言人总下单奖1%= 一度粉丝下单价的1%&lt;!&ndash;+-->
+          <!--二度粉丝下单价的0.5%；&ndash;&gt;-->
+        <!--</div>-->
+        <!--<h3>粉丝充值奖</h3>-->
+        <!--<div class="what-p">-->
+          <!--1、粉丝成功充值金币的10%，作为代言人的金-->
+          <!--币返点奖励，二度粉丝充值无金币返点奖励；<br>-->
+          <!--&lt;!&ndash;2、一度粉丝累计充值每满500金币，代言人可获得1张必中劵（货蛮好网内所有100元价值以下商品均可使用，特殊说明除外），上不封顶：&ndash;&gt;-->
+
+        <!--</div>-->
+
+        <!--<h3>举例</h3>-->
+        <!--<div class="what-p">-->
+          <!--粉丝充值100元金币，代言人可获得返点10金币=粉丝充值金币100*返点比例10%-->
+        <!--</div>-->
+        <div class="what-p">
+          张三成功在货蛮好免费领取成功商品，即可成为代言人；<br>
+          张三去邀请李四成功领取商品，张三获得10元现金；李四下第4单，张三再获3元现金；<br>
+          李四邀请王五成功领取商品，李四获得10元现金，张三获得3金币；<br>
+          李四充值100金币，张三获得100金币*10%=10金币返利奖励
+        </div>
+
+
+
+
+
+        <!--<h3>代言人蜕变奖</h3>
+        <div class="what-p">代言人在最近30天内成功招募了20名粉丝，并让他们也成为了代言人，
+          就可以获得200元微信红包。微信红包领取方式详情请联系微信号：  huomanhao8888
+        </div>-->
+       <!-- <h3>代言人起步奖</h3>
+        <div class="what-p">代言人在最近30天内成功招募了50名粉丝，
+          同样可以获得200元微信红包。微信红包领取方式详情请联系微信号：  huomanhao8888
+        </div>-->
+      </div>
+    </div>
+    <div class="row no-row-padding what-title" on-touch="toggleFunc($event)">
+         <span class="what-icon-q"></span>
+         <h3 class="spokes-title">　什么是代言人奖励周期？</h3><i class="icon text_right" ></i>
+       </div>
+       <div class="row no-row-padding what-text inner">
+         <span class="what-icon-a"></span>　<p>
+           1、一级或者二级粉丝注册7天内不下单，将解除代言人关系<br/>2、代言人注册时间开始，60天内拥有代言人资格；期间不下任何订单，代言人奖励资格将消失；期间下单（无论新人专享还是好货精选），将重置时间，新的失效日期是最近1笔订单之后的60天<br/>3、代言人资格失效后，可以正常邀请，但是失效期间无法获得粉丝是任何奖励（无论是首单还是提成）；失效并恢复后，失效期间的奖励不会补发！</p></div>
+    <div class="row no-row-padding what-title" on-touch="toggleFunc($event)">
+         <span class="what-icon-q"></span>
+         <h3 class="spokes-title">　关于奖励发放</h3><i class="icon text_right" ></i>
+       </div>
+       <div class="row no-row-padding what-text inner">
+         <span class="what-icon-a"></span>　<p>
+         1、金币奖励发放时间：金币奖励及时到账；<br>
+         2、下单返现奖励时间：粉丝完成活动任务，下单付款并确认
+         	收货给予好评，则系统自动将一级粉丝订单的1%的返款到
+         	代言人账户；<br>
+         3、微信红包奖励时间：完成<!--代言人蜕变奖或-->起步奖后，关注
+         	平台微信公众号（huomanhao8888）。平台将在审核确认之后及时发放到代
+         	言人微信。
+       </p></div>
+    <div class="row no-row-padding what-title" on-touch="toggleFunc($event)">
+         <span class="what-icon-q"></span>
+         <h3 class="spokes-title">　代言人有哪些支持？</h3><i class="icon text_right" ></i>
+       </div>
+    <div class="row no-row-padding what-text inner">
+         <span class="what-icon-a" style="width:64px;"></span>
+         <div style="padding-left:26px;">
+           <h3 style="padding-top: 15px;">代言人服务团队</h3>
+           <div class="what-p">货蛮好网代言人管家，微信公众号： huomanhao8888<br>货蛮好网设立代言人服务团队，配合代言人的分享和管理工作。
+           代言人微信群<br>
+             货蛮好网及代言人服务团队将建立服务专用微信群，便于及时发送平台信息以及收集反馈意见；<br>
+             不定时的在群里会进行有利于代言人进行推广吸粉的培训课程；
+             新代言人可以询问推荐人，进入推荐人的代言人群。</div>
+           <h3>专属二维码</h3>
+           <div class="what-p">
+             目前二维码有效期为30天，可随时换新
+           </div>
+           <h3>代言人激励活动</h3>
+           <div class="what-p">
+             货蛮好网汇定期策划和组织各种形式的活动，活动包含不限于业绩PK、线下聚会、旅游、任务奖励等，届时希望大家积极参与。
+           </div>
+
+         </div>
+       </div>
+
+    <div class="row no-row-padding what-title" on-touch="toggleFunc($event)">
+      <span class="what-icon-q"></span>
+      <h3 class="spokes-title">　代言人失效规则</h3><i class="icon text_right" ></i>
+    </div>
+    <div class="row no-row-padding what-text inner">
+      <span class="what-icon-a"></span>　<p>
+      1 一级或者二级粉丝注册7天内不下单，将解除代言人关系<br>
+      2 代言人注册时间开始，60天内拥有代言人资格；期间不下任何订单，代言人奖励资格将消失；期间下单（无论新人专享还是好货精选），将重置时间，新的失效日期是最近1笔订单之后的60天<br>
+      3 代言人资格失效后，可以正常邀请，但是失效期间无法获得粉丝是任何奖励（无论是首单还是提成）；失效并恢复后，失效期间的奖励不会补发！
+    </p></div>
+  </ion-content>
+  <ion-footer>
+    <div class="top" style="width:60px;height:60px;left:30px;line-height: 60px;" ui-sref="tabs.spokesmanPage"><i class="icon ion-arrow-left-a" style="margin-top:-14px;color:red"></i></div>
+  </ion-footer>
+</ion-view>

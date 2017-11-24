@@ -1,0 +1,73 @@
+
+<style>
+  .login_main{
+    background: #ffffff;
+    margin-top: 24px;
+    width: 100%;
+  }
+  .login_main .nick_name{
+    width: 94%;
+    height: 97px;
+    color: #666666;
+    font-size: 28px;
+    line-height: normal;
+    padding-left: 24px;
+    display: inline-block;
+  }
+  .login_main .password_name{
+    width: 94%;
+    height: 97px;
+    color: #666666;
+    line-height: normal;
+    font-size: 28px;
+    padding-left: 24px;
+    display: inline-block;
+  }
+  #login_btn{
+    background: #FF366F;
+    font-size: 36px;
+    color: #ffffff;
+    width: 92%;
+    margin-left: 4%;
+    height: 88px;
+    outline: none;
+    border-radius: 8px;
+    margin-top: 150px;
+  }
+  .registerBtn2 {
+    text-align: center;
+    line-height: 88px;
+    height: 88px;
+    width: 92%;
+    padding-left: 0;
+    background: #FF366F;
+    color: #FFFFFF;
+    margin-left: 4%;
+    margin-top: 152px;
+    font-size: 36px;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    border: none;
+  }
+</style>
+<ion-view style="background: #f6f6f6">
+  <ion-content>
+    <h3 ng-if="$root.isCode=='true'">正在检测您的微信是否已注册，已注册用户将为您提供免登录服务，未注册用户将为您提供准用户服务，请稍等。</h3>
+    <div ng-if="isState==1">
+
+
+      <div class="login_main">
+        <div style="width: 96%;margin-left: 4%;border-bottom: 1px solid #e5e5e5;">
+          <i class="icon ion-ios-person-outline" style="font-size: 46px;color: #666666;"></i><input class="nick_name" type="text" name="nick" placeholder="昵称/用户名" ng-model="nick">
+        </div>
+        <div style="width: 96%;margin-left: 4%;">
+          <i class="icon ion-ios-locked-outline" style="font-size: 46px;color: #666666;"></i><input class="password_name" type="password" name="password" placeholder="密码" ng-model="password">
+        </div>
+      </div>
+      <input type="button" value="登录" id="login_btn" on-touch="next(nick,password)">
+      <p style="font-size: 26px;text-align: center;line-height: 55px;margin-top:90px;">----------  还没有货蛮好账号 ----------</p>
+         <button class="registerBtn2" style="margin-top: 35px;"  ui-sref="loginregister">注册</button>
+    </div>
+
+  </ion-content>
+</ion-view>

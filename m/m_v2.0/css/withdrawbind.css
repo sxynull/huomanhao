@@ -1,0 +1,112 @@
+.bindtop_hint2{
+  height: 82px;
+  padding-top: 12px;
+  line-height: 30px;
+  width:100%;
+  padding-left: 8%;
+  padding-right: 4%;
+  font-size: 24px;
+  background: #ffecf2 url(../img/apply/top_hint.png) no-repeat 3% 13px;
+  background-size: 24px 24px;
+  color: #666666;
+}
+.bind_content2{
+  width: 100%;
+  padding-left: 4%;
+  background: #ffffff;
+}
+.bind_content2 p{
+  height: 100px;
+  width: 100%;
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 28px;
+  color: #333333;
+  line-height: 100px;
+}
+.bind_name2 .bind_nameinput2{
+  width: 648px;
+  padding-left: 48px;
+  height: 100px;
+  line-height: normal;
+  font-size: 28px;
+  display: inline-block;
+}
+.bind_payaccount2 .bind_payaccountinput2{
+  width: 558px;
+  padding-left: 48px;
+  height: 100px;
+  line-height: normal;
+  font-size: 28px;
+  display: inline-block;
+}
+.bind_phone2 .bind_phoneinput2{
+  width: 364px;
+  padding-left: 48px;
+  height: 100px;
+  font-size: 28px;
+  line-height:normal;
+  display: inline-block;
+}
+.bind_code2 .bind_codeinput2{
+  width: 558px;
+  padding-left: 48px;
+  height: 100px;
+  font-size: 28px;
+  line-height:normal;
+  display: inline-block;
+}
+.bind_phone2 .getCode {
+  display: inline-block;
+  width: 190px;
+  height: 46px;
+  line-height: 100px;
+  text-align: center;
+  font-size: 26px;
+  color: #ff366f;
+  border: 1px solid #FF366F;
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -o--border-radius: 6px;
+  position: relative;
+  top: 16px;
+}
+.bind_phone2 .getCode i{
+  line-height: 46px;
+}
+.error_text2 {
+  font-size: 26px;
+  color: #FF366F;
+  margin-left:4%;
+}
+.registerBtn2 {
+  text-align: center;
+  line-height: 88px;
+  height: 88px;
+  width: 92%;
+  padding-left: 0;
+  background: #FF366F;
+  color: #FFFFFF;
+  margin-left: 4%;
+  margin-top: 152px;
+  font-size: 36px;
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  border: none;
+}
+.registerBtn22 {
+  text-align: center;
+  line-height: 88px;
+  height: 88px;
+  width: 92%;
+  padding-left: 0;
+  background: #999999;
+  color: #FFFFFF;
+  margin-left: 4%;
+  margin-top: 152px;
+  font-size: 36px;
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  border: none;
+}

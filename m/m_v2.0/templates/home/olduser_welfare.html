@@ -1,0 +1,84 @@
+<link rel="stylesheet" href="/../../m/m_v2.0/css/olduserwelfare.css?366">
+<style>
+  .button.button-positive{
+    background: #FF366F!important;
+  }
+</style>
+<ion-view style="background: url(/m/m_v2.0/img/olduser/olduser_Bg.png) no-repeat center center">
+  <ion-content>
+    <div class="turntable">
+      <div class="turntable-bg">
+        <div class="pointer" ng-if="pay==true" ng-click="pointer();statistic('老客福利页面','抽奖',userId)"><img src="../../m/m_v2.0/img/olduser/playbtn.png" alt="pointer"/></div>
+        <div class="pointer" ng-if="pay==false"><img src="../../m/m_v2.0/img/olduser/noplaybtn.png" alt="pointer"/></div>
+        <div class="rotate" ><img id="rotate" src="../../m/m_v2.0/img/olduser/bg-lottery.png" alt="turntable"/></div>
+      </div>
+    </div>
+    <p class="turntable_text">每日申请进度将在每天24点清空</p>
+    <div class="extra_award">
+      <p class="win_title"></p>
+      <p class="progressbar_title">申请进度:<em>{{data.user_add_cart_count_day}}</em>/10</p>
+      <div class="progressbar">
+            <span class="barout" ng-class="{barout1:data.user_add_cart_count_day==10}">
+                <span class="barin" ></span>
+<!--                 <span class="location" ng-class="{location1:data.user_add_cart_count_day==10}" ng-if="data.user_add_cart_count_day>0"></span> -->
+            </span>
+        <a class="goto_apply" ui-sref="tabs.goodList">去申请</a>
+      </div>
+      <p class="continuous_text">连续转动达到指定天数将获得额外奖励</p>
+      <div class="continuous_bar">
+        <div class="continuous_outbar">
+          <div class="continuous_inbar" ng-if="data.continuity_luck_draw_days<5" style="width: 0"></div>
+          <div class="continuous_inbar" ng-if="data.continuity_luck_draw_days>=5&&data.continuity_luck_draw_days<7" style="width: 30%"></div>
+          <div class="continuous_inbar" ng-if="data.continuity_luck_draw_days>=7&&data.continuity_luck_draw_days<14" style="width: 52%"></div>
+          <div class="continuous_inbar" ng-if="data.continuity_luck_draw_days>=14&&data.continuity_luck_draw_days<20" style="width: 70%"></div>
+          <div class="continuous_inbar" ng-if="data.continuity_luck_draw_days>=20" style="width: 100%"></div>
+
+        </div>
+        <span ng-class="{spot1:data.continuity_luck_draw_days>2,spot11:data.continuity_luck_draw_days==2,spot111:data.continuity_luck_draw_days<2}"></span>
+        <span ng-class="{spot2:data.continuity_luck_draw_days>5,spot22:data.continuity_luck_draw_days==5,spot222:data.continuity_luck_draw_days<5}"></span>
+        <span ng-class="{spot3:data.continuity_luck_draw_days>7,spot33:data.continuity_luck_draw_days==7,spot333:data.continuity_luck_draw_days<7}"></span>
+        <span ng-class="{spot4:data.continuity_luck_draw_days>14,spot44:data.continuity_luck_draw_days==14,spot444:data.continuity_luck_draw_days<14}"></span>
+        <span ng-class="{spot5:data.continuity_luck_draw_days>=20,spot555:data.continuity_luck_draw_days<20}"></span>
+      </div>
+      <div class="continuousDays">
+        <span style="margin-left: 46px">2天</span>
+        <span>5天</span>
+        <span>7天</span>
+        <span>14天</span>
+        <span style="margin-right: 0px">20天</span>
+      </div>      
+      <div class="continuous_coins">
+        <span style="margin-left: 46px"><em></em>1金币</span>
+        <span><em></em>2金币</span>
+        <span><em></em>4金币</span>
+        <span><em></em>10金币</span>
+        <span style="margin-right: 0px"><em></em>20金币</span>
+      </div>
+      <p class="continuous_num">连续转动<em style="color: #ea3836">{{data.continuity_luck_draw_days}}</em>天</p>
+    </div>
+    <div class="weeklistmain">
+      <p class="win_title2"></p>
+      <p class="weeklistnum_text" style="text-align: center;margin: 24px auto;color: #ea3836;letter-spacing: 4px;">您本周共申请了<em style="color: #363636" class="userAddCartCountWeek">{{data.user_add_cart_count_week}}</em>个活动，全站排名<em style="color: #e4480b" class="rank" ng-if="data.ranking<=1000">{{data.ranking}}</em>
+        <em style="color: #e4480b" class="rank" ng-if="data.ranking>1000">千里之外</em>
+      </p>
+      <table class="rank_List">
+        <tr style="color: #ea3836">
+          <th>昵称</th>
+          <th>活动申请量</th>
+          <th>排名</th>
+          <th>金币奖励</th>
+        </tr>
+
+
+        <tr ng-repeat="rank in ranklists">
+          <td>{{rank.userName}}</td>
+          <td>{{rank.addCartCount}}</td>
+          <td ng-class="{ranking1:rank.rank==1,ranking2:rank.rank==2,ranking3:rank.rank==3}">{{rank.rank}}</td>
+          <td>{{rank.goldReward}}</td>
+        </tr>
+      </table>
+      <p class="updata_time">本榜单每10分钟更新一次数据<br>
+        奖励将在每周日24点后自动发放</p>
+    </div>
+  </ion-content>
+</ion-view>

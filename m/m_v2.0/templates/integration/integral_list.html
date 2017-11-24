@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="/../../m/m_v2.0/css/goidindex.css?366">
+<ion-view style="background: #f6f6f6">
+  <ion-content>
+<div class="remaining_sumb">
+  <div class="remaining_sumlb myfl">
+    <p class="remaining_sumltopb">历史获得</p>
+    <p class="remaining_sumlbutb">{{historycoin}}</p>
+  </div>
+  <div class="remaining_sumrb myfl">
+    <p class="remaining_sumrtopb">积分余额</p>
+    <p class="remaining_sumrbutb">{{nowcoin}}</p>
+  </div>
+</div>
+<div class="fund_contentb" style="margin-bottom: 97px">
+  <div class="fundcontent_detailb clearfix" ng-repeat="integral in coindata">
+    <div class="myfl fundcontent_detailfb"><p>{{integral.remark}}<br><span>{{dateFunction(integral.gmt_created) |  date:'yyyy-MM-dd' }}</span></p></div>
+    <div class="myfr fundcontent_detailrb" style="color: #ff9710">+{{integral.point_pay}}</div>
+  </div>
+  <!--<div class="fundcontent_detailb clearfix">-->
+    <!--<div class="myfl fundcontent_detailfb"><p>粉丝充值返款<br><span>2017-12-21 12:22:12</span></p></div>-->
+    <!--<div class="myfr fundcontent_detailrb">+20.00</div>-->
+  <!--</div>-->
+  <!--<div class="fundcontent_detailb clearfix">-->
+    <!--<div class="myfl fundcontent_detailfb"><p>粉丝首单奖励<br><span>2017-12-21 12:22:12</span></p></div>-->
+    <!--<div class="myfr fundcontent_detailrb">+20.00</div>-->
+  <!--</div>-->
+  <!--<div class="fundcontent_detailb clearfix">-->
+    <!--<div class="myfl fundcontent_detailfb"><p>金币兑换商品<br><span>2017-12-21 12:22:12</span></p></div>-->
+    <!--<div class="myfr fundcontent_detailrb" style="color: #27ac2b">-20.00</div>-->
+  <!--</div>-->
+  <!--<div class="fundcontent_detailb clearfix">-->
+    <!--<div class="myfl fundcontent_detailfb"><p>金币兑换商品<br><span>2017-12-21 12:22:12</span></p></div>-->
+    <!--<div class="myfr fundcontent_detailrb" style="color: #27ac2b">-20.00</div>-->
+  <!--</div>-->
+</div>
+    <ion-infinite-scroll on-infinite="pulldowngetdatafund1()"  spinner="android" icon="icon ion-load-d " ng-if="total>current_page" immediate-check="false">
+    </ion-infinite-scroll>
+  </ion-content>
+  <div class="bar bar-footer apply_Btn20" ui-sref="integralTest">
+    <div class="title"  style=" font-size: 30px; height: 97px; line-height: 97px;">积分商城</div>
+  </div>
+</ion-view>
+

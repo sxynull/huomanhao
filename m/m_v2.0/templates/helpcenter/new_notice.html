@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="/../../m/m_v2.0/css/newnotice.css?366">
+<ion-view >
+  <ion-content>
+
+   <div class="news_content" ng-repeat="noticeList in goodList">
+     <input type="hidden" value="{{noticeList.notification_id}}">
+     <p class="newscontent_top newscontent_top_read"  ng-if="noticeList.status==0" on-touch="toggleFunc($event)">{{noticeList.title}}<span class="newscontent_time">{{noticeList.gmt_created}}&nbsp;></span></p>
+     <p class="newscontent_top"  ng-if="noticeList.status==1" on-touch="toggleFunc($event)">{{noticeList.title}}<span class="newscontent_time">{{noticeList.gmt_created}}&nbsp;></span></p>
+     <p class="newscontent_top"  ng-if="noticeList.status==2" on-touch="toggleFunc($event)">{{noticeList.title}}</p>
+     <p class="newscontent_text">{{noticeList.condition}}</p>
+   </div>
+
+    <!--无限滚动:如果所有的页面都加载完了(例如，共30页)，则不再出现此组件-->
+           <ion-infinite-scroll on-infinite="getRestaurants()"  spinner="android" icon="icon ion-load-c " ng-if="total>page" immediate-check="false">
+
+           </ion-infinite-scroll>
+  </ion-content>
+</ion-view>

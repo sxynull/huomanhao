@@ -1,0 +1,292 @@
+<link rel="stylesheet" href="/../../m/m_v2.0/css/home.css?366">
+<link rel="stylesheet" href="/../../m/m_v2.0/css/sort.css?366">
+<style>
+   .coin_tabs{text-align: center;height: 113px;padding: 12px 0 5px 0;font-family: "Hiragino Sans GB W3";}
+   .coin_tabs p{font-size: 22px;line-height: 33px;}
+   .coin-title{width: 100%;margin: 0 auto;padding: 0 24px 0 24px;}
+  .hour,.minute,.second{width: 28px;height: 28px;line-height: 28px;font-size: 20px;color: #fff;background-color: #30353c;border-radius:3px;}
+  .coin-title-text{font-size: 24px;line-height: 66px;font-family: "Hiragino Sans GB W3";}
+   .coin-title-time{font-size: 20px;line-height:66px;font-family: "Hiragino Sans GB W3";text-align: right}
+  .coin-list{height: 243px;width: 100%;margin: 0 auto;padding: 28px 24px 30px 24px;}
+  .coin-price{margin-top: 80px;font-size: 24px;color: #666666}
+   .coin-price time{color: #ff366f;}
+  .coin-apply-btn{width: 160px;line-height: 48px;height: 48px;font-size:26px;font-family: "Hiragino Sans GB W3";color: #fff;background-color: #ff366f;text-align: center;float: right;margin-top: 52px;border-radius: 24px;background: -webkit-gradient(linear, 0 0, 0 bottom, from(#ff5a6a), to(#ff2463));}
+  .coin-begin-apply-btn{width: 160px;line-height: 48px;height: 48px;font-size:26px;font-family: "Hiragino Sans GB W3";color: #fff;background-color: #000;text-align: center;float: right;margin-top: 52px;border-radius: 24px;}
+  .coin-list-left{width: 75%;display: inline-block}
+  .price{font-size: 24px;margin-top: 15px;color: #666666}
+  .price time{ text-decoration: line-through;}
+  .coin-list-remaining{float: right;font-size: 18px;margin-top: 8px;}
+  .coin-list-already{float: right;font-size: 18px;margin-top: -8px;}
+   .goods_bar {
+       width: 160px;
+       height: 8px;
+       background: #e6e6e6;
+       border-radius: 8px;
+       -moz-border-radius: 8px;
+       -o-border-radius: 8px;
+       -webkit-border-radius: 8px;
+   }
+   .goods_bar_inner {
+       width: 60%;
+       height: 8px;
+       background: -ms-linear-gradient(left,#fd77a5,#b088fb);
+       background: -moz-linear-gradient(left,#fd77a5,#b088fb);
+       background: -webkit-gradient(linear, 0% 0%, 100% 0%,from(#fd77a5), to(#b088fb));
+       background: -webkit-gradient(linear, 0% 0%, 100% 0%, from(#fd77a5), to(#b088fb));
+       background: -webkit-linear-gradient(left,#fd77a5,#b088fb);
+       background: -o-linear-gradient(left,#fd77a5,#b088fb);
+       border-top-left-radius: 8px;
+       -moz-border-top-left-radius: 8px;
+       -o-border-top-left-radius: 8px;
+       -webkit-border-top-left-radius: 8px;
+       border-bottom-left-radius: 8px;
+       -moz-border-bottom-left-radius: 8px;
+       -o-border-bottom-left-radius: 8px;
+       -webkit-border-bottom-left-radius: 8px;
+   }
+   .header_classify{
+    height: 88px;
+    background: #f6f6f6;
+    padding: 0;
+
+  }
+  .classifyul1{
+    height:88px;
+    width: 670px;
+    background: #F6F6F6;
+    line-height: 88px;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+  .classifyul1 li{
+    display: inline-block;
+    height: 88px;
+    font-size: 28px;
+    color: #333333;
+    padding-left: 17px;
+    padding-right: 16px;
+  }
+  .search_link{
+    height: 88px;
+    width: 80px;
+    background: #F6F6F6 url(../../m/m_v2.0/img/apply/grabble.png) no-repeat center;
+    box-shadow:-12px 0px 12px #F1F0F0,
+    0 0 0 #888888,
+    0 0 0 #888888,
+    0 0 0 #888888;
+    position: relative;
+    z-index: 99999;
+  }
+  .classifyul1 .current1{
+    color: #FF366F;
+  }
+  .classify_bottom{
+    background: #ffffff;
+    height: 260px;
+    width: 750px;
+    position: relative;
+    left: -750px;
+    top: 88px;
+    border-bottom: 1px solid #f6f6f6;
+  }
+  .classify_bottomul{
+    height:72px;
+    width: 100%;
+    background: #ffffff;
+  }
+  .classify_bottomul li{
+    display: inline-block;
+    height: 48px;
+    line-height: 48px;
+    color: #999999;
+    margin-top: 12px;
+    border: 1px solid #c2c2c2;
+    padding-left: 35px;
+    padding-right: 35px;
+    border-radius: 4px;
+    font-size: 28px;
+  }
+  .cur{
+    color: #FF366F!important;
+    border: 1px solid #FF366F!important;
+    background: url(../../m/m_v2.0/img/apply/classify_buttom.png) no-repeat right bottom;
+  }
+   .top_hint1{
+     height: 80px;
+     line-height: 40px;
+     width:100%;
+     padding-left: 8%;
+     font-size: 24px;
+     background: #ffecf2 url(../../m/m_v2.0/img/apply/top_hint.png) no-repeat 3% center;
+     background-size: 24px 24px;
+     color: #666666;
+   }
+
+   .button:after {
+     position: absolute;
+     top: 0;
+     right: -6px;
+     bottom:0;
+     left: -6px;
+     content: ' ';
+   }
+   .modal{
+     min-height: 59%;
+     top: 10%;
+   }
+   .button-full{
+     padding: 0;
+     margin-top: 0;
+     margin-bottom: 0;
+   }
+   .sort{line-height: 73px;font-size: 28px;}
+    .sortActive{color: #ff366f}
+  .finish_bg{height: 162px;width: 162px;background-color: #7d7d7d;position: absolute;top: 30px;opacity: 0.7;}
+  .finish_bg_text{border: 1px solid #fff;transform:translate(-50%，-50%);position:absolute;top: 40%;left: 20%;}
+  .finish_bg_text_p{width: 100px;height:36px;text-align: center ;line-height: 36px;margin: 2px;background-color: #fff;font-size: 22px;color: #000}
+</style>
+<ion-view>
+  <ion-header class="bar bar-header header_classify" style="display:-webkit-box!important;">
+     <ion-scroll class="scrollxli" direction="x" scrollbar-x="false" scrollbar-y="false">
+       <ul class="classifyul1" style="width: 750px">
+         <li class="current1">精选</li>
+         <li>女装</li>
+         <li>男装</li>
+         <li>箱包</li>
+         <li>运动</li>
+         <li>配饰</li>
+         <li>数码</li>
+         <li>彩妆</li>
+         <li>母婴</li>
+         <li>保健</li>
+         <li>家装</li>
+         <li>日用</li>
+         <li>美食</li>
+         <li>车用</li>
+       </ul>
+     </ion-scroll>
+    <div class="classify_bottom">
+      <div class="row row-no-padding" ng-click="modal.show()"><img src="../../m/m_v2.0/img/coin/coinSecondsKill_banner.jpg" alt=""></div>
+
+       <div class="row row-no-padding coin-title " style="border-bottom: 10px solid #f6f6f6">
+         <div class="col text_center" ><span  class=" text_center sort sortActive" ng-click="sortALL()" style="margin-right: 25px">默认排序</span><em style="margin-right: 25px;color: #dedede">丨</em><i class="ion-ios-arrow-up up " style="margin-top: -20px;margin-right: -14px;"></i><i class="ion-ios-arrow-down down" style="margin-bottom: -20px;margin-right:13px;"></i><span class="text_center sort" ng-click="sort()" >份数排序</span></div>
+         <div class="col coin-title-time end_time" ng-if="extra_business.sekill_status==1">距开始 <em class="hour">00</em> : <em class="minute">00</em> : <em class="second">00</em></div>
+         <div class="col coin-title-time end_time" ng-if="extra_business.sekill_status==2">今日秒杀进行中 </div>
+         <div class="col coin-title-time end_time" ng-if="extra_business.sekill_status==3">已结束，请等待 <em style="color:#ff366f">明日12:00</em></div>
+         <div class="col coin-title-time end_time" ng-if="extra_business.sekill_status==4">今日秒杀时间<em style="color:#ff366f">12:00</em></div>
+            </div>
+       </div>
+
+   </ion-header>
+  <ion-content>
+     <!-- <div class="row  coin_tabs row-no-padding border_b_25">
+         <div class="col"><h1>10:00</h1><p>已结束</p></div>
+         <div class="col"><h1>10:00</h1><p>已结束</p></div>
+         <div class="col"><h1>10:00</h1><p>已结束</p></div>
+         <div class="col"><h1>10:00</h1><p>已结束</p></div>
+         <div class="col"><p>抢购提醒</p><h1>(0)</h1></div>
+      </div>
+      <div class="row row-no-padding coin-title border_b_1">
+        <div class="col coin-title-text" >本场抢购进行中</div>
+        <div class="col coin-title-time">距结束 <em class="hour">00</em> : <em class="minute">00</em> : <em class="second">00</em></div>
+      </div>-->
+    <div class="coin-list list border_b_1" style="top:351px;"  ng-repeat="goods in goodList">
+      <a href="#/details?activityId={{goods.activity_id}}&sekill_channel=3" style="display: inline-block;height: 162px;width: 162px;vertical-align: top;"><img style="width: 162px;height: 162px;" ng-src="{{goods.item_pic}}!162x162" ></a>
+      <div class="finish_bg" ng-if="extra_business.sekill_status==3">
+         <div class="finish_bg_text"><p class="finish_bg_text_p">已结束</p></div>
+      </div>
+      <div class="coin-list-left">
+            <h3><a href="#/details?activityId={{goods.activity_id}}&sekill_channel=3"></a>{{goods.item_name}}</h3>
+            <p>
+              <span class="coin-price">抢购价：<time>{{goods.coin_num}}金币</time></span>
+              <a class="coin-apply-btn" ng-if="extra_business.sekill_status==2" href="#/details?activityId={{goods.activity_id}}&sekill_channel=3" ng-click="statistic1('金币秒杀','立即抢购',userId,goods.activity_id)">立即抢购</a>
+                            <a class="coin-apply-btn" ng-if="extra_business.sekill_status==3" href="#/tabs/goodList">查看更多</a>
+                            <a class="coin-apply-btn" ng-if="extra_business.sekill_status==4" href="#/tabs/goodList">查看更多</a>
+                            <a class="coin-begin-apply-btn" ng-if="extra_business.sekill_status==1" href="#/details?activityId={{goods.activity_id}}&sekill_channel=3">即将开始</a> </p>
+            <div>
+              <span class="price">价格：<time>￥{{goods.item_price /100 | number:2}}</time></span>
+              <span class="coin-list-remaining">剩余{{goods.surplus_buying_count}}份</span>
+
+            </div>
+            <div class="goods_bar myfr">
+                           <div class="goods_bar_inner" style="border-radius: 4px;" ng-style="{width:goods.sekill_sales_percent+'%'}"></div>
+                         </div>
+                         <div class="coin-list-already">已抢购{{goods.sekill_sales_percent}}%　</div>
+
+          </div>
+    </div>
+<!--    <div class="coin-list list border_b_1" style="top:351px;" ng-if="isSort==2" ng-repeat="goods in goodList | orderBy:'sales_normal_stock'">
+      <a href="#/details?activityId={{goods.activity_id}}&sekill_channel=3" style="display: inline-block;height: 162px;width: 162px;vertical-align: top;"><img style="width: 162px;height: 162px;" ng-src="{{goods.item_pic}}!162x162" ></a>
+          <div class="coin-list-left">
+            <h3><a href="#/details?activityId={{goods.activity_id}}&sekill_channel=3"></a>{{goods.item_name}}</h3>
+            <p>
+              <span class="coin-price">抢购价：<time>{{goods.coin_num}}金币</time></span>
+              <a class="coin-apply-btn" ng-if="extra_business.sekill_status==2" href="#/details?activityId={{goods.activity_id}}&sekill_channel=3">立即抢购</a>
+                            <a class="coin-apply-btn" ng-if="extra_business.sekill_status==3" href="#/tabs/goodList">查看更多</a>
+                            <a class="coin-begin-apply-btn" ng-if="extra_business.sekill_status==1" href="#/details?activityId={{goods.activity_id}}&sekill_channel=3">即将开始</a> </p>
+            <div>
+              <span class="price">价格：<time>￥{{goods.item_price /100 | number:2}}</time></span>
+              <span class="coin-list-remaining">剩余{{goods.sales_normal_stock}}份</span>
+
+            </div>
+            <div class="goods_bar myfr">
+                           <div class="goods_bar_inner" style="border-radius: 4px;" ng-style="{width:goods.sales_percent+'%'}"></div>
+                         </div>
+                         <div class="coin-list-already">已抢购{{goods.sales_percent}}%　</div>
+
+          </div>
+    </div>
+    <div class="coin-list list border_b_1" style="top:351px;" ng-if="isSort==3" ng-repeat="goods in goodList | orderBy:'sales_normal_stock':true">
+      <a href="#/details?activityId={{goods.activity_id}}&sekill_channel=3" style="display: inline-block;height: 162px;width: 162px;vertical-align: top;"><img style="width: 162px;height: 162px;" ng-src="{{goods.item_pic}}!162x162" ></a>
+          <div class="coin-list-left">
+            <h3><a href="#/details?activityId={{goods.activity_id}}&sekill_channel=3"></a>{{goods.item_name}}</h3>
+            <p>
+              <span class="coin-price">抢购价：<time>{{goods.coin_num}}金币</time></span>
+              <a class="coin-apply-btn" ng-if="extra_business.sekill_status==2" href="#/details?activityId={{goods.activity_id}}&sekill_channel=3">立即抢购</a>
+              <a class="coin-apply-btn" ng-if="extra_business.sekill_status==3" href="#/tabs/goodList">查看更多</a>
+              <a class="coin-begin-apply-btn" ng-if="extra_business.sekill_status==1" href="#/details?activityId={{goods.activity_id}}&sekill_channel=3">即将开始</a>
+            </p>
+            <div>
+              <span class="price">价格：<time>￥{{goods.item_price /100 | number:2}}</time></span>
+              <span class="coin-list-remaining">剩余{{goods.sales_normal_stock}}份</span>
+
+            </div>
+            <div class="goods_bar myfr">
+              <div class="goods_bar_inner" style="border-radius: 4px;" ng-style="{width:goods.sales_percent+'%'}"></div>
+            </div>
+            <div class="coin-list-already">已抢购{{goods.sales_percent}}%　</div>
+
+          </div>
+    </div>-->
+    <!--无限滚动:如果所有的页面都加载完了(例如，共30页)，则不再出现此组件-->
+    <ion-infinite-scroll  on-infinite="getRestaurants()"   icon="icon ion-load-c" ng-if="total>page"  immediate-check="false" style="margin-top:180px">
+    </ion-infinite-scroll>
+  </ion-content>
+  <ion-footer>
+      <div class="top" on-touch="top()" style="line-height: 90px;"><i class="icon ion-arrow-up-a" ></i></div>
+      <button class="button button-assertive back-home" ui-sref="tabs.home" style="background-color: #ff366f;">返回首页</button>
+      </ion-footer>
+</ion-view>
+<script id="templates/coinSecondsKillRules.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-content style="height: 100%">
+      <p style="padding-bottom: 24%; height:92%; line-height: 48px;font-size: 16px;color: #666666;padding-top:5%;width: 100%;padding-left: 4%;padding-right: 4%;text-align: left">
+        1、金币秒杀频道为货蛮好网所有，货蛮好网保留对金币秒杀活动的最终解释权。<br/>
+        2、秒杀频道在每日开放时间为：12:00 - 20:00 ，如遇到不可抗力因素、业务变更等重大变动货蛮好网有权作出相应调整。<br/>
+        3、每个用户每天不同商品仅限3次秒杀机会，每个会员用户每天不同商品仅限5次秒杀机会，货蛮好网有权根据业务需求作出秒杀次数的调整。<br/>
+        4、已经在好货精选中申请过的商品，在金币秒杀频道中无秒杀资格。<br/>
+        5、秒杀频道提供每日秒杀次数外额外的秒杀机会，额外的秒杀机会将会根据您在好货精选中完成的申请次数来给予，货蛮好网有权根据业务需求作出额外秒杀机会次数的调整。<br/>
+        6、秒杀成功以完成申请后的提示为准，只点击申请的不作为秒杀成功的依据，货蛮好网有权将未秒杀成功的份数转发给其他参与用户。<br/>
+        7、秒杀成功后，应按照规则及时完成后续的领奖任务，如未及时领奖货蛮好网有权做出处罚。<br/>
+        8、如遇到技术问题导致秒杀失败的，请及时联系客服处理，否则后果自负。<br/>
+        9、如正常秒杀失败，货蛮好网额外为您提供下次正常抽奖的机会，请您以下一次开奖的通知为准。<br/>
+        10、秒杀商品的详情页仅限从秒杀频道中体现，如从好货精选或搜索结果页进入的商品详情页不参与秒杀，请您知晓。<br/>
+        11、秒杀商品的金额不等，请在秒杀前认真核对清楚，因用户自己的原因造成的秒杀送金额错误，货蛮好网不承担责任。
+      </p>
+      <div class="list" style="height: 8%">
+        <button class="button button-full buttonl" style=" padding: 0;margin-top: 0;margin-bottom: 0; background: #ff366f;color: #ffffff;height: 100%;font-size: 32px;" ng-click="createContact(newUser)">确定</button>
+      </div>
+    </ion-content>
+
+  </ion-modal-view>
+</script>

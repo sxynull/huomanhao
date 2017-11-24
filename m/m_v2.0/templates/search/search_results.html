@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="/../../m/m_v2.0/css/home.css?366">
+<link rel="stylesheet" href="/../../m/m_v2.0/css/sort.css?366">
+<ion-view>
+  <ion-content>
+    <form action="javascript:;" style="width: 100%;">
+    <div class="item-input-inset bar mtb15 search">
+
+                  <label class="item-input-wrapper">
+                    <i class="icon  ion-ios-search-strong pink" ui-sref="search" style="font-size: 28px"></i>
+                    <input  readOnly="readonly" class="icon ion-ios-search-strong searchInput" type="search" placeholder="请输入搜索宝贝内容" ng-model="searchObj.searchValue" ng-value="{{searchObj.searchValue}}" ui-sref="search">
+                  </label>
+                  <span class="icon bar-home" style="height: 40px;width: 40px;"  ui-sref="tabs.home"></span>
+
+        </div>
+    </form>
+    <div class="row row-no-padding border_b_6">
+      <div class="col text_center sort " ng-click="sortALL()"><span class="sortActive">综合排序</span></div>
+      <div class="col text_center sort" ng-click="sortSentiment()"><i class="ion-ios-arrow-up up" style="margin-top: -20px;margin-right: -17.5px;"></i><i class="ion-ios-arrow-down down" style="margin-bottom: -20px;margin-right:17.5px;"></i><span>人气排序</span></div>
+      <div class="col text_center sort" ng-click="sortPrice()"><i class="ion-ios-arrow-up up" style="margin-top: -20px;margin-right: -17.5px;"></i><i class="ion-ios-arrow-down down" style="margin-bottom: -20px;margin-right:17.5px;"></i><span>价格排序</span></div>
+        </div>
+    <div class="text-center itemDiv border_b_6 list-item" ng-repeat="goods in goodList">
+                              <div class="itemList pt36 pb20">
+                                <a href="#/details?activityId={{goods.activity_id}}&newType=1"><img class="img80w" ng-src="{{goods.item_pic}}!325x315" alt=""></a>
+                                            <div class="itemName "><a class="itemName" href="#/details?activityId={{goods.activity_id}}&newType=1">{{goods.item_name}}</a></div>
+                                            <div class="originalPriceText text_left">￥{{goods.item_price /100 | number:2}}</div>
+                                            <div class="text_left itemApply">{{goods.apply_member_count}}人已申请，还剩{{goods.sales_normal_stock}}份</div>
+                                            <div class="mt10">
+                                              <a class="home_shareMakeMoney_btn" href="">分享赚钱</a>
+                                            <a class="home_freeGet_btn" href="#/details?activityId={{goods.activity_id}}&newType=1">免费申请</a>
+                                            </div>
+                              </div>
+                     <div class="highValue" ng-if="goods.activity_type==4"></div>
+                   </div>
+       <!--无限滚动:如果所有的页面都加载完了(例如，共30页)，则不再出现此组件-->
+       <ion-infinite-scroll on-infinite="getRestaurants()"  spinner="android" icon="icon ion-load-c " ng-if="total>page" immediate-check="false">
+
+       </ion-infinite-scroll>
+  </ion-content>
+  <ion-footer>
+      <div class="top" on-touch="top()"><i class="icon ion-arrow-up-a" ></i></div>
+    </ion-footer>
+</ion-view>

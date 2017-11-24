@@ -1,0 +1,117 @@
+
+<link rel="stylesheet" href="/../../m/m_v2.0/css/apply.css?366">
+<ion-view style="background: #f6f6f6">
+  <ion-content>
+    <p class="top_hint" ng-if="boo">请在今天21点前完成领取，否则视为放弃。</p>
+    <p class="top_hint" ng-if="!boo">请在今天24点前完成领取，否则视为放弃。</p>
+    <div class="commodity_show">
+      <h2 class="show_title">店铺：{{shop_name}}</h2>
+      <dl>
+        <dd class="myfl"><img ng-src="{{items.item_b_o.item_pic}}">
+          <p class="pic_text">淘宝主图</p>
+        </dd>
+        <dt class="myfl">
+        <p class="goodsName">{{items.item_b_o.item_name}}</p>
+        <p class="wangwangname">掌柜旺旺：{{wangwang_name}}</p>
+        <p class="goodsSku">商品规格：{{sku1}}&nbsp;&nbsp;&nbsp;&nbsp;{{sku2}}</p>
+        <p class="goodsNum">商品数量：{{items.item_b_o.buy_number}}件</p>
+        <p class="goodsPrice">{{items.item_b_o.item_price/100.00|currency:'￥'}}</p>
+        </dt>
+      </dl>
+    </div>
+<div class="applyStep" style="height:1130px;">
+  <div class="line myfl" style="margin-top: 8px">
+    <div class="line_top"></div>
+    <div class="line_strip" style="height: 642px;"></div>
+    <div class="line_top"></div>
+    <div class="line_strip" style="height:392px"></div>
+  </div>
+  <div class="step_describe myfl">
+    <div class="step_describetop" style="height: 620px;">
+      <p class="findbei">找到活动宝贝</p>
+      <p class="find_hint1">1、打开淘宝，登录<em style="color: #FF366F">{{items.tao_bao_name}}</em>，<em style="color: #FF366F">进入购物车</em>，找到目标宝贝，并点击宝贝进入到详情页
+      </p>
+      <p class="find_hint1" style="line-height: 48px;margin-bottom: 6px;">2、在客户端首页搜索框中，选择搜索宝贝，输入搜索关键词</p>
+      <input type="text" class="keywordtext" value="{{keyword}}" disabled="disabled" style="cursor: default;"><input
+      type="button" id="change_keyword" ng-click="Changebtn()" value="换一个">
+      <p class="find_hint1" style="margin-top: 46px">3、在搜索结果的列表页面，通过以下条件找到商品</p>
+      <p class="goods_informationa">排序方式<input type="text" class="goods_sort" value="{{sort}}" disabled="disabled" style="margin-right: 60px">商品分类<input
+        type="text" class="goods_sort" value="{{items.item_b_o.item_category}}" disabled="disabled"></p>
+      <p class="goods_informationa">价格区间<input type="text" ng-show="showstriping" class="goods_pricerange" value="{{items.activity_search_b_o.priceLow/100|number:2}}-{{items.activity_search_b_o.priceHeight/100|number:2}}" disabled="disabled"><input type="text" ng-show="!showstriping" class="goods_pricerange" value="{{items.priceLow}}" disabled="disabled" style="margin-right: 83px;">发货地<input
+        type="text" class="goods_origin" value="{{items.activity_search_b_o.province}}" disabled="disabled"></p>
+      <div class="discount">
+        <span class="myfl" style="margin-right: 18px;margin-top: 4px">折扣服务</span>
+        <label><input type="checkbox" class="free_delivery" ng-checked="check1" disabled="disabled"/><i>包邮</i></label>
+        <label><input type="checkbox" class="present_back_insurance" ng-checked="check2" disabled="disabled"/><i>赠送退货运费险</i></label>
+        <label><input type="checkbox" class="item_off_pay" ng-checked="check3" disabled="disabled"/><i>货到付款</i></label>
+        <br>
+        <label style="margin-left: 114px;line-height: 52px"><input type="checkbox" class="tmall_check" ng-checked="check4" disabled="disabled"/><i>天猫</i></label>
+        <label style="line-height: 52px"><input type="checkbox" class="real_item" ng-checked="check5" disabled="disabled"/><i>正品保证</i></label>
+        <label style="line-height: 52px"><input type="checkbox" class="seven_back" ng-checked="check6" disabled="disabled"/><i>7+天内退货</i></label>
+      </div>
+    </div>
+    <div class="step_describebuttom" style="height: 490px;">
+      <p class="findbei" style="margin-top: 32px">货比三家</p>
+      <p class="find_hint1">在搜索结果的列表页面，找到跟目标商品相同的<em style="color: #FF366F">其他3家产品</em>并上传产品截图</p>
+      <div class="upload_reminder clearfix">
+        <p class="upload_reminderleft myfl">上传截图 </p>
+        <a href="javascript:;" class="upload_reminderright myfr" ng-click="modal.show()">查看截图示例</a>
+      </div>
+      <div class="upload_photo1">
+        <input type="file" style="opacity: 0;height: 118px;width: 118px;position: relative;z-index: 10;"  id="imgUrl021">
+        <div class="pic wu-example" id="imgUrl21">
+          <img class="imgUrl1" id="preview21" src="../../m/m_v2.0/img/apply/upload_photo.png" />
+        </div>
+      </div>
+      <div class="upload_photo1">
+        <input type="file" style="opacity: 0;height: 118px;width: 118px;position: relative;z-index: 10;"  id="imgUrl022">
+        <div class="pic wu-example" id="imgUrl22">
+          <img class="imgUrl1" id="preview22" src="../../m/m_v2.0/img/apply/upload_photo.png" />
+        </div>
+      </div>
+      <div class="upload_photo1" style="margin-right: 0px;">
+        <input type="file" style="opacity: 0;height: 118px;width: 118px;position: relative;z-index: 10;"  id="imgUrl023">
+        <div class="pic wu-example" id="imgUrl23">
+          <img class="imgUrl1" id="preview23" src="../../m/m_v2.0/img/apply/upload_photo.png" />
+        </div>
+      </div>
+      <div style="height: 46px;width: 220px;" class=" clearfix myfl" >
+        <p class="error_texta" ng-if="flog1" style="font-size: 24px; height: 46px; line-height: 46px;color: #FF366F;padding-left: 34px;background: url(../../m/m_v2.0/img/apply/error_bg.png) no-repeat left center;">请上传图片！</p>
+        <p class="error_texta" ng-if="flog2" style="font-size: 24px; height: 46px; line-height: 46px;color: #dda90c;padding-left: 34px;background: url(../../m/m_v2.0/img/apply/timeing1.png) no-repeat left center;">上传图片中...</p>
+        <p class="error_texta" ng-if="flog3" style="font-size: 24px; height: 46px; line-height: 46px;color: #2EA725;padding-left: 34px;background: url(../../m/m_v2.0/img/apply/icon_right3.png) no-repeat left center;">上传成功！</p>
+      </div>
+      <div style="height: 46px;width: 220px;" class="myfl">
+        <p class="error_texta" ng-if="flog4" style="font-size: 24px; height: 46px; line-height: 46px;color: #FF366F;padding-left: 34px;background: url(../../m/m_v2.0/img/apply/error_bg.png) no-repeat left center;">请上传图片！</p>
+        <p class="error_texta" ng-if="flog5" style="font-size: 24px; height: 46px; line-height: 46px;color: #dda90c;padding-left: 34px;background: url(../../m/m_v2.0/img/apply/timeing1.png) no-repeat left center;">上传图片中...</p>
+        <p class="error_texta" ng-if="flog6" style="font-size: 24px; height: 46px; line-height: 46px;color: #2EA725;padding-left: 34px;background: url(../../m/m_v2.0/img/apply/icon_right3.png) no-repeat left center;">上传成功！</p>
+      </div>
+      <div style="height: 46px;width: 200px;" class="myfl">
+        <p class="error_texta" ng-if="flog7" style="font-size: 24px; height: 46px; line-height: 46px;color: #FF366F;padding-left: 34px;background: url(../../m/m_v2.0/img/apply/error_bg.png) no-repeat left center;">请上传图片！</p>
+        <p class="error_texta" ng-if="flog8" style="font-size: 24px; height: 46px; line-height: 46px;color: #dda90c;padding-left: 34px;background: url(../../m/m_v2.0/img/apply/timeing1.png) no-repeat left center;">上传图片中...</p>
+        <p class="error_texta" ng-if="flog9" style="font-size: 24px; height: 46px; line-height: 46px;color: #2EA725;padding-left: 34px;background: url(../../m/m_v2.0/img/apply/icon_right3.png) no-repeat left center;">上传成功！</p>
+      </div>
+    </div>
+  </div>
+</div>
+</ion-content>
+<div class="bar bar-footer apply_Btn" ng-style="setbackgroundColor(flog3,flog6,flog9)">
+  <div class="title" ng-if="flog3&&flog6&&flog9" ng-click="toLink()" ng-click="statistic1('用户任务提交','货比三家',userId,items.item_b_o.activity_id)" style=" font-size: 30px; height: 97px; line-height: 97px;">已上传，下一步</div>
+  <div class="title" ng-if="!flog3||!flog6||!flog9"style=" font-size: 30px; height: 97px; line-height: 97px;">已上传，下一步</div>
+</div>
+</ion-view>
+<script id="templates/modalcompare.html" type="text/ng-template">
+  <ion-modal-view style="display: block;
+    position: absolute;
+    top: 25%;
+    z-index: 10;
+    overflow: hidden;
+    min-height: 100%;
+    width: 564px;
+    margin-left: 93px;
+    text-align: center;
+    background-color: #fff;">
+    <ion-content">
+    <span style="height:100%;display: inline-block;vertical-align: top;"></span><img src="../../m/m_v2.0/img/apply/sameshop.jpg" style="display: inline-block;margin-top: 0%;height: 75%;">
+    </ion-content>
+  </ion-modal-view>
+</script>

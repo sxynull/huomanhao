@@ -1,0 +1,108 @@
+
+<link rel="stylesheet" href="/../../m/m_v2.0/css/apply.css?366">
+<ion-view style="background: #f6f6f6">
+  <ion-content>
+<p class="top_hint" ng-if="items.lottery_status==0">完成此任务可以提升20%中奖率，并且获得1积分</p>
+<p class="top_hint" ng-if="items.lottery_status==1&&boo">请在今天21点前完成领取，否则视为放弃。</p>
+<p class="top_hint" ng-if="items.lottery_status==1&&!boo">请在今天24点前完成领取，否则视为放弃。</p>
+    <div class="commodity_show">
+      <h2 class="show_title">店铺：{{shop_name}}</h2>
+      <dl>
+        <dd class="myfl"><img ng-src="{{items.item_b_o.item_pic}}">
+          <p class="pic_text">淘宝主图</p>
+        </dd>
+        <dt class="myfl">
+        <p class="goodsName">{{items.item_b_o.item_name}}</p>
+        <p class="wangwangname">掌柜旺旺：{{wangwang_name}}</p>
+        <p class="goodsSku">商品规格：{{sku1}}&nbsp;&nbsp;&nbsp;&nbsp;{{sku2}}</p>
+        <p class="goodsNum">商品数量：{{items.item_b_o.buy_number}}件</p>
+        <p class="goodsPrice">{{items.item_b_o.item_price/100.00|currency:'￥'}}</p>
+        </dt>
+      </dl>
+    </div>
+<div class="applyStep">
+  <div class="line myfl" style="margin-top: 8px">
+    <div class="line_top"></div>
+    <div class="line_strip" style="height: 160px;"></div>
+    <div class="line_top" ></div>
+    <div class="line_strip" style="height: 770px"></div>
+  </div>
+  <div class="step_describe myfl">
+    <div class="step_describetop">
+      <p class="findbei">通过购物车找到活动宝贝</p>
+      <p class="find_hint1">打开淘宝，登录<em style="color: #FF366F">{{items.tao_bao_name}}</em>，<em style="color: #FF366F">进入购物车</em>，
+        找到目标宝贝，并点击宝贝进入到详情页</p>
+    </div>
+    <div class="step_describebuttom">
+      <p class="findbei" style="margin-top: 32px">收藏宝贝和店铺</p>
+      <p class="find_hint1">在宝贝详情页点击收藏按钮<em style="color:#FF366F">收藏宝贝</em>，并提供收藏截图，截图必须包含收藏提示信息</p>
+      <div class="upload_reminder clearfix">
+        <p class="upload_reminderleft myfl">上传截图 </p>
+        <a href="javascript:;" ng-click="modal.show()"  class="upload_reminderright myfr">查看截图示例</a>
+      </div>
+      <div class="upload_photo clearfix">
+        <input type="file" style="opacity: 0;height: 118px;width: 118px;position: relative;left: -128px;z-index: 10;"  id="imgUrl011">
+      <div class="pic wu-example" id="imgUrl11">
+        <img class="imgUrl1" id="preview11" src="../../m/m_v2.0/img/apply/upload_photo.png" />
+      </div>
+      </div>
+      <div style="height: 46px;width: 70%;" >
+        <p class="error_texta" ng-if="flog1" style="font-size: 24px; height: 46px; line-height: 46px;color: #FF366F;padding-left: 34px;background: url(../../m/m_v2.0/img/apply/error_bg.png) no-repeat left center;">请上传图片！</p>
+        <p class="error_texta" ng-if="flog2" style="font-size: 24px; height: 46px; line-height: 46px;color: #dda90c;padding-left: 34px;background: url(../../m/m_v2.0/img/apply/timeing1.png) no-repeat left center;">上传图片中...</p>
+        <p class="error_texta" ng-if="flog3" style="font-size: 24px; height: 46px; line-height: 46px;color: #2EA725;padding-left: 34px;background: url(../../m/m_v2.0/img/apply/icon_right3.png) no-repeat left center;">上传图片完成！</p>
+      </div>
+      <p class="find_hint1">在宝贝详情页点击收藏按钮<em style="color:#FF366F">收藏店铺</em>，并提供收藏截图，截图必须包含收藏提示信息</p>
+      <div class="upload_reminder clearfix">
+        <p class="upload_reminderleft myfl">上传截图 </p>
+        <a href="javascript:;" class="upload_reminderright myfr" ng-click="modal1.show()">查看截图示例</a>
+      </div>
+      <div class="upload_photo clearfix">
+        <input type="file" style="opacity: 0;height: 118px;width: 118px;position: relative;left: -128px;z-index: 10;"  id="imgUrl012">
+        <div class="pic wu-example" id="imgUrl12">
+          <img class="imgUrl1" id="preview12" src="../../m/m_v2.0/img/apply/upload_photo.png" />
+        </div>
+      </div>
+      <div style="height: 46px;width: 70%;" >
+        <p class="error_texta" ng-if="flog4" style="font-size: 24px; height: 46px; line-height: 46px;color: #FF366F;padding-left: 34px;background: url(../../m/m_v2.0/img/apply/error_bg.png) no-repeat left center;">请上传图片！</p>
+        <p class="error_texta" ng-if="flog5" style="font-size: 24px; height: 46px; line-height: 46px;color: #dda90c;padding-left: 34px;background: url(../../m/m_v2.0/img/apply/timeing1.png) no-repeat left center;">上传图片中...</p>
+        <p class="error_texta" ng-if="flog6" style="font-size: 24px; height: 46px; line-height: 46px;color: #2EA725;padding-left: 34px;background: url(../../m/m_v2.0/img/apply/icon_right3.png) no-repeat left center;">上传图片完成！</p>
+      </div>
+    </div>
+  </div>
+</div>
+  </ion-content>
+  <div class="bar bar-footer apply_Btn" ng-style="setbackgroundColor(flog3,flog6)">
+   <div class="title" ng-if="flog3&&flog6" ng-click="toLink()" ng-click="statistic1('用户任务提交','双收藏',userId,items.item_b_o.activity_id)"  style=" font-size: 30px; height: 97px; line-height: 97px;">已提交，下一步</div>
+   <div class="title" ng-if="!flog3||!flog6" style=" font-size: 30px; height: 97px; line-height: 97px;">已提交，下一步</div>
+  </div>
+</ion-view>
+<script id="templates/modalcollect.html" type="text/ng-template">
+  <ion-modal-view style="display: block;
+    position: absolute;
+    top: 25%;
+    z-index: 10;
+    overflow: hidden;
+    min-height: 100%;
+    width: 100%;
+    text-align: center;
+    background-color: #fff;">
+    <ion-content">
+    <span style="height:100%;display: inline-block;vertical-align: top;"></span><img src="../../m/m_v2.0/img/apply/collect01.jpg" style="display: inline-block;margin-top: 0%;height: 75%;">
+    </ion-content>
+  </ion-modal-view>
+</script>
+<script id="templates/modalcollect1.html" type="text/ng-template">
+  <ion-modal-view style="display: block;
+    position: absolute;
+    top: 25%;
+    z-index: 10;
+    overflow: hidden;
+    min-height: 100%;
+    width:100%;
+    text-align: center;
+    background-color: #fff;">
+    <ion-content">
+    <span style="height:100%;display: inline-block;vertical-align: top;"></span><img src="../../m/m_v2.0/img/apply/collect02.jpg" style="display: inline-block;margin-top: 0%;height: 75%;">
+    </ion-content>
+  </ion-modal-view>
+</script>

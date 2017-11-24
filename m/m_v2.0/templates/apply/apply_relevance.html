@@ -1,0 +1,99 @@
+
+<link rel="stylesheet" href="/../../m/m_v2.0/css/apply.css?366">
+<style>
+  .button:after {
+    position: absolute;
+    top: 0;
+    right: -6px;
+    bottom:0;
+    left: -6px;
+    content: ' ';
+  }
+  .modal{
+    min-height: 59%;
+    top: 41%;
+  }
+  .button-full{
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+</style>
+<ion-view style="background: #f6f6f6">
+  <ion-content>
+    <!--<div class="shadow_select1" style="display: none"></div>-->
+    <!--<div class="relevance_mission">-->
+      <!--<p class="mission_text">关联购买需要你在购买任务宝贝的同时，找到店铺的另一款宝-->
+        <!--贝，和主任务宝贝一起加购物车下单。完成后续任务后会返还-->
+        <!--您全部消费金额。<br>-->
+        <!--接到隐藏寻宝任务的几率非常小，一定要珍惜哦。</p>-->
+      <!--<div class="mission_true">确定</div>-->
+    <!--</div>-->
+<p class="top_hint">请在24小时内完成申请，否则视为放弃！</p>
+<div class="commodity_show">
+  <h2 class="show_title">{{items.shopName}}</h2>
+  <dl>
+    <dd class="myfl"><img src="{{items.itemSearchPic}}"></dd>
+    <dt class="myfl">
+    <p class="goodsName">{{items.itemName}}</p>
+    <p class="goodsSku">规格：{{items.itemSku}}</p>
+    <p class="goodsNum">数量：1件</p>
+    <p class="goodsPrice">{{items.itemPrice/100.00|currency:'￥'}}</p>
+    </dt>
+  </dl>
+</div>
+<p class="trigger_relevance">恭喜你触发隐藏寻宝任务，我们将免费追送您一样关联宝贝!<a href="javascript:;" ng-click="modal.show()" class="look_rel">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;查看</a></p>
+<div class="applyStep" style="height: 780px">
+  <div class="line myfl" style="margin-top: 8px">
+    <div class="line_top"></div>
+    <div class="line_strip" style="height: 162px;"></div>
+    <div class="line_top" ></div>
+    <div class="line_strip" style="height: 364px"></div>
+    <div class="line_top" ></div>
+    <div class="line_strip" style="height: 154px"></div>
+  </div>
+  <div class="step_describe myfl">
+    <div class="step_describetop" style="height: 138px;">
+      <p class="findbei">找到活动宝贝</p>
+      <p class="find_hint1">打开手机淘宝客户端，登录淘宝账户<em style="color: #FF366F">{{items.taoName}}</em>找到目标宝贝，并点击宝贝进入到详情页</p>
+    </div>
+    <div class="step_describetop" style="height: 340px;">
+      <p class="findbei" style="margin-top: 32px">找到关联宝贝</p>
+      <p class="find_hint1">浏览宝贝详情页进入店铺首页，从店铺宝贝中找到以下宝贝</p>
+      <div class="commodity_show" style="background: #e5e5e5;padding-top: 20px;height: 204px;margin-top: 20px;">
+        <dl style="margin-top: 0">
+          <dd class="myfl"><img src="{{items.freeServiceBO.relevancePicUrl}}"></dd>
+          <dt class="myfl" style="width: 392px;">
+          <p class="goodsName">{{items.freeServiceBO.relevanceItemName}}</p>
+          <p class="goodsSku">{{items.freeServiceBO.relevanceItemSku}}</p>
+          <p class="goodsNum">数量：1件</p>
+          <p class="goodsPrice">{{items.freeServiceBO.relevanceItemPrice/100.00|currency:'￥'}}</p>
+          </dt>
+        </dl>
+      </div>
+    </div>
+    <div class="step_describebuttom" style="height: 270px">
+      <p class="findbei" style="margin-top: 32px">加入购物车</p>
+      <p class="find_hint1">将关联宝贝<em style="color: #FF366F">一起加入购物车</em>确认无误后，点击下一步进入支付流程</p>
+    </div>
+  </div>
+</div>
+</ion-content>
+<div class="bar bar-footer apply_Btn">
+  <div class="title" ui-sref="applyPay" style=" font-size: 30px; height: 97px; line-height: 97px;">已加购，下一步</div>
+</div>
+</ion-view>
+
+<script id="templates/modal.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-content style="height: 100%">
+      <p style="padding-bottom: 24%; height:85%; line-height: 48px;font-size: 26px;color: #666666;padding-top:10%;width: 100%;padding-left: 4%;padding-right: 4%;">关联购买需要你在购买任务宝贝的同时，找到店铺的另一款宝
+        贝，和主任务宝贝一起加购物车下单。完成后续任务后会返还
+        您全部消费金额。<br>
+        接到隐藏寻宝任务的几率非常小，一定要珍惜哦。</p>
+      <div class="list" style="height: 15%;">
+        <button class="button button-full buttonl" style=" padding: 0;margin-top: 0;margin-bottom: 0; background: #ff366f;color: #ffffff;height: 100%;font-size: 32px;" ng-click="createContact(newUser)">确定</button>
+      </div>
+    </ion-content>
+  </ion-modal-view>
+</script>

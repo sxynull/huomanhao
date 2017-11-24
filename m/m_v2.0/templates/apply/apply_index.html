@@ -1,0 +1,110 @@
+
+  <link rel="stylesheet" href="/../../m/m_v2.0/css/apply.css?366">
+<style>
+  .button:after {
+    position: absolute;
+    top: 0;
+    right: -6px;
+    bottom:0;
+    left: -6px;
+    content: ' ';
+  }
+  .modal{
+    min-height: 59%;
+    top: 41%;
+  }
+  .button-full{
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+</style>
+ <ion-view style="background: #f6f6f6;">
+   <ion-content>
+     <ion-refresher pulling-text="正在下拉刷新中" on-refresh="applyIndexRefresh()"></ion-refresher>
+     <div>
+       <ion-scroll class="scrollxli" direction="x" scrollbar-x="false" scrollbar-y="false" style="background: #ffffff;">
+         <ul class="activityManage_nav">
+           <li class=" current">再抽一次奖（<em>{{applyAcount.commit_cont}}</em>）</li>
+           <li>中奖啦（<em>{{applyAcount.winng_cont}}</em>）</li>
+           <li>待评价（<em>{{applyAcount.comment_cont}}</em>）</li>
+           <li>待抽奖（<em>{{applyAcount.amait_cont}}</em>）</li>
+           <li>已完成（<em>{{applyAcount.finish_count}}</em>）</li>
+           <li class="lastli">已结束（<em>{{applyAcount.end_count}}</em>）</li>
+         </ul>
+       </ion-scroll>
+     </div>
+     <p class="top_hint top_hintindex" style="display: none"></p>
+     <div class="ew" ng-if()></div>
+     <div class="commodity_show" ng-repeat="goods in gooddata" style="margin-top: 24px;margin-bottom: 0;">
+       <p class="show_title" style="padding-left: 0;"><span ng-class="{taobao_tamll: goods.shop_type==1, tamll_taobao: goods.shop_type==2}"></span><span class="date_time">{{goods.create_time}}</span><span class="activity_number">活动编号<em style="color: #666666;">{{goods.activity_code}}</em></span><span class="activity_nickname" style="float: right; margin-right: 24px; display: block; line-height: 78px; max-width:176px;overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">{{goods.shop_name}}</span></p>
+       <dl>
+
+         <dd class="myfl"><img ng-src="{{goods.item_pic}}!162x162"></dd>
+         <dt class="myfl" class="applyindexdt">
+         <p class="goodsName">{{goods.item_name}}</p>
+         <p class="goodsSku">{{goods.item_sku}}</p>
+         <p class="goodsNum myfl">数量：{{goods.buy_number}}件</p>
+         <!--<a href="javascript:;" ng-class="{accept_operationa:goods.status==1||goods.status==3||goods.status==8,accept_operationb:goods.status==2||goods.status==4||goods.status==5||goods.status==6||goods.status==7}">评价商品</a>-->
+         <a href="javascript:;" ng-if="goods.status==1" on-touch="gotodata(goods.activity_id)" ng-click="statistic1('活动管理','继续申请',userId,goods.activity_id)"  class="accept_operationb">继续申请</a>
+         <a href="javascript:;" ng-if="goods.status==2" on-touch="gotodata(goods.activity_id)" ng-click="statistic1('活动管理','提高中奖率',userId,goods.activity_id)" class="accept_operationb">提高中奖率</a>
+         <a href="javascript:;" ng-if="goods.status==3" on-touch="gotodata(goods.activity_id)" ng-click="statistic1('活动管理','等待明日任务',userId,goods.activity_id)" class="accept_operationb">等待明日任务</a>
+         <a href="javascript:;" ng-if="goods.status==4&&goods.countdown>0" on-touch="gotodata(goods.activity_id)" ng-click="statistic1('活动管理','领取奖励',userId,goods.activity_id)" class="accept_operationb">领取奖励</a>
+         <a href="javascript:;" ng-if="goods.status==4&&goods.countdown==0" class="accept_operationa">未按时领奖</a>
+         <a href="javascript:;" ng-if="goods.status==5" on-touch="gotodata(goods.activity_id)" class="accept_operationb">订单审核中</a>
+         <a href="javascript:;" ng-if="goods.status==6" on-touch="gotodata(goods.activity_id)" ng-click="statistic1('活动管理','订单重新提交',userId,goods.activity_id)" class="accept_operationb">订单重新提交</a>
+         <a href="javascript:;" ng-if="goods.status==7" class="accept_operationb">商家发货</a>
+         <a href="javascript:;" ng-if="goods.status==8&&goods.comment_countdown!=0&&goods.comment_countdown!=null" class="accept_operationa">评价商品</a>
+         <a href="javascript:;" on-touch="gotodata(goods.activity_id)" ng-if="goods.status==8&&(goods.comment_countdown==0||goods.comment_countdown==null)" ng-click="statistic1('活动管理','评价商品',userId,goods.activity_id)" class="accept_operationb">评价商品</a>
+         <a href="javascript:;" on-touch="gotodata(goods.activity_id)" ng-if="goods.status==9" class="accept_operationb" ng-click="statistic1('活动管理','置顶好评',userId,goods.activity_id)">置顶好评</a>
+         <!--<a href="javascript:;" ng-if="goods.status==10&&goods.comment_countdown!=0&&goods.comment_countdown!=null" on-touch="gotodata(goods.activity_id)" class="accept_operationa">置顶追评</a>-->
+         <a href="javascript:;" ng-if="goods.status==10" on-touch="gotodata(goods.activity_id)" class="accept_operationb" ng-click="statistic1('活动管理','置顶追评',userId,goods.activity_id)">置顶追评</a>
+         <a href="javascript:;" ng-if="goods.status==11" on-touch="gotodata(goods.activity_id)" class="accept_operationb" ng-click="statistic1('活动管理','朋友圈任务',userId,goods.activity_id)">朋友圈任务</a>
+         <a href="javascript:;" ng-if="goods.status==12" class="accept_operationb">商家审核中</a>
+         <a href="javascript:;" ng-if="goods.status==13" on-touch="gotodata(goods.activity_id)" class="accept_operationb" ng-click="statistic1('活动管理','提交追评',userId,goods.activity_id)">提交追评</a>
+         <a href="javascript:;" ng-if="goods.status==14" class="accept_operationa">未按时提交追评</a>
+         <a href="javascript:;" ng-if="goods.status==15" on-touch="gotodata(goods.activity_id)"class="accept_operationb" ng-click="statistic1('活动管理','等待开奖',userId,goods.activity_id)">等待开奖</a>
+         <a href="javascript:;" ng-if="goods.status==16" on-touch="gotodata(goods.activity_id)" class="accept_operationb" ng-click="statistic1('活动管理','评价重新提交',userId,goods.activity_id)">评价重新提交</a>
+         <a href="javascript:;" ng-if="goods.status==17"  class="accept_operationb">等待返款</a>
+         <a href="javascript:;" ng-if="goods.status==18" class="accept_operationb">返款已到账</a>
+         <a href="javascript:;" ng-if="goods.status==19" class="accept_operationb">已结束</a>
+         <a href="javascript:;" ng-if="goods.status==99" on-touch="gotodata(goods.activity_id)" class="accept_operationb" >中奖名额已满</a>
+         <p class="goodsPrice clear myfl">{{goods.price/100.00|currency:'￥'}}</p>
+         <span class="evaluate_time myfr" ng-if="(goods.status==8 && goods.comment_countdown!=0 && goods.comment_countdown!=null) || (goods.status==10&&goods.comment_countdown!=0&&goods.comment_countdown!=null)"><em class="time">{{goods.comment_countdown*1000| date:"HH:mm:ss" : 'UTC' }}</em>后开放评价</span>
+         <span class="evaluate_timea myfr" ng-if="(goods.status==8 && (goods.comment_countdown==0 ||goods.comment_countdown==null) || goods.status==9||(goods.status==10&&(goods.comment_countdown==0||goods.comment_countdown==null)))"><em>离系统返款就差一步啦</em></span>
+         <!--<em class="time">{{goods.lotteryDate | date:'HH:mm:ss'}}</em>-->
+         <span class="evaluate_time myfr" ng-if="goods.status==14"><em class="time">00:00:00</em>内完成评价</span>
+         <span class="evaluate_timea myfr" ng-if="goods.status==6">订单被驳回，<a href="javascript:;" on-touch="assignment(goods.refuse_text);modal.show()"><em>查看详情</em></a>
+         </span>
+         <span class="evaluate_timea myfr" ng-if="goods.status==16">评价被驳回，<a href="javascript:;" on-touch="assignment(goods.refuse_text);modal.show()"><em>查看详情</em></a>
+         </span>
+         <span class="evaluate_timea myfr" ng-if="goods.status==20">朋友圈分享被驳回，<a href="javascript:;" on-touch="assignment(goods.refuse_text);modal.show()"><em>查看详情</em></a>
+         </span>
+         <span class="evaluate_time myfr" ng-if="goods.status==1">离中奖就差一步啦</span>
+         <span class="evaluate_time myfr" ng-if="goods.status==2">做任务极大提升下次中奖率</span>
+         <span class="evaluate_time myfr" ng-if="goods.status==3">任务在早上10点开放</span>
+         <span class="evaluate_time myfr" ng-if="goods.status==99">您将获得积分补偿</span>
+         <span class="evaluate_time myfr" ng-if="goods.status==7">收货后先查看评价任务再评价</span>
+         <span class="evaluate_time myfr" ng-if="goods.status==4&&goods.countdown==0"><em class="time" style="color: #666666">00:00:00</em>内完成领取</span>
+         <span class="evaluate_time myfr" ng-if="goods.status==4&&goods.countdown>0"><em class="time">{{goods.countdown*1000 | date:'HH:mm:ss': 'UTC'}}</em>内完成领取</span>
+         <span class="evaluate_time myfr" ng-if="goods.status==17"><em class="time">{{goods.back_amount_time}}</em>到账</span>
+         </dt>
+       </dl>
+     </div>
+     <ion-infinite-scroll on-infinite="pulldowngetdata1()"  spinner="android" icon="icon ion-load-c " ng-if="total>current_page" immediate-check="false">
+     </ion-infinite-scroll>
+   </ion-content>
+ </ion-view>
+
+  <script id="templates/modalindexapply.html" type="text/ng-template">
+    <ion-modal-view>
+      <ion-content style="height: 100%">
+        <p style="padding-bottom: 24%; height:85%; text-align: center; line-height: 48px;font-size: 26px;color: #666666;padding-top:10%;width: 100%;padding-left: 4%;padding-right: 4%;">
+          {{refuseText}}
+        </p>
+        <div class="list" style="height: 15%;">
+          <button class="button button-full buttonl" style=" padding: 0;margin-top: 0;margin-bottom: 0; background: #ff366f;color: #ffffff;height: 100%;font-size: 32px;" on-touch="createContact(newUser)">确定</button>
+        </div>
+      </ion-content>
+    </ion-modal-view>
+  </script>

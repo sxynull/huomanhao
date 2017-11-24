@@ -1,0 +1,32 @@
+
+<ion-tabs class="tabs-icon-top  tabs-color-active-positive scrollable">
+  <div class="top" on-touch="top()" ng-show="getHeight()>1500"><i class="icon ion-arrow-up-a" ></i></div>
+      <ion-tab title="首页" icon-on="bar-home-on" icon="bar-home" ui-sref="tabs.home" >
+          <ion-nav-view name="tabs-home"></ion-nav-view>
+      </ion-tab>
+     <!-- <ion-tab icon-on="bar-coin-on" icon="bar-coin" ui-sref="tabs.coinIndex" title="金币必中">
+          <ion-nav-view name="tabs-coinIndex"></ion-nav-view>
+      </ion-tab>-->
+      <ion-tab icon-on="bar-goods-on" icon="bar-goods" ui-sref="tabs.goodList" title="好货精选">
+          <ion-nav-view name="tabs-goodList"></ion-nav-view>
+      </ion-tab>
+      <ion-tab icon-on="bar-spokesman-on" icon="bar-spokesman" ui-sref="tabs.spokesmanPage" title="分享赚钱">
+          <ion-nav-view name="tabs-spokesmanPage"></ion-nav-view>
+      </ion-tab>
+      <ion-tab icon-on="bar-progress-on" icon="bar-progress" ng-if="$root.open_id==0 || $root.open_id==undefined" ui-sref="tabs.applyIndex" title="申请进展" badge="winng_cont" >
+        <ion-nav-view name="tabs-applyIndex"></ion-nav-view>
+      </ion-tab>
+      <ion-tab icon-on="bar-progress-on" icon="bar-progress" ng-if="$root.open_id!=0 && $root.open_id!=undefined&&$root.isCode=='true'" ui-sref="loginbind" title="申请进展" >
+      </ion-tab>
+      <ion-tab icon-on="bar-progress-on" icon="bar-progress" ng-if="$root.open_id!=0 && $root.open_id!=undefined&&$root.isCode=='false'" href="#/login?isState=1" title="申请进展"  >
+
+      </ion-tab>                                                                                        <!--badge="99" badge-style="badge-assertive"-->
+      <ion-tab icon-on="bar-account-on" icon="bar-account" ng-if="$root.open_id==0 || $root.open_id==undefined" ui-sref="tabs.personalCenter" title="我的账户" >
+          <ion-nav-view name="tabs-personalCenter"></ion-nav-view>
+      </ion-tab>
+      <ion-tab icon-on="bar-account-on" icon="bar-account" ng-if="$root.open_id!=0 && $root.open_id!=undefined&&$root.isCode=='true'" ui-sref="loginbind" title="我的账户" >
+      </ion-tab>
+      <ion-tab icon-on="bar-account-on" icon="bar-account" ng-if="$root.open_id!=0 && $root.open_id!=undefined&&$root.isCode=='false'" href="#/login?isState=1" title="我的账户" >
+
+      </ion-tab>
+  </ion-tabs>

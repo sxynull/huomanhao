@@ -1,0 +1,221 @@
+<link rel="stylesheet" href="/../../m/m_v2.0/css/home.css?366">
+<link rel="stylesheet" href="/../../m/m_v2.0/css/details.css?366">
+<style>
+  .particulars{height: 1400px!important;width: 750px;background-color: #ffffff}
+  .tabsFixed{position: fixed;
+    top:0;background-color: #FFFFFF;z-index: 999999}
+  .header_classify2{
+    height: 74px;
+    background: #f6f6f6;
+    padding: 0;
+  }
+  .hide1{
+    margin-bottom: 97px;
+  }
+  .goods_sku{
+    font-size: 22px;
+    color: #ffffff;
+    line-height: 24px;
+    margin-top: 38px;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .itemList{
+    margin:0 4%;
+  }
+</style>
+<ion-view view-title="商品详情页">
+  <div class="bar bar-header header_classify2" ng-show="flog">
+    <ul class="tab_menu row row-no-padding" >
+      <li class="current fristLi col">商品详情页</li>
+      <li class="process col">新手流程</li>
+      <li class="rule col">申请规则</li>
+      <li class="col" on-touch="getGoods()" style="font-weight: 800;color: #FF366F;">99%中奖</li>
+    </ul>
+  </div>
+  <ion-content>
+
+    <!--<div class="row row-no-padding">-->
+    <!--</div>-->
+    <!--<ion-slide-box does-continue="true" slide-interval="3000" auto-play="true" show-pager="true" height="535" width="750">
+                        <ion-slide><div class="pig"><img ng-src="{{detailsData.item_pic}}" ui-sref="tabs.hometv" width="750" height="535"></div></ion-slide>
+    </ion-slide-box>-->
+    <div class="pig" style="width: 750px;height: 750px;position: relative;">
+      <div class="col details_time" ui-sref="tabs.home" style="position: absolute;left: 0;top: 0;">活动结束剩余：{{detailsData.activity_end_time}}</div>
+      <img ng-src="{{detailsData.item_pic}}!750x750"  width="750" height="750">
+      <div class="goodsinfo">
+        <div class="col" style="width: 50%;padding-left: 4%;margin-top: 24px;float: left"><span class="details_price" style="color: #ffffff;font-size: 36px;margin-right: 14px">￥{{detailsData.item_price /100 | number:2}}</span> <span class="details_text" style="color: #ffffff;font-size: 22px;">包邮</span></div>
+        <div style="float: left;width: 50%;padding-right: 4%">
+          <span class="goods_sku">商品规格：{{sku1}}&nbsp;{{sku2}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="row row-no-padding itemList" style="width: 510px;float: left">
+              <div class="col details_name" >{{detailsData.item_name}}</div>
+    </div>
+    <div style="width: 180px;float: right">
+      <span class="details_text" style="    height: 84px;
+    line-height: 84px;
+    font-size: 22px;
+    color: #666666;">{{detailsData.apply_member_count}}人已申请</span>
+    </div>
+    <div class="row row-no-padding itemList details_activity border_b_1" style="line-height: 8px;padding-bottom: 30px;">
+          <div class="col">活动份数: 共<span >{{detailsData.item_total_stock}}</span>份， 剩余<span >{{detailsData.item_sales_stock}}</span>份 </div>
+          <div class="col">金币兑换: 共<span >{{detailsData.today_coin_stock}}</span>份， 剩余<span >{{detailsData.today_sales_stock}}</span>份 </div>
+    </div>
+    <div class="row row-no-padding itemList">
+             <div class="col">
+               <div class="acquire_integral  mt20"><span class="details_integral">积</span> 连续<em>3</em>天申请并完成任务未中奖，将获得<em>30</em>积分</div>
+             </div>
+       </div>
+    <div class="row row-no-padding itemList">
+             <div class="col">
+               <div class="acquire_integral mt20"><span class="details_integral">币</span> 商铺正在参加抢购活动，仅需支付<em>{{detailsData.need_coin}}</em>金币</div>
+             </div>
+       </div>
+    <div class="row row-no-padding itemList">
+             <div class="col">
+               <div class="acquire_integral mt20 mb28 "><span class="details_integral">率</span> 邀请好友提升<em>30%</em>中奖率</div>
+             </div>
+       </div>
+
+
+    <div class="row row-no-padding border_b_25">
+    </div>
+    <h3 class="itemList details_reasons">
+        推荐理由
+    </h3>
+    <p class="itemList details_reasons_text" style="margin-bottom: 20px">
+     {{detailsData.reasons}}
+    </p>
+    <div class="row row-no-padding border_b_25 mt10">
+       </div>
+    <div class="particulars">
+                  <ul class="tab_menu row row-no-padding" >
+                    <li class="current fristLi col">商品详情页</li>
+                    <li class="process col">新手流程</li>
+                    <li class="rule col">申请规则</li>
+                    <li class="col" on-touch="getGoods()" style="font-weight: 800;color: #FF366F;">99%中奖</li>
+                  </ul>
+      <div class="tab_box" >
+                        							<div class="hide1 commoditydDetails">
+
+                        							</div>
+                        							<div class="hide1 hide Newbie clearfix">
+                        								<dl class="myfl">
+                        									<dt class="myfl">01</dt>
+                        									<dd class="myfl"><h2>注册账户，免费申请</h2>
+                        										<p>注册货蛮好网用户账户，然后找到想要的商品，进入商品详情页，点击立即申请后，查看申请试用规则，然后进入到申请页面。</p>
+                        									</dd>
+                        								</dl>
+                        								<dl class="myfl">
+                        									<dt class="myfl">02</dt>
+                        									<dd class="myfl"><h2>提交申请，等待开奖</h2>
+                        										<p>按照要求找到商品后，把商品的链接或者商品标题前三个字在平台申请页面核对，确认正确后把商品加入购物车，然后回到平台提交申请。</p>
+                        									</dd>
+                        								</dl>
+                        								<dl class="myfl">
+                        									<dt class="myfl">03</dt>
+                        									<dd class="myfl"><h2>中奖领取，下单付款</h2>
+                        										<p>系统开奖后收到了中奖通知就可以去领奖了，领奖之前请先阅读领奖须知，然后去完成领奖的任务，去找到商品下单付款。</p>
+                        									</dd>
+                        								</dl>
+
+
+                        								<dl class="myfl">
+                        									<dt class="myfl">04</dt>
+                        									<dd class="myfl"><h2>收货确认，五星好评</h2>
+                        										<p>等收到货后，撰写商品的五星好评并提交，然后回到平台上传评论截图提交审核。</p>
+                        									</dd>
+                        								</dl>
+
+                        								<dl class="myfl">
+                        									<dt class="myfl">05</dt>
+                        									<dd class="myfl"><h2>完成活动，返款到账</h2>
+                        										<p>商家审核确认之后，平台会自动返款到您的注册账户上，您可以通过<资金明细>查看</p>
+                        									</dd>
+                        								</dl>
+
+                        							</div>
+                                                    <!--申请规则-->
+                        							<div class="hide1 hide application_regulation">
+                        								<dl>
+                        									<dt>注意事项</dt>
+                        									<dd><p>1、禁止使用信用卡、花呗、淘金币、优惠券、红包、天猫积分等。<br />
+                        										2、禁止通过淘宝客、返利网、一淘等返现返利网链接下单。
+                                                                   <br />
+                        										以上由于买家违规下单所产生的费用，由买家承担。货蛮好网有权冻结其帐号，限制提现操作，IP列入黑名单。</p></dd>
+                        								</dl>
+                        								<dl>
+                        									<dt>温馨提示</dt>
+                        									<dd><p>1、用户获得领奖资格后，请根据时间提示按时提交订单号和评论截图。<br />
+                        										2、若因未按时提交以上信息而被系统取消资格，用户自行承担责任。<br />
+                        										3、若活动已无剩余资格，将无法恢复资格，由此造成的损失需由买家承担。</p></dd>
+                        								</dl>
+                        								<dl>
+                        									<dt>权利说明</dt>
+                        									<dd><p>所有活动产品均由合作商家直接提供，杜绝一切非正规渠道来源的活动产品。本站只为用户提供渠道及信息交流平台，产品的使用效果因产品本身及用户的个体差异而有所不同。若会员在产品使用过程中有任何不适，请即时停用并直接与商品提供商联系。因商品提供商的产品和服务导致的任何瑕疵、过错 、责任和纠纷，本站不承担任何法律责任。</p></dd>
+                        								</dl>
+                        							</div>
+                                      <div class="hide1 hide">
+                                        <div class="text-center itemDiv border_b_6 list-item" ng-repeat="goods in goodList">
+                                                                  <div class="itemList pt36 pb20">
+                                                                    <span ng-click="go('#/details?activityId={{goods.activity_id}}&newType=1');statistic1('商品详情','99%中奖免费申请',userId,detailsData.activity_id)"><img class="img80w" ng-src="{{goods.item_pic}}!325x315" alt=""></span>
+                                                                                <div class="itemName "><span class="itemName" ng-click="go('#/details?activityId={{goods.activity_id}}&newType=1');statistic1('商品详情','99%中奖免费申请',userId,detailsData.activity_id)">{{goods.item_name}}</span></div>
+                                                                                <div class="originalPriceText text_left">￥{{goods.item_price /100 | number:2}}</div>
+                                                                                <div class="text_left itemApply">{{goods.apply_member_count}}人已申请，还剩{{goods.sales_normal_stock}}份</div>
+                                                                                <div class="mt10">
+                                                                                  <a class="home_shareMakeMoney_btn" href="">分享赚钱</a>
+                                                                                <span class="home_freeGet_btn" ng-click="go('#/details?activityId={{goods.activity_id}}&newType=1');statistic1('商品详情','99%中奖免费申请',userId,detailsData.activity_id)" >免费申请</span>
+                                                                                </div>
+                                                                  </div>
+                                         <div class="highValue" ng-if="goods.activity_type==4"></div>
+                                           </div>
+                        						</div>
+                </div>
+    </div>
+
+  </ion-content>
+  <ion-tabs ng-if="$root.open_id==0 || $root.open_id==undefined" class="tabs-icon-top  tabs-color-active-positive">
+    <div class="top" on-touch="top()" ng-show="getHeight()>1500"><i class="icon ion-arrow-up-a" ></i></div>
+       <div class="home-icon " ui-sref="tabs.home" style="padding-left: 20px;"><i class="bar-home details-icon"></i><p class="details-title">首页</p></div>
+           <div class="home-icon" on-touch="action()" style="padding-right: 20px;"><i class="bar-share details-icon"></i><p class="details-title">分享</p></div>
+           <div class="home-btn details-coin-apply" on-touch="showConfirm()" ng-if="detailsData.permit_purchase_coin_item==1&&sekill_channel!=3" ng-click="statistic1('商品详情','金币兑换',userId,detailsData.activity_id)">金币兑换</div>
+           <div class="home-btn details-coin-apply disabled" disabled=""  ng-if="detailsData.permit_purchase_coin_item==0&&sekill_channel!=3">{{detailsData.forbidden_purchase_coin_item_reason}}</div>
+           <div class="home-btn details-apply" ng-if="detailsData.progress_status==0&&sekill_channel!=3" on-touch="apply()" ng-click="statistic1('商品详情','免费申请',userId,detailsData.activity_id)">免费申请</div>
+           <div class="home-btn details-apply" ng-if="detailsData.progress_status==2&&sekill_channel!=3" on-touch="goOn()" ng-click="statistic1('商品详情','立即领奖',userId,detailsData.activity_id)">立即领奖</div>
+           <div class="home-btn details-apply disabled" disabled="" ng-if="detailsData.progress_status==-1&&sekill_channel!=3">取消资格</div>
+           <div class="home-btn details-apply"  ng-if="detailsData.progress_status==1&&sekill_channel!=3" on-touch="goOn()" ng-click="statistic1('商品详情','继续任务',userId,detailsData.activity_id)">继续任务</div>
+           <div class="home-btn details-apply disabled" disabled="" ng-if="detailsData.progress_status==4&&sekill_channel!=3">活动结束</div>
+           <div class="home-btn details-apply disabled" disabled="" ng-if="detailsData.progress_status==3&&sekill_channel!=3">领奖超时</div>
+           <div class="home-btn details-apply "  ng-if="detailsData.progress_status==5&&sekill_channel!=3"><a ng-href="http://huomanhao.com/wap/user/share/activity?userId={{$root.userId}}&activityId={{detailsData.activity_id}}" ng-click="statistic1('商品详情','分享赚钱',userId,detailsData.activity_id)" style="display: inline-block;color: #fff">分享赚钱</a></div>
+    <div class="coinKill-btn details-apply" ng-if="detailsData.sekill_status==2&&sekill_channel==3&&detailsData.progress_status==0" on-touch="apply()" ng-click="statistic1('商品详情','立即抢',userId,detailsData.activity_id)">立即抢</div>
+    <div class="coinKill-btn details-apply disabled" disabled="" ng-if="detailsData.sekill_status==3&&sekill_channel==3&&detailsData.progress_status==0" on-touch="apply()">活动结束</div>
+    <div class="coinKill-btn details-apply" ng-if="sekill_channel==3&&detailsData.progress_status==2" on-touch="apply()">立即领奖</div>
+    <div class="coinKill-btn details-apply disabled" disabled="" ng-if="detailsData.progress_status==3&&sekill_channel==3">领奖超时</div>
+    <div class="coinKill-btn details-apply disabled" disabled="" ng-if="detailsData.progress_status==-1&&sekill_channel==3">取消资格</div>
+    <div class="coinKill-btn details-apply"  ng-if="detailsData.progress_status==1&&sekill_channel==3" on-touch="goOn()" ng-click="statistic1('商品详情','继续任务',userId,detailsData.activity_id)">继续任务</div>
+    <div class="coinKill-btn details-apply end_time" style="background-color: #000" ng-if="detailsData.sekill_status==1&&sekill_channel==3&&detailsData.progress_status==0" on-touch="apply()">秒杀即将开始　　<em class="hour">00</em>时<em class="minute">00</em>分<em class="second">00</em>秒</div>
+  </ion-tabs>
+
+  <ion-tabs ng-if="$root.open_id!=0 && $root.open_id!=undefined&&$root.isCode=='true'"  class="tabs-icon-top  tabs-color-active-positive">
+    <div class="top" on-touch="top()" ng-show="getHeight()>1500"><i class="icon ion-arrow-up-a" ></i></div>
+          <div class="home-icon " ui-sref="tabs.home" style="padding-left: 20px;"><i class="bar-home details-icon"></i><p class="details-title">首页</p></div>
+              <div class="home-icon" ui-sref="loginbind" style="padding-right: 20px;"><i class="bar-share details-icon"></i><p class="details-title">分享</p></div>
+    <div class="home-btn details-coin-apply" ui-sref="loginbind" >金币兑换</div>
+    <div class="home-btn details-apply" ui-sref="loginbind" >免费申请</div>
+  </ion-tabs>
+  <ion-tabs ng-if="$root.open_id!=0 && $root.open_id!=undefined&&$root.isCode=='false'"  class="tabs-icon-top  tabs-color-active-positive">
+    <div class="top" on-touch="top()" ng-show="getHeight()>1500"><i class="icon ion-arrow-up-a" ></i></div>
+          <div class="home-icon " ui-sref="tabs.home" style="padding-left: 20px;"><i class="bar-home details-icon"></i><p class="details-title">首页</p></div>
+              <a class="home-icon" href="#/login?isState=1" style="padding-right: 20px;"><i class="bar-share details-icon"></i><p class="details-title">分享</p></a>
+    <a class="home-btn details-coin-apply" href="#/login?isState=1" >金币兑换</a>
+    <a class="home-btn details-apply" href="#/login?isState=1" >免费申请</a>
+  </ion-tabs>
+
+</ion-view>
+
+
+

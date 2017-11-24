@@ -1,0 +1,187 @@
+<link rel="stylesheet" href="/../../m/m_v2.0/css/account.css?366">
+<link rel="stylesheet" href="/../../m/m_v2.0/css/mobile-area-select.css?366">
+<style>
+  .data-header-pic{width: 100px;height: 100px;border-radius: 50%;vertical-align: middle}
+  .shopping-tip{line-height: 70px;margin: 0 24px 0 24px;font-size: 24px;color: #e5e5e5;font-family: "Hiragino Sans GB W3"}
+  .love_ck li{line-height: 53px;background-color: #f6f6f6;text-align: center;margin:0 12px 20px 12px;font-family: "Hiragino Sans GB W3";font-size: 24px;}
+  .love_ckeckeded{background-color: #ff366f!important;color: #fff;}
+  .button.button-positive{
+    background: #FF366F;
+    border-radius: 0 0 8px 8px;
+  }
+  .button.button-positive.activated{
+    background: #FF366F;
+  }
+  .select-area{
+    position: relative;
+    overflow: hidden;
+  }
+  .select-area select{
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    width: 100%;
+    height: 88px;
+  }
+  .select-area select option{
+    font-size: 28px;
+    line-height: 28px;
+  }
+  #demo1{ position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      width: 100%;
+      height: 88px;}
+  .city-picker .scroll li{font-size: 25px!important;text-align: center!important;}
+  .account-list-right-icon{
+      font-size: 30px;
+      color: #999999;
+      margin-left: 13px;
+    float: right;
+  }
+  .account-text{
+    line-height: normal!important;
+    position: absolute;
+        left: 0;
+        top: 0;
+    width: 100%;
+    padding-right: 4%!important;
+        height: 88px!important;
+  text-align: right;
+    font-size: 24px!important;
+        color: #999999!important;
+    background: url(../m/img/apply/next.png) no-repeat right center!important;
+  }
+  .pic{width: 130px;height: 130px;margin-left: 550px}
+  .item_associated_preview{width: 130px;height: 130px;margin-top: -130px;}
+   .pic input[type="file"] { width: 98px!important;  height: 98px!important;  position: absolute;  top: 0;  left: 0;  cursor: pointer;  opacity: 1;  filter: alpha(opacity=1);  outline: none;}
+</style>
+<ion-view>
+  <ion-content>
+    <div class="account-list border_b_1" style="height:130px;line-height: 130px;">
+        <span class="account-list-left">头像</span>
+      <i class="icon ion-ios-arrow-right  account-list-right-icon"></i>
+      <div class="pic" id="item_associated_pic">
+      	<img class="item_associated_preview" style="border-radius: 50%;"  id="item_associated_previewa" src="" />
+      </div>
+      <input type="file" style="opacity: 0;height: 130px;width: 130px;position: relative;left: 556px;top: -180px; z-index: 10;"  id="imgUrlheade">
+
+    </div>
+    <div class="account-list border_b_1 clearfix"  >
+        <span class="account-list-left">用户名</span><span class="account-list-right">{{personsinfo.nick}}<i class="icon ion-ios-arrow-right"></i></span>
+    </div>
+    <div data-tap-disabled="true" class="account-list border_b_1 clearfix select-area">
+        <span class="account-list-left">性别</span>
+      <select name="gender" id="gendersel" ng-blur="saveSend1()" ng-model="selectedgender" ng-options="x.text for x in gender">
+        <input type="hidden" value="{{selectedgender.value}}" class="selectedgender">
+      </select>
+      <i class="icon ion-ios-arrow-right  account-list-right-icon"></i><span class="account-list-right select-value">{{selectedgender.text}}</span>
+    </div>
+    <div class="account-list border_b_25 clearfix " style="height: 103px; position: relative;
+        overflow: hidden;">
+        <span class="account-list-left">生日</span>
+      <i class="icon ion-ios-arrow-right  account-list-right-icon"></i><span class="account-list-right demo1" ng-if="personsinfo.birthday==''||personsinfo.birthday==null||personsinfo.birthday==undefined">请设置</span>
+      <span class="account-list-right demo1" ng-if="personsinfo.birthday!=''&&personsinfo.birthday!=null&&personsinfo.birthday!=undefined" class="bst">{{dateFunction(personsinfo.birthday)|date:'yyyy-MM-dd'}}</span>
+      <input readOnly="readonly" ng-blur="saveSend1()" id="demo1"></span>
+    </div>
+    <div class="account-list border_b_1 clearfix">
+        <span class="account-list-left">购物偏好</span><span class="account-list-right"></span>
+    </div>
+    <div class="shopping-tip">
+      你最多可设置6个偏好，设置后系统会提高您偏好物品的中奖率
+    </div>
+    <ul class="love_ck row">
+       <li class="col" names="1"  ng-click="saveSend2()">潮流女装</li>
+       <li class="col" names="2" ng-click="saveSend2()">时尚男装</li>
+       <li class="col" names="3" ng-click="saveSend2()">鞋子箱包</li>
+       <li class="col" names="4" ng-click="saveSend2()">文娱运动</li>
+    </ul>
+    <ul class="love_ck row">
+    									<li class="col" names="5" ng-click="saveSend2()">珠宝配饰</li>
+    									<li class="col" names="6" ng-click="saveSend2()">数码家电</li>
+    									<li class="col" names="7" ng-click="saveSend2()">护肤彩妆</li>
+    									<li class="col" names="8" ng-click="saveSend2()">母婴用品</li>
+    </ul>
+    <ul class="love_ck row">
+      <li class="col" names="9" ng-click="saveSend2()">家庭保健</li>
+    	<li class="col" names="10" ng-click="saveSend2()">家纺家装</li>
+    	<li class="col" names="11" ng-click="saveSend2()">居家日用</li>
+    	<li class="col" names="12" ng-click="saveSend2()">美食特产</li>
+    </ul>
+    <ul class="love_ck row border_b_25">
+      <li class="col" names="13" ng-click="saveSend2()">车用周边</li>
+      <li class="col" names="14" ng-click="saveSend2()">内衣内裤</li>
+      <li class="col" names="15" ng-click="saveSend2()">中老年</li>
+      <!--<li class="col" names="15" ng-click="saveSend2()">大小家电</li>-->
+
+    </ul>
+    <div class="account-list border_b_1 clearfix" style="position: relative;
+            overflow: hidden;">
+      <span style="font-size: 28px;color: black">身高(cm)</span>
+      <input type="tel" class="account-text tall tall1" ng-if="personsinfo.stature==''||personsinfo.stature==undefined||personsinfo.stature==null" placeholder="未填写" ng-blur="saveSend2()">
+      <input type="tel" class="account-text tall" ng-if="personsinfo.stature!=''&&personsinfo.stature!=undefined&&personsinfo.stature!=null" value="{{personsinfo.stature}}" ng-blur="saveSend2()">
+           <!--<span class="account-list-left">身高(cm)</span><i class="icon ion-ios-arrow-right account-list-right-icon"></i><span class="account-list-right" ng-if="personsinfo.stature==''||personsinfo.stature==undefined||personsinfo.stature==null">未填写</span>-->
+      <!--<span class="account-list-right tallCm" style="display: none";  ng-if="personsinfo.stature!=''&&personsinfo.stature!=undefined&&personsinfo.stature!=null">{{personsinfo.stature}}</span>-->
+       </div>
+    <div class="account-list border_b_1 clearfix" style="position: relative;
+                overflow: hidden;">
+      <span style="font-size: 28px;color: black">体重(kg)</span>
+      <input type="tel" class="account-text kg" ng-if="personsinfo.weight==''||personsinfo.weight==undefined||personsinfo.weight==null" placeholder="未填写" ng-blur="saveSend2()">
+      <input type="tel" class="account-text kg" ng-if="personsinfo.weight!=''&&personsinfo.weight!=undefined&&personsinfo.weight!=null" value="{{personsinfo.weight}}" ng-blur="saveSend2()">
+
+           <!--<span class="account-list-left">体重(kg)</span><i class="icon ion-ios-arrow-right account-list-right-icon"></i><span class="account-list-right" ng-if="personsinfo.weight==''||personsinfo.weight==undefined||personsinfo.weight==null">未填写</span>-->
+    <!--<span class="account-list-right pesKg" style="display: none" ng-if="personsinfo.weight!=''&&personsinfo.weight!=undefined&&personsinfo.weight!=null">{{personsinfo.weight}}</span>-->
+    </div>
+    <div class="account-list border_b_1 clearfix" style="position: relative;
+                overflow: hidden;">
+      <span style="font-size: 28px;color: black">鞋码(码)</span>
+      <input type="tel" ng-if="personsinfo.shoe_size==''||personsinfo.shoe_size==undefined||personsinfo.shoe_size==null" class="account-text shoe_size" placeholder="未填写" ng-blur="saveSend2()">
+      <input type="tel" ng-if="personsinfo.shoe_size!=''&&personsinfo.shoe_size!=undefined&&personsinfo.shoe_size!=null" class="account-text shoe_size" value="{{personsinfo.shoe_size}}" ng-blur="saveSend2()">
+      <!--<span class="account-list-left">鞋码(码)</span><i class="icon ion-ios-arrow-right account-list-right-icon"></i><span class="account-list-right" ng-if="personsinfo.shoe_size==''||personsinfo.shoe_size==undefined||personsinfo.shoe_size==null">未填写</span>-->
+      <!--<span class="account-list-right shoesSize" style="display: none" ng-if="personsinfo.shoe_size!=''&&personsinfo.shoe_size!=undefined&&personsinfo.shoe_size!=null">{{personsinfo.shoe_size}}</span>-->
+    </div>
+
+
+    <div data-tap-disabled="true" class="account-list border_b_1 clearfix select-area" >
+           <span class="account-list-left">婚姻状况</span>
+      <select name="marriageStatus" id="marriageStatus" ng-blur="saveSend3()" ng-model="selectedmarriage" ng-options="x.text for x in marriage">
+        <input type="hidden" value="{{selectedmarriage.value}}" class="selectedmarriage">
+      </select>
+      <i class="icon ion-ios-arrow-right  account-list-right-icon"></i>
+      <span class="account-list-right select-value">{{selectedmarriage.text}}</span>
+      </div>
+    <div data-tap-disabled="true" class="account-list border_b_1 clearfix select-area" >
+           <span class="account-list-left">月收入</span>
+      <select  tabindex="14" id="news_othera" ng-blur="saveSend3()" ng-model="selectedincome" ng-options="x.text for x in income">
+        <input type="hidden" value="{{selectedincome.value}}" class="income">
+      </select>
+      <i class="icon ion-ios-arrow-right  account-list-right-icon"></i>
+      <span class="account-list-right select-value">{{selectedincome.text}}</span>
+       </div>
+    <div data-tap-disabled="true" class="account-list border_b_1 clearfix select-area" >
+      <span class="account-list-left">教育程度</span>
+      <select  tabindex="15" id="news_otherb" ng-blur="saveSend3()" ng-model="selectedSite" ng-options="x.text for x in culture">
+      <input type="hidden" value="{{selectedSite.value}}" class="culture">
+      </select>
+      <i class="icon ion-ios-arrow-right  account-list-right-icon"></i>
+      <span class="account-list-right select-value">{{selectedSite.text}}</span>
+    </div>
+    <div data-tap-disabled="true" class="account-list select-area border_b_1 clearfix" >
+           <span class="account-list-left">所属人群</span>
+      <select  tabindex="16"  id="news_otherc" ng-blur="saveSend3()" ng-model="selectedindustry" ng-options="x.text for x in industry">
+        <input type="hidden" value="{{selectedindustry.value}}" class="industry">
+      </select>
+      <i class="icon ion-ios-arrow-right  account-list-right-icon"></i>
+      <span class="account-list-right select-value">{{selectedindustry.text}}</span>
+       </div>
+    <!--<ionic-city-picker options='vm.CityPickData3'></ionic-city-picker>-->
+    <div class="account-list border_b_1 clearfix"  style="border-bottom:none;">
+      <span class="account-list-left">所在地区</span>
+      <input type="text" readonly="readonly" id="area" value="" ng-blur="sendcity()"  data-value="" style="display: inline-block;background:#ffffff;font-size:24px; text-align: right; color: #999999; height: 100%;width: 564px;">
+      <input type="hidden" id="hd_area" value=""/>
+      <span class="account-list-right"><i class="icon ion-ios-arrow-right"></i></span>
+    </div>
+   </ion-content>
+</ion-view>

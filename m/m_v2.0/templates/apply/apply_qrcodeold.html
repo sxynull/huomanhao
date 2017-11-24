@@ -1,0 +1,60 @@
+
+<link rel="stylesheet" href="/../../m/m_v2.0/css/apply.css?366">
+<ion-view style="background: #f6f6f6">
+  <ion-content>
+    <p class="top_hint">请在24点内完成申请，否则视为放弃！</p>
+    <div class="commodity_show">
+      <h2 class="show_title">{{shop_name}}</h2>
+      <dl>
+        <dd class="myfl"><img ng-src="{{items.item_b_o.item_pic}}"></dd>
+        <dt class="myfl">
+        <p class="goodsName">{{items.item_b_o.item_name}}</p>
+        <p class="goodsSku">规格：{{sku1}}&nbsp;&nbsp;&nbsp;&nbsp;{{sku2}}</p>
+        <p class="goodsNum">数量：{{items.item_b_o.buy_number}}件</p>
+        <p class="goodsPrice">{{items.item_b_o.item_price/100.00|currency:'￥'}}</p>
+        </dt>
+      </dl>
+    </div>
+    <div class="applyStep" style="height: 1420px;">
+      <div class="line myfl" style="margin-top: 8px">
+        <div class="line_top"></div>
+        <div class="line_strip" style="height: 686px"></div>
+        <div class="line_top" ></div>
+        <div class="line_strip" style="height: 485px"></div>
+        <div class="line_top" ></div>
+        <div class="line_strip" style="height: 200px"></div>
+      </div>
+      <div class="step_describe myfl">
+        <div class="step_describetop" style="height: 660px">
+          <p class="findbei">找到宝贝</p>
+          <p class="find_hint">打开手机淘宝客户端，登录淘宝账户<em style="color: #FF366F">{{items.tao_bao_name}}</em><br>
+            ①点击以下二维码图片&nbsp;&nbsp;②长按&nbsp;&nbsp;③保存到手机</p>
+          <img class="qrPiclink" style="width: 400px;height: 400px;display: inline-block;">
+          <p class="find_hint1">打开手机淘宝客户端，扫描刚才保存的图片找到宝贝<br><em style="color:#FF366F;text-decoration: underline;" onclick="window.location.href='#/helpcenterDetail?number=3'">查看教程</em></p>
+        </div>
+        <div class="step_describebuttom" style="height: 464px;border-bottom: 1px solid #e5e5e5;">
+          <p class="findbei" style="margin-top: 32px">核对宝贝标题</p>
+          <p class="find_hint1">请进入商品详情页，浏览商品详情<em style="color:#FF366F">不少于3分钟</em>，复制并核对目标宝贝的<em style="color:#FF366F">淘宝标题前3字</em>。</p>
+          <p class="goods_informationa" >核对标题：<input type="text" name="text1" class="caption" ng-model="Ctrltitle.title"  value="{{Ctrltitle.title}}" placeholder="请输入标题前3字" ng-change="Changein()" style="width: 288px;padding-left: 10px;text-align: left;color: #333333"/>
+            <input type="button" value="核对" class="checktitle" ng-click="Checktital()" />
+          </p>
+          <div style="height: 46px;width: 70%;margin-left: 138px;margin-bottom: 34px;">
+            <p class="error_textb" ng-show="flog1" style="font-size: 24px; height: 46px; line-height: 46px;color: #65b73a;padding-left: 34px;background: url(../../m/m_v2.0/img/apply/icon_right2.png) no-repeat left center;">标题核对正确！</p>
+            <p class="error_textb" ng-show="flog2" style="font-size: 24px; height: 46px; line-height: 46px;color: #FF366F;padding-left: 34px;background: url(../../m/m_v2.0/img/apply/error_bg.png) no-repeat left center;">标题核对错误！</p>
+            <p class="error_textb" ng-show="flog3" style="font-size: 24px; height: 46px; line-height: 46px;color: #FF366F;padding-left: 34px;background: url(../../m/m_v2.0/img/apply/error_bg.png) no-repeat left center;">请输入标题前三个字！</p>
+          </div>
+          <p class="goods_informationa" style="margin-top: 0;height: 116px; line-height: 116px;vertical-align:top;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;示例：<span class="sample_graph"></span></p>
+        </div>
+
+        <div class="step_describebuttom" style="height: 250px;">
+          <p class="findbei" style="margin-top: 32px">加入购物车</p>
+          <p class="find_hint1">核对正确后请回到<em style="color:#FF366F">淘宝</em>，把宝贝加入购物车</p>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+  <div class="bar bar-footer apply_Btn" ng-style="setbackgroundColor(flog1)">
+    <div class="title" ng-if="flog1" ng-click="toLink()" style=" font-size: 30px; height: 97px; line-height: 97px;">已加入购物车，下一步</div>
+    <div class="title" ng-if="!flog1" style=" font-size: 30px; height: 97px; line-height: 97px;">已加入购物车，下一步</div>
+  </div>
+</ion-view>

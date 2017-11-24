@@ -1,0 +1,108 @@
+
+<link rel="stylesheet" href="/../../m/m_v2.0/css/apply.css?366">
+<style>
+  .no_checked{
+    float: left;
+    height: 100%;
+    width: 50%;
+    line-height: 54px;
+    text-align: center;
+    color: #ff366f;
+    font-size: 26px;
+  }
+  .yes_checked{
+    background:#FF366F;
+    color: #ffffff;
+  }
+</style>
+<ion-view style="background: #f6f6f6">
+  <ion-content>
+    <p class="top_hint">请在24点前完成申请，通过搜索找到完成申请，提升20%中奖率！</p>
+    <div class="commodity_show">
+      <h2 class="show_title">店铺：{{shop_name}}</h2>
+      <dl>
+        <dd class="myfl"><img ng-src="{{items.item_b_o.item_pic}}">
+          <p class="pic_text">淘宝主图</p>
+        </dd>
+        <dt class="myfl">
+        <p class="goodsName">{{items.item_b_o.item_name}}</p>
+        <p class="wangwangname">掌柜旺旺：{{wangwang_name}}</p>
+        <p class="goodsSku">商品规格：{{sku1}}&nbsp;&nbsp;&nbsp;&nbsp;{{sku2}}</p>
+        <p class="goodsNum">商品数量：{{items.item_b_o.buy_number}}件</p>
+        <p class="goodsPrice">{{items.item_b_o.item_price/100.00|currency:'￥'}}</p>
+        </dt>
+      </dl>
+    </div>
+    <div class="applyStep" style="height: 1432px;">
+      <div class="line myfl" style="margin-top: 8px">
+        <div class="line_top"></div>
+        <div class="line_strip" style="height: 422px"></div>
+        <div class="line_top" ></div>
+        <div class="line_strip" style="height: 556px"></div>
+        <div class="line_top" ></div>
+        <div class="line_strip" style="height: 300px"></div>
+      </div>
+      <div class="step_describe myfl">
+        <div class="step_describetop" style="height: 396px">
+          <p class="findbei">找到宝贝</p>
+          <p class="find_hint" style="margin-bottom: 8px">打开手机淘宝客户端，登录淘宝账户<em style="color: #FF366F">{{items.tao_bao_name}}</em></p>
+          <p style=";line-height: 42px;color: #666666;font-size: 24px;margin-top: 3px"><span>搜索宝贝：</span><span class="key_text" style="color: #FF366F;display:inline;">{{keyword}}</span><span class="change_keytext" style="color: #0052fa;margin-left: 40px;text-decoration: underline" ng-click="Changebtn()">找不到，换一个</span></p>
+          <p style="line-height: 42px;color: #666666;font-size: 24px;margin-top: 3px"><span>排序方式：</span><span style="color: #FF366F">{{sort}}</span></p>
+          <p style="line-height: 42px;color: #666666;font-size: 24px;margin-top: 3px"><span style="float: left">折扣服务：</span><span style="color: #FF366F;width: 510px;float: left"><em ng-if="check1">包邮、</em><em ng-if="check2">赠送退货运费险、</em><em ng-if="check3">货到付款、</em><em ng-if="check4">天猫、</em><em ng-if="check5">正品保证、</em>
+               <em ng-if="check6">7+天内退货</em></span></p>
+          <p style="line-height: 42px;color: #666666;font-size: 24px;clear: both;margin-top: 3px"><span>价格区间：</span>
+            <span style="color: #FF366F" ng-if="showstriping">{{items.activity_search_b_o.priceLow/100|number:2}}-{{items.activity_search_b_o.priceHeight/100|number:2}}</span>
+            <span style="color: #FF366F" ng-if="!showstriping">{{pricerange}}</span>
+          </p>
+          <p style="line-height: 42px;color: #666666;font-size: 24px;margin-top: 3px"><span>发货地：</span><span style="color: #FF366F">{{items.activity_search_b_o.province}}</span></p>
+          </div>
+        <div class="step_describebuttom" style="height: 536px;border-bottom: 1px solid #e5e5e5;">
+          <p class="findbei" style="margin-top: 32px">核对宝贝<span style="color: #FF366F;font-size: 22px;">以下两种核对方式二选一</span></p>
+          <ul class="check_choose" style="height: 54px;width: 100%;border: 2px solid #FF366F;border-radius: 8px;margin-top: 30px;margin-bottom: 30px;">
+            <li class="no_checked yes_checked">核对淘口令</li>
+            <li class="no_checked">核对宝贝标题</li>
+          </ul>
+
+          <div class="check_command">
+          <p style="font-size: 24px;height: 54px;line-height: 54px;margin-top: 30px;color: #666666">1、复制淘口令<span style="color:#0052fa;margin-left: 28px;text-decoration: underline;" onclick="window.location.href='#/helpcenterDetail?number=30'">如何复制淘口令</span></p>
+          <p style="font-size: 24px;height: 54px;line-height: 54px;color: #666666">2、点击下方输入框，长按，粘贴</p>
+          <textarea class="command_text" ng-model="Ctrlcommand.command"  value="{{Ctrlcommand.command}}" ng-change="Changein1()" placeholder="点击手机淘宝商品详情页的“分享”按钮，之后弹框页面选择“复制链接”，然后将商品链接粘贴到此处"></textarea>
+          <input type="button" value="核对" class="checkcommand" ng-click="Checktital()" />
+            <div style="height: 46px;width: 70%;clear: both;margin-top: 6px">
+              <p class="error_textb" ng-show="flog4" style="font-size: 24px; height: 46px; line-height: 46px;color: #65b73a;padding-left: 34px;background: url(../../m/m_v2.0/img/apply/icon_right2.png) no-repeat left center;">淘口令核对正确！</p>
+              <p class="error_textb" ng-show="flog5" style="font-size: 24px; height: 46px; line-height: 46px;color: #FF366F;padding-left: 34px;background: url(../../m/m_v2.0/img/apply/error_bg.png) no-repeat left center;">淘口令核对错误！</p>
+              <p class="error_textb" ng-show="flog6" style="font-size: 24px; height: 46px; line-height: 46px;color: #FF366F;padding-left: 34px;background: url(../../m/m_v2.0/img/apply/error_bg.png) no-repeat left center;">淘口令不能为空！</p>
+            </div>
+          </div>
+
+
+          <div class="check_titel" style="display: none;">
+          <p class="find_hint1">请进入商品详情页，浏览商品详情<em style="color:#FF366F">不少于3分钟</em>，复制并核对目标宝贝的<em style="color:#FF366F">淘宝标题前3字</em>。</p>
+          <p class="goods_informationa" >核对标题：<input type="text" name="text1" class="caption" ng-model="Ctrltitle.title"  value="{{Ctrltitle.title}}" placeholder="请输入标题前3字" ng-change="Changein()" style="width: 288px;padding-left: 10px;text-align: left;color: #333333"/>
+            <input type="button" value="核对" class="checktitle" ng-click="Checktital()" />
+          </p>
+          <div style="height: 46px;width: 70%;margin-left: 138px;margin-bottom: 34px;">
+            <p class="error_textb" ng-show="flog1" style="font-size: 24px; height: 46px; line-height: 46px;color: #65b73a;padding-left: 34px;background: url(../../m/m_v2.0/img/apply/icon_right2.png) no-repeat left center;">标题核对正确！</p>
+            <p class="error_textb" ng-show="flog2" style="font-size: 24px; height: 46px; line-height: 46px;color: #FF366F;padding-left: 34px;background: url(../../m/m_v2.0/img/apply/error_bg.png) no-repeat left center;">标题核对错误！</p>
+            <p class="error_textb" ng-show="flog3" style="font-size: 24px; height: 46px; line-height: 46px;color: #FF366F;padding-left: 34px;background: url(../../m/m_v2.0/img/apply/error_bg.png) no-repeat left center;">请输入标题前三个字！</p>
+          </div>
+          <p class="goods_informationa" style="margin-top: 0;height: 116px; line-height: 116px;vertical-align:top;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;示例：<span class="sample_graph"></span></p>
+          </div>
+        </div>
+        <div class="step_describebuttom" style="height: 378px;">
+          <p class="findbei" style="margin-top: 32px">加入购物车</p>
+          <p class="find_hint1">核对正确后请回到<em style="color:#FF366F">淘宝</em>，把宝贝加入购物车</p>
+          <img src="../../m/m_v2.0/img/apply/addcar.png" style="width: 382px;height: 110px;margin-top: 20px">
+        </div>
+      </div>
+    </div>
+  </ion-content>
+  <div class="bar bar-footer apply_Btn" ng-if="chooseindex==1" ng-style="setbackgroundColor(flog1)">
+    <div class="title" ng-if="flog1" on-touch="toLink()" ng-click="statistic1('用户任务提交','关键词搜索',userId,items.item_b_o.activity_id)" style=" font-size: 30px; height: 97px; line-height: 97px;">已加入购物车，下一步</div>
+    <div class="title" ng-if="!flog1" style=" font-size: 30px; height: 97px; line-height: 97px;">已加入购物车，下一步</div>
+  </div>
+  <div class="bar bar-footer apply_Btn" ng-if="chooseindex==0" ng-style="setbackgroundColor(flog4)">
+    <div class="title" ng-if="flog4" on-touch="toLink()" ng-click="statistic1('用户任务提交','关键词搜索',userId,items.item_b_o.activity_id)" style=" font-size: 30px; height: 97px; line-height: 97px;">已加入购物车，下一步</div>
+    <div class="title" ng-if="!flog4" style=" font-size: 30px; height: 97px; line-height: 97px;">已加入购物车，下一步</div>
+  </div>
+</ion-view>

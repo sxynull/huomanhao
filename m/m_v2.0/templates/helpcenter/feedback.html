@@ -1,0 +1,29 @@
+
+<link rel="stylesheet" href="/../../m/m_v2.0/css/feedback.css?366">
+<ion-view style="background: #f6f6f6">
+  <ion-content>
+    <form name="bindForm">
+    <p class="common_question">选择您要反馈的问题类型（必填)</p>
+    <div class="question_list1">
+      <label><p class="question_listdetail1">申请流程 <input type="radio" value="1" name="feedbacktype" ng-checked="true" ng-model="level" class="myfr question_click"></p></label>
+      <label><p class="question_listdetail1">商品建议 <input type="radio" value="2" name="feedbacktype" ng-model="level" class="myfr question_click"></p></label>
+      <label><p class="question_listdetail1">售后服务 <input type="radio" value="3" name="feedbacktype" ng-model="level" class="myfr question_click"></p></label>
+      <label><p class="question_listdetail1">商家问题 <input type="radio" value="4" name="feedbacktype" ng-model="level" class="myfr question_click"></p></label>
+      <label><p class="question_listdetail1" style="border-bottom: none;">其他问题 <input type="radio" value="0" ng-model="level" name="feedbacktype" class="myfr question_click"></p></label>
+    </div>
+    <p class="common_question">您的建议（必填)</p>
+    <textarea class="suggest_text" ng-pattern="/^[\S]{0,200}$/"  name="content" placeholder="200字以内" ng-model="content" required ng-focus>
+    </textarea>
+    <p class="common_question">联系方式（必填)</p>
+    <input type="number" name="phone" style="height: 88px; width: 100%; padding-left: 24px; color: #999999; font-size: 26px; background: #ffffff;" class="phone_nuberquestion" ng-model="phone" placeholder="请输入手机号码" required ng-pattern="/^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|17[0|1|2|3|5|6|7|8]|18[0|1|2|3|4|5|6|7|8|9])\d{8}$/" ng-focus/>
+    </form>
+      <div style="height: 30px;margin-top: 20px;">
+        <p class="error_text2" ng-if="bindForm.content.$focused&&bindForm.content.$error.required">内容不能为空</p>
+        <p class="error_text2" ng-if="bindForm.content.$focused&&bindForm.content.$error.pattern">内容不能超过200字</p>
+        <p class="error_text2" ng-if="bindForm.phone.$focused&&bindForm.phone.$error.required">手机号不能为空</p>
+        <p class="error_text2" ng-if="bindForm.phone.$focused&&bindForm.phone.$error.pattern">手机号格式不正确</p>
+      </div>
+      <button class="registerBtn10"  ng-if="!bindForm.content.$error.required&&!bindForm.content.$error.pattern&&!bindForm.phone.$error.required&&!bindForm.phone.$error.pattern" on-touch="next(level,content,phone)">提交</button>
+    <button class="registerBtn10 disabled"  ng-if="bindForm.content.$error.required||bindForm.content.$error.pattern||bindForm.phone.$error.required||bindForm.phone.$error.pattern" disabled>提交</button>
+  </ion-content>
+</ion-view>

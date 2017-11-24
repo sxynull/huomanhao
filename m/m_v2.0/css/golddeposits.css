@@ -1,0 +1,116 @@
+.top_hinta{
+  height: 50px;
+  line-height: 50px;
+  width:100%;
+  padding-left: 8%;
+  font-size: 24px;
+  background: #ffecf2 url(../img/apply/top_hint.png) no-repeat 3% center;
+  background-size: 24px 24px;
+  color: #666666;
+}
+.VIP_choicea {
+  width: 100%;
+  padding-left: 4%;
+  padding-right: 4%;
+  background: #ffffff;
+}
+.gold_accounta{
+  height: 100px;
+  width: 100%;
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 28px;
+  color: #333333;
+  line-height: 100px;
+}
+.gold_accounta span{
+  margin-left: 30px;
+  color: #666666;
+}
+.gold_rechargea{
+  height: 100px;
+  width: 100%;
+  font-size: 28px;
+  color: #333333;
+  line-height: 100px;
+}
+.gold_rechargea .gold_rechargeinputa{
+  width: 520px;
+  padding-left: 30px;
+  height: 100px;
+  font-size: 28px;
+  line-height: 100px;
+  display: inline-block;
+}
+.VIP_choicea .choice_detaila {
+  height: 88px;
+  line-height: 88px;
+  border-top: 1px solid #e5e5e5;
+  width: 100%;
+  font-size: 26px;
+  color: #333333;
+}
+.VIP_choicea .choice_detaila .add_coina{
+  font-size: 22px;
+  height: 28px;
+  width: 130px;
+  background: #FF366F;
+  color: #ffffff;
+  border-radius: 14px;
+  text-align: center;
+  line-height: 28px;
+  margin-left: 50px;
+}
+.VIP_choicea .choice_detaila .VIP_clicka {
+  margin-top: 25px;
+  margin-left: 46px;
+  height: 38px;
+  width: 38px;
+}
+
+.pay_choicea {
+  width: 100%;
+  padding-left: 4%;
+  padding-right: 4%;
+  height: 178px;
+  background: #ffffff;
+  margin-top: 24px;
+}
+
+.pay_choicea .pay_titlea {
+  height: 88px;
+  width: 100%;
+  line-height: 88px;
+  border-bottom: 1px solid #e5e5e5;
+  color: #333333;
+  font-size: 28px;
+}
+
+.pay_choicea .pay_detaila {
+  height: 89px;
+  line-height: 89px;
+  color: #333333;
+  font-size: 26px;
+  padding-left: 40px;
+  background: url(../img/funddetail/iconweixin.png) no-repeat left center;
+}
+
+.pay_choicea .pay_clicka {
+  margin-top: 25px;
+  height: 38px;
+  width: 38px;
+}
+.registerBtna {
+  text-align: center;
+  line-height: 88px;
+  height: 88px;
+  width: 92%;
+  padding-left: 0;
+  background: #FF366F;
+  color: #FFFFFF;
+  margin-left: 4%;
+  margin-top: 152px;
+  font-size: 36px;
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  border: none;
+}

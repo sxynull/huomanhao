@@ -1,0 +1,76 @@
+<link rel="stylesheet" href="/../../m/m_v2.0/css/useVipdredge.css?366">
+<ion-view style="background: #f6f6f6">
+  <ion-content>
+<div class="userVip_top1">
+  <dl>
+    <dd class="myfl" ng-if="dataList.avatar!=''"><img ng-src="{{dataList.avatar}}"></dd>
+    <dd class="myfl" ng-if="dataList.avatar==''"><img src="../../m/m_v2.0/img/apply/business_index_user.png"></dd>
+    <dt class="myfl">
+    <p class="user_name1 myfl">{{dataList.nick}}</p><span class="user_namespan1 myfl"></span>
+    <p class="VIP_grade1 clear" ng-if="dataList.is_vip==1">
+      <span class="grade1" style="margin-right: 34px;">等级：VIP会员</span><span>到期时间：{{dataList.vip_expire}}</span>
+    </p>
+    <p class="VIP_grade1 clear" ng-if="dataList.is_vip==0">
+      <span class="grade1" style="margin-right: 34px;">普通用户</span>
+    </p>
+    </dt>
+  </dl>
+</div>
+<div class="VIP_choice1">
+  <P class="choice_title1">货蛮好VIP套餐</P>
+  <label><P class="choice_detail1 clearfix">1个月会员<input type="radio" name="viptype" checked="checked" class="myfr VIP_click1"><span class="myfr" style="color: #dab176;font-weight: 600;">￥9.90&nbsp;&nbsp;</span></P></label>
+  <label><P class="choice_detail1 clearfix">3个月会员<input type="radio" name="viptype" class="myfr VIP_click1"><span class="myfr" style="color: #dab176;font-weight: 600;">￥24.90</span></P></label>
+  <label><P class="choice_detail1 clearfix">12个月会员<input type="radio" name="viptype" class="myfr VIP_click1"><span class="myfr" style="color: #dab176;font-weight: 600;">￥89.90</span></P></label>
+</div>
+<div class="pay_choice1">
+  <P class="pay_title1">手机端暂不支持开通，请前往PC站完成充值<br>PC网址<a href="http://www.huomanhao.com" style="color: #FF366F;text-decoration: underline">www.huomanhao.com</a></P>
+</div>
+<div class="VIP_privilege1">
+  <p class="privilege_title1">尊享货蛮好7大会员特权</p>
+  <p class="VIP_privilegetop1 clearfix"><span class="myfl vip1">货蛮好VIP会员<em></em></span><span class="myfr common1">普通会员<em></em></span></p>
+</div>
+    <div style="background: #ffffff;padding-left: 58px;padding-right: 58px;width: 100%">
+    <span class="textleft">每日最多5次中奖次数 </span>
+    <span class="textright">每日最多1次中奖次数 </span>
+    <p class="privilegedetail"><span class="circle"></span><span class="line"></span><span class="main_pic"></span><span class="line" style="width: 94px;"></span><span class="circle"></span><span class="line" style="width: 154px;background: #b0b3b4"></span></p>
+    <p class="privilegegrade">每日最多中奖次数</p>
+    </div>
+    <div style="background: #ffffff;padding-left: 58px;padding-right: 58px;width: 100%">
+      <span class="textleft">优先等待</span>
+      <span class="textright" style="left: 430px;">排队等待</span>
+      <p class="privilegedetail"><span class="circle"></span><span class="line"></span><span class="main_pic" style="background: url(../../m/m_v2.0/img/apply/main_pic2.png) no-repeat"></span><span class="line" style="width: 94px;"></span><span class="circle"></span><span class="line" style="width: 154px;background: #b0b3b4"></span></p>
+      <p class="privilegegrade">专属客服服务</p>
+    </div>
+    <div style="background: #ffffff;padding-left: 58px;padding-right: 58px;width: 100%">
+      <span class="textleft">优先审核</span>
+      <span class="textright" style="left: 430px;">排队等待</span>
+      <p class="privilegedetail"><span class="circle"></span><span class="line"></span><span class="main_pic" style="background: url(../../m/m_v2.0/img/apply/main_pic3.png) no-repeat"></span><span class="line" style="width: 94px;"></span><span class="circle"></span><span class="line" style="width: 154px;background: #b0b3b4"></span></p>
+      <p class="privilegegrade">提现审核</p>
+    </div>
+    <div style="background: #ffffff;padding-left: 58px;padding-right: 58px;width: 100%">
+      <span class="textleft">充值金币多送20%</span>
+      <span class="textright" style="left: 333px;">没有折扣</span>
+      <p class="privilegedetail"><span class="circle"></span><span class="line"></span><span class="main_pic" style="background: url(../../m/m_v2.0/img/apply/main_pic4.png) no-repeat"></span><span class="line" style="width: 94px;"></span><span class="circle"></span><span class="line" style="width: 154px;background: #b0b3b4"></span></p>
+      <p class="privilegegrade">充值金币享折扣</p>
+    </div>
+    <div style="background: #ffffff;padding-left: 58px;padding-right: 58px;width: 100%">
+      <span class="textleft">VIP专属标识</span>
+      <span class="textright" style="left: 390px;">没有标识</span>
+      <p class="privilegedetail"><span class="circle"></span><span class="line"></span><span class="main_pic" style="background: url(../../m/m_v2.0/img/apply/main_pic5.png) no-repeat"></span><span class="line" style="width: 94px;"></span><span class="circle"></span><span class="line" style="width: 154px;background: #b0b3b4"></span></p>
+      <p class="privilegegrade">会员金属标识</p>
+    </div>
+    <div style="background: #ffffff;padding-left: 58px;padding-right: 58px;width: 100%">
+      <span class="textleft">可参与</span>
+      <span class="textright" style="left: 453px;">不能参与</span>
+      <p class="privilegedetail"><span class="circle"></span><span class="line"></span><span class="main_pic" style="background: url(../../m/m_v2.0/img/apply/main_pic6.png) no-repeat"></span><span class="line" style="width: 94px;"></span><span class="circle"></span><span class="line" style="width: 154px;background: #b0b3b4"></span></p>
+      <p class="privilegegrade">专享活动（即将上线）</p>
+    </div>
+    <div style="background: #ffffff;padding-left: 58px;padding-right: 58px;width: 100%;padding-bottom: 30px;">
+      <span class="textleft">可参与</span>
+      <span class="textright" style="left: 453px;">不能参与</span>
+      <p class="privilegedetail"><span class="circle"></span><span class="line"></span><span class="main_pic" style="background: url(../../m/m_v2.0/img/apply/main_pic7.png) no-repeat"></span><span class="line" style="width: 94px;"></span><span class="circle"></span><span class="line" style="width: 154px;background: #b0b3b4"></span></p>
+      <p class="privilegegrade">专属试用（即将上线）</p>
+    </div>
+    <button onclick="window.location.href='http://www.huomanhao.com'" class="registerBtn7">开通会员</button>
+  </ion-content>
+</ion-view>

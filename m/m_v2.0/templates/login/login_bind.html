@@ -1,0 +1,69 @@
+<link rel="stylesheet" href="/../../m/m_v2.0/css/withdrawbind.css?366">
+<style>
+  .bind_phone2 .bind_phoneinput2{
+    width: 100%;
+    line-height: normal;
+    background: url(../../m/m_v2.0/img/apply/phone_bg.png) no-repeat left center;
+  }
+  .bind_code2 .bind_codeinput2{
+    width: 490px;
+    line-height: normal;
+    background: url(../../m/m_v2.0/img/apply/code_bg.png) no-repeat left center;
+  }
+  .bind_code2 .getCode {
+    display: inline-block;
+    width: 190px;
+    height: 46px;
+    line-height: 100px;
+    text-align: center;
+    font-size: 26px;
+    color: #ff366f;
+    border: 1px solid #FF366F;
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -o--border-radius: 6px;
+    position: relative;
+    top: 16px;
+  }
+  .bind_code2 .getCode i{
+    line-height: 46px;
+  }
+</style>
+<ion-view style="background: #f6f6f6">
+  <ion-content>
+    <form name="loginbindForm">
+      <div class="bind_content2">
+       <p class="bind_phone2"><input type="number" name="text1" class="bind_phoneinput2" required ng-pattern="/^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|17[0|1|2|3|5|6|7|8]|18[0|1|2|3|4|5|6|7|8|9])\d{8}$/" placeholder="请输入手机号" ng-model="bind_phoneinput2" ng-focus/></p>
+        <p class="bind_code2" style="border-bottom: none"><input type="number" name="text2" ng-model="bind_codeinput2" required class="bind_codeinput2" placeholder="请输入验证码" ng-focus/>
+          <span class="getCode">
+            <i class="note_click" ng-click="sendcode1()"  style="font-style: normal; margin-left: 28px; float: left">获取验证码</i>
+    <i id="note_time" style="float: left; font-style: normal;margin-left: 26px;display: none;">60</i><i class="note_time1" style="color: #FF366F;float: left;font-style: normal;display: none;">秒后重发</i> </span></p>
+      </div>
+
+    <div style="height: 30px;margin-top: 20px;" ng-if="!flog1">
+      <p class="error_text2" ng-show="loginbindForm.text1.$focused&&loginbindForm.text1.$error.required">手机号不能为空</p>
+      <p class="error_text2" ng-show="loginbindForm.text1.$focused&&loginbindForm.text1.$error.pattern">手机号格式不正确</p>
+      <p class="error_text2" ng-show="loginbindForm.text2.$focused&&loginbindForm.text2.$error.required">验证码不能为空</p>
+    </div>
+      <div style="height: 30px;margin-top: 20px;" ng-if="flog1">
+        <p class="error_text2" ng-if="flog2">手机号不能为空</p>
+        <p class="error_text2" ng-if="!flog2">手机号格式不正确</p>
+      </div>
+    <button ng-disabled="
+loginbindForm.text1.$error.required||
+loginbindForm.text2.$error.required||
+loginbindForm.text1.$error.pattern"
+            ng-class="{registerBtn2:
+!loginbindForm.text1.$error.required&&
+!loginbindForm.text2.$error.required&&
+!loginbindForm.text1.$error.pattern, registerBtn22:
+loginbindForm.text1.$error.required||
+loginbindForm.text2.$error.required||
+loginbindForm.text1.$error.pattern }" ng-click="loginbind(bind_phoneinput2,bind_codeinput2)">绑定</button>
+    </form>
+    <p style="font-size: 26px;text-align: center;line-height: 55px;margin-top:90px;">----------  还没有货蛮好账号 ----------</p>
+    <button class="registerBtn2" style="margin-top: 35px;"  ui-sref="loginregister">注册</button>
+  </ion-content>
+</ion-view>

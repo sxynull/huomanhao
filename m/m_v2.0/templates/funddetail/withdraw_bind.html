@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="/../../m/m_v2.0/css/withdrawbind.css?366">
+<ion-view style="background: #f6f6f6">
+  <ion-content>
+<p class="bindtop_hint2">请注意：绑定的账号必须与支付宝账户一致，如提交的账户不一致导致无法打款，网站概不负责。</p>
+    <form name="withdrawForm">
+<div class="bind_content2">
+<p class="bind_name2">姓名<input type="text" name="text1" ng-model="bind_nameinput2" class="bind_nameinput2" ng-pattern="/^.{2,50}$/" required placeholder="姓名必须与支付宝认证的姓名一致!" ng-focus/></p>
+<p class="bind_payaccount2">支付宝账号<input type="text" name="text2" ng-model="bind_payaccountinput2" class="bind_payaccountinput2" required ng-pattern="/(^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|17[0|1|2|3|5|6|7|8]|18[0|1|2|3|4|5|6|7|8|9])\d{8}$)|(^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$)/" placeholder="请输入支付宝账号" ng-focus/></p>
+<p class="bind_phone2">绑定手机号<input type="number" name="text3" style="background: none;" class="bind_phoneinput2" ng-model="bind_phoneinput2" value="{{phonenum}}" readonly="readonly"/>
+  <span class="getCode"><i class="note_click" ng-click="sendcode()"  style="font-style: normal; margin-left: 28px; float: left">获取验证码</i>
+    <i id="note_time" style="float: left; font-style: normal;margin-left: 26px;display: none;">60</i><i class="note_time1" style="color: #FF366F;float: left;font-style: normal;display: none;">秒后重发</i> </span></p>
+<p class="bind_code2" style="border-bottom: none">输入验证码<input type="tel" name="text4" ng-model="bind_codeinput2" required class="bind_codeinput2" placeholder="请输入验证码" ng-focus/></p>
+</div>
+    </form>
+<div style="height: 30px;margin-top: 20px;">
+  <p class="error_text2" ng-show="withdrawForm.text1.$focused&&withdrawForm.text1.$error.required" >姓名不能为空</p>
+  <p class="error_text2" ng-show="withdrawForm.text1.$focused&&withdrawForm.text1.$error.pattern" >姓名格式不正确</p>
+  <p class="error_text2" ng-show="withdrawForm.text2.$focused&&withdrawForm.text2.$error.required">支付宝账号不能为空</p>
+  <!--<p class="error_text2" ng-show="withdrawForm.text3.$focused&&withdrawForm.text3.$error.required">手机号不能为空</p>-->
+  <p class="error_text2" ng-show="withdrawForm.text2.$focused&&withdrawForm.text2.$error.pattern">支付宝格式为手机号或邮箱</p>
+  <p class="error_text2" ng-show="withdrawForm.text4.$focused&&withdrawForm.text4.$error.required">验证码不能为空</p>
+</div>
+<button ng-disabled="
+withdrawForm.text1.$error.required||
+withdrawForm.text1.$error.pattern||
+withdrawForm.text2.$error.required||
+withdrawForm.text2.$error.pattern||
+withdrawForm.text4.$error.required"
+        ng-class="{registerBtn2:
+!withdrawForm.text1.$error.required&&
+!withdrawForm.text1.$error.pattern&&
+!withdrawForm.text2.$error.required&&
+!withdrawForm.text2.$error.pattern&&
+!withdrawForm.text4.$error.required, registerBtn22:
+withdrawForm.text1.$error.required||
+withdrawForm.text1.$error.pattern||
+withdrawForm.text2.$error.required||
+withdrawForm.text2.$error.pattern||
+withdrawForm.text4.$error.required }" ng-click="sendpaycount()">下一步</button>
+    </ion-content>
+</ion-view>

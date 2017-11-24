@@ -1,0 +1,75 @@
+<link rel="stylesheet" href="/../../m/m_v2.0/css/taobaoaccountbind.css?366">
+<ion-view style="background: #f6f6f6">
+  <ion-content>
+<!--<div class="shadow_select" style="display: none"></div>-->
+<div class="reject_top">
+<img src="../../img/apply/reject_error.png">
+  <p class="reject_text">很抱歉，您的申请被驳回</p>
+  <p class="reject_textdetail">驳回原因：<em style="color: #FF366F">账号等级不符合要求</em><br>
+    您可以选择重新绑定符合要求的淘宝账户</p>
+</div>
+    <form name="bindForm">
+    <div class="bind_taobao">
+      <p class="bind_taobaoaccount" style="color: #000000;">淘宝账户<input type="text" class="bind_taobaoaccountinput bindtaobao_name" name="taobaoNum" ng-model="bindNum" required ng-focus/></p>
+      <!--<p class="bind_taobaoaccount">淘宝等级<input type="text" class="bind_taobaoaccountinput"></p>-->
+      <div class="item1 clearfix">
+        <span class="item_lable myfl">淘宝等级</span>
+        <input type="hidden" value="0" name="taobaoLevel" id="taobao_name"/>
+        <div class="taobaoBind_frame" style="float: left;">
+          <span class="taobaoBind_grades" ng-click="modal.show()">请选择等级</span>
+        </div>
+        <br/>
+      </div>
+    </div>
+    </form>
+    <div style="height: 46px;width: 90%;margin-left: 4%;" >
+      <p class="error_texta" ng-show="bindForm.taobaoNum.$focused&&bindForm.taobaoNum.$error.required||boobind" style="font-size: 24px; height: 46px; line-height: 46px;color: #FF366F;padding-left: 34px;background: url(../../m/m_v2.0/img/apply/error_bg.png) no-repeat left center;">请填写淘宝账号,不能为纯数字、手机号、或者邮箱！</p>
+    </div>
+    <div class="attention6">
+      <span class="attention_notice6">绑定须知：</span>
+      <p class="attention_text6">1、请填写您的淘宝账号，而不是您的淘宝账号绑定的手机或者邮箱。<em style="color: #FF366F;" onclick="window.location.href='#/helpcenterDetail?number=29'">不知道自己的淘宝会员名点这里</em><br>
+        2、淘宝账号需完成实名认证。<br>
+        3、请核对淘宝账号后填写，如填写的账号不是本人所使用，则会影响活动中奖率！<br>
+        4、提交后预计在24小时内完成审核操作，审核通过后才能获得返现。<br>
+        5、淘宝账号等级不低于2星且中差评率<1%，注册时间>1个月。<br>
+        6、淘宝账号认证通过后无法修改或删除。</p>
+    </div>
+
+    <button ui-sref="taobaoaccoutSucceed" style="margin-bottom: 100px" ng-disabled="
+bindForm.taobaoNum.$error.required||!myVar" ng-class="{registerBtn61:bindForm.taobaoNum.$error.required||!myVar,registerBtn6:!bindForm.taobaoNum.$error.required&&myVar}">立即绑定</button>
+  </ion-content>
+</ion-content>
+</ion-view>
+
+<script id="templates/modaltaobaobind.html" type="text/ng-template">
+  <ion-modal-view style="display: block;
+    position: absolute;
+    top: 40%;
+    z-index: 10;
+    /*overflow: hidden;*/
+    min-height: 100%;
+    width: 100%;
+    text-align: center;
+    background-color: #fff;">
+    <ion-scroll>
+      <ul class="taobaoBind_type_info" >
+        <li class="taobaoBind_type_title" ng-click="checkgrand($event)" data="0" style="margin-bottom: 12px;color: #333333;font-size: 26px;">请选择等级</li>
+        <!--<li data="11"><img src="/img/user/user_taobao.png" alt=""/></li>-->
+        <li data="12" ng-click="checkgrand($event);modal.hide()"><img src="../../img/apply/user_taobaoa.png" alt=""/></li>
+        <li data="13" ng-click="checkgrand($event);modal.hide()"><img src="../../img/apply/user_taobaob.png" alt=""/></li>
+        <li data="14" ng-click="checkgrand($event);modal.hide()"><img src="../../img/apply/user_taobaoc.png" alt=""/></li>
+        <li data="15" ng-click="checkgrand($event);modal.hide()"><img src="../../img/apply/user_taobaod.png" alt=""/></li>
+        <li data="21" ng-click="checkgrand($event);modal.hide()"><img src="../../img/apply/user_taobaoe.png" alt=""/></li>
+        <li data="22" ng-click="checkgrand($event);modal.hide()"><img src="../../img/apply/user_taobaof.png" alt=""/></li>
+        <li data="23" ng-click="checkgrand($event);modal.hide()"><img src="../../img/apply/user_taobaog.png" alt=""/></li>
+        <li data="24" ng-click="checkgrand($event);modal.hide()"><img src="../../img/apply/user_taobaoh.png" alt=""/></li>
+        <li data="25" ng-click="checkgrand($event);modal.hide()"><img src="../../img/apply/user_taobaoi.png" alt=""/></li>
+        <li data="31" ng-click="checkgrand($event);modal.hide()"><img src="../../img/apply/user_taobaoj.png" alt=""/></li>
+        <li data="32" ng-click="checkgrand($event);modal.hide()"><img src="../../img/apply/user_taobaok.png" alt=""/></li>
+        <li data="33" ng-click="checkgrand($event);modal.hide()"><img src="../../img/apply/user_taobaol.png" alt=""/></li>
+        <li data="34" ng-click="checkgrand($event);modal.hide()"><img src="../../img/apply/user_taobaom.png" alt=""/></li>
+        <li data="35" style="border-bottom: none;" ng-click="checkgrand($event);modal.hide()"><img src="../../img/apply/user_taobaon.png" alt=""/></li>
+      </ul>
+    </ion-scroll>
+  </ion-modal-view>
+</script>

@@ -1,0 +1,493 @@
+<link rel="stylesheet" href="/../../m/m_v2.0/css/home.css?366">
+<style>
+  .bannerNext:last-child img{margin-top: -20px;}
+  .picturesholder{
+    height:250px;
+    		overflow: hidden;
+    		white-space: nowrap;
+
+  }
+  .header_classify1{
+    height: 88px;
+    background: #f6f6f6;
+    padding: 0;
+  }
+  .classifyul{
+    height:88px;
+    width: 670px;
+    background: #F6F6F6;
+    line-height: 88px;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+  .classifyul li{
+    display: inline-block;
+    height: 88px;
+    font-size: 28px;
+    color: #333333;
+    padding-left: 17px;
+    padding-right: 16px;
+  }
+  .search_link{
+    height: 88px;
+    width: 80px;
+    background: #F6F6F6 url(../../m/m_v2.0/img/apply/grabble.png) no-repeat center;
+    box-shadow:-12px 0px 12px #F1F0F0,
+    0 0 0 #888888,
+    0 0 0 #888888,
+    0 0 0 #888888;
+    position: relative;
+    z-index: 99999;
+  }
+  .classifyul .current1{
+  color: #FF366F;
+  }
+  .col-38{
+    webkit-box-flex: 0;
+    -webkit-flex: 0 0 40%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 40%;
+    -ms-flex: 0 0 40%;
+    flex: 0 0 40%;
+    max-width: 40%;
+  }
+  .col-28{
+    webkit-box-flex: 0;
+    -webkit-flex: 0 0 28%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 28%;
+    -ms-flex: 0 0 28%;
+    flex: 0 0 28%;
+    max-width: 28%;
+  }
+  .font_size24{
+    font-size:24px;
+    line-height:2rem;
+    height: 2rem;
+    margin-top: 12px;
+  }
+  /*.scrollxli{*/
+    /*transform:translate( 90px, 0)*/
+  /*}*/
+</style>
+<ion-view view-title="首页">
+  <div id="box" class="floating_collar my-drag"  ng-if="$root.open_id==0 || $root.open_id==undefined">
+    <img src="../../m/m_v2.0/img/floating_collar1.png" class="floating_collar1img" style="display: block;height: 154px;width: 114px;" ng-if="neworold==1" ui-sref="newpeopleWelfare">
+    <img src="../../m/m_v2.0/img/floating_collar2.png" class="floating_collar1img" style="display: block;height: 154px;width: 114px;" ng-if="neworold==0" ui-sref="olduserWelfare">
+  </div>
+  <ion-header class="bar bar-header header_classify1">
+    <ion-scroll class="scrollxli" direction="x" scrollbar-x="false" scrollbar-y="false">
+      <ul class="classifyul">
+        <li class="current1" onclick="window.location.href='#/tabs/goodList?item_category_id=0'" ng-click="statistic('首页分类导航','精选',userId)">精选</li>
+        <li onclick="window.location.href='#/tabs/goodList?item_category_id=1'" ng-click="statistic('首页分类导航','女装',userId)">女装</li>
+        <li onclick="window.location.href='#/tabs/goodList?item_category_id=2'" ng-click="statistic('首页分类导航','男装',userId)">男装</li>
+        <li onclick="window.location.href='#/tabs/goodList?item_category_id=3'" ng-click="statistic('首页分类导航','箱包',userId)">箱包</li>
+        <li onclick="window.location.href='#/tabs/goodList?item_category_id=4'" ng-click="statistic('首页分类导航','运动',userId)">运动</li>
+        <li onclick="window.location.href='#/tabs/goodList?item_category_id=5'" ng-click="statistic('首页分类导航','配饰',userId)">配饰</li>
+        <li onclick="window.location.href='#/tabs/goodList?item_category_id=6'" ng-click="statistic('首页分类导航','数码',userId)">数码</li>
+        <li onclick="window.location.href='#/tabs/goodList?item_category_id=7'" ng-click="statistic('首页分类导航','彩妆',userId)">彩妆</li>
+        <li onclick="window.location.href='#/tabs/goodList?item_category_id=8'" ng-click="statistic('首页分类导航','母婴',userId)">母婴</li>
+        <li onclick="window.location.href='#/tabs/goodList?item_category_id=9'" ng-click="statistic('首页分类导航','保健',userId)">保健</li>
+        <li onclick="window.location.href='#/tabs/goodList?item_category_id=10'" ng-click="statistic('首页分类导航','家装',userId)">家装</li>
+        <li onclick="window.location.href='#/tabs/goodList?item_category_id=11'" ng-click="statistic('首页分类导航','日用',userId)">日用</li>
+        <li onclick="window.location.href='#/tabs/goodList?item_category_id=12'" ng-click="statistic('首页分类导航','美食',userId)">美食</li>
+        <li onclick="window.location.href='#/tabs/goodList?item_category_id=13'" ng-click="statistic('首页分类导航','车用',userId)">车用</li>
+      </ul>
+    </ion-scroll>
+    <div class="search_link" ui-sref="search">
+    </div>
+  </ion-header>
+
+  <ion-content>
+
+
+
+      <div class="item-input-inset bar mtb15 search" style="margin-top: 30px;margin-bottom: 14px;visibility: hidden">
+                     <form action="javascript:;" style="width: 100%;">
+                       <label class="item-input-wrapper">
+                         <i class="icon  ion-ios-search-strong pink" ui-sref="search" style="font-size: 28px"></i>
+                         <input  readOnly="readonly" class="icon ion-ios-search-strong searchInput" type="search" placeholder="搜索好货宝贝" ng-model="searchObj.searchValue" ng-value="{{searchObj.searchValue}}" ui-sref="search">
+                       </label>
+                   </form>
+      </div>
+          <section>
+            <ion-slide-box ng-if="adsList.length!=0" auto-play="true" does-continue="true" slide-interval="3000" show-pager="true" on-slide-changed="slideChanged($index)">
+            　　<ion-slide class="bannerNext" ng-repeat="ads in adsList" repeat-done="repeatDone()"><a  ng-href="{{ads.target_url}}" ><img  ng-src="{{ads.link_url}}!750x300"  alt="" width="750" height="300"  /></a></ion-slide>
+            </ion-slide-box>
+
+          </section>
+             <div class="row ptb3425 row-no-padding" style="padding-bottom:0.5rem!important;">
+                         <a class="col col-25 div font_color_dark " style="text-align: center" ui-sref="newList"><img class="home_icon_size" src="img/home_icon1.png" alt=""><div class="font_size24">新人专享</div></a>
+                         <a class="col col-25 div font_color_dark " style="text-align: center" onclick="window.location.href='#/tabs/goodList?sort_type=1&sort_enum=DESC&item_category_id=&item_type=&current_page=1'"><img class="home_icon_size" src="img/home_icon2.png" alt=""><div class="font_size24">好货精选</div></a>
+                         <a class="col col-25 div font_color_dark " style="text-align: center" ui-sref="coinIndex"><img class="home_icon_size" src="img/home_icon3.png" alt=""><div class="font_size24">金币必中</div></a>
+                         <a class="col col-25 div font_color_dark " style="text-align: center" ui-sref="tabs.spokesmanPage"><img class="home_icon_size" src="img/home_icon4.png" alt=""><div class="font_size24">邀请奖13元</div></a>
+             </div>
+    <div class="row ptb3425 row-no-padding" style="padding-bottom:1.5rem!important;padding-top: 1.2rem!important;">
+      <a class="col col-25 div font_color_dark " style="text-align: center" onclick="window.location.href='#/tabs/goodList?sort_type=1&sort_enum=DESC&item_category_id=&item_type=1&current_page=1'"><img class="home_icon_size" src="img/home_icon5.png" alt=""><div class="font_size24">高价值精品</div></a>
+      <a class="col col-25 div font_color_dark " style="text-align: center" onclick="window.location.href='#/tabs/goodList?sort_type=1&sort_enum=DESC&item_category_id=&item_type=2&current_page=1'"><img class="home_icon_size" src="img/home_icon6.png" alt=""><div class="font_size24">99%高中奖率</div></a>
+      <a class="col col-25 div font_color_dark " style="text-align: center" onclick="window.location.href='#/helpcenterDetail?number=4'"><img class="home_icon_size" src="img/home_icon7.png" alt=""><div class="font_size24">申请攻略</div></a>
+      <a class="col col-25 div font_color_dark " style="text-align: center" ui-sref="integralTest"><img class="home_icon_size" src="img/home_icon8.png" alt=""><div class="font_size24">积分兑换</div></a>
+    </div>
+             <div class="row border_t_1 border_b_25 row-no-padding" >
+                        <span  class=" col  col-21 col-offset-5 notice">货蛮好<i>头条</i>丨</span>
+                        <ion-slide-box ng-if="noticeList.length>0" does-continue="true" slide-interval="3000" auto-play="true" show-pager="false" class="notice_text col">
+                               <ion-slide ng-repeat="noticeLists in noticeList"><li><a href="">{{noticeLists.time}}:<span class="pink">{{noticeLists.name}}</span> {{noticeLists.type}}<!--<span class="pink">12000</span>-->{{noticeLists.content}}</a></li></ion-slide>
+                        </ion-slide-box>
+              </div>
+
+          <div class="row row-no-padding border_b_25" style="margin-top: 0;">
+            <!--<a href="#/todayList"><img style="height: 239px" ng-src="{{adsNewList.link_url}}"  ></a>-->
+            <div class="coinWillbein" style="float: left"><a ng-href="{{advertistodayList[0].target_url}}" ng-click="statistic('首页导航入口','金币必中',userId)"><img ng-src="{{advertistodayList[0].link_url}}!290x450" style="width: 290px;height: 450px;"></a></div>
+            <div class="advertising_center" style="float: left;margin-left: 11px;">
+              <div class="today_update"><a ng-href="{{advertistodayList[1].target_url}}" ng-click="statistic('首页分类导航','今日上新',userId)"><img ng-src="{{advertistodayList[1].link_url}}!220x220" style="width: 220px;height: 220px"></a></div>
+              <div class="high_value" style="margin-top: 11px"><a ng-href="{{advertistodayList[2].target_url}}" ng-click="statistic('首页分类导航','高价值精品',userId)"><img ng-src="{{advertistodayList[2].link_url}}!220x220" style="width: 220px;height: 220px"></a></div>
+            </div>
+            <div class="advertising_center" style="float: right;margin-left: 11px">
+              <div class="today_update"><a ng-href="{{advertistodayList[3].target_url}}" ng-click="statistic('首页分类导航','新人专享',userId)"><img ng-src="{{advertistodayList[3].link_url}}!220x220" style="width: 220px;height: 220px"></a></div>
+              <div class="high_value" style="margin-top: 11px"><a ng-href="{{advertistodayList[4].target_url}}" ng-click="statistic('首页分类导航','金币秒杀',userId)"><img ng-src="{{advertistodayList[4].link_url}}!220x220" style="width: 220px;height: 220px"></a></div>
+            </div>
+          </div>
+            <div class="row row-no-padding ">
+              <span class="col col-30 col-offset-5 highPriceTitle">新人专享</span>
+              <a class="col col-30 col-offset-70 text-right highPriceMore" ng-click="statistic('首页分类导航','新人专享更多',userId)"  ui-sref="newList">更多</a>
+            </div>
+
+               <section>
+                 <ion-scroll direction="x">
+                   <ul class="row row-no-padding" style="margin-left:2%;">
+                                          <li class="col text_center col-28  newGoodList"  ng-repeat="newList in newmenList" >
+                                            <div  class="text-center ">
+                                              <a  href="#/details?activityId={{newList.activity_id}}&newType=5" ng-click="statistic1('首页商品列表','新人专享列表',userId,newList.activity_id)"><img class="newGoodsImg"  ng-src="{{newList.item_pic}}!152x160" alt=""></a>
+                                            </div>
+                                            <div class="originalPriceText">￥{{newList.item_price /100 | number:2}}</div>
+                                            <!--<div class="backPrice"><span>返</span>￥10.00</div>-->
+                                            <div class="backPrice">免费领取</div>
+                                          </li>
+
+
+                                        </ul>
+                 </ion-scroll>
+               </section>
+
+
+
+
+          <!--<div class="row row-no-padding" style="background-color: #f6f6f6;margin-top: 37px" >-->
+                     <!--<span class="col col-30 col-offset-5 highPriceTitle">高价值推荐</span>-->
+                     <!--<a class="col col-30 col-offset-70 text-right highPriceMore"   ui-sref="highList">更多>></a>-->
+          <!--</div>-->
+
+          <!--潮流女装-->
+    <div ng-if="trendList.length!=0&&isShow==1">
+          <div class="classifyheader">
+            <span style="width: 242px;border-bottom: 1px solid #e5e5e5;position: relative;top: -8px;"></span>
+            <span class="classifytitle">潮流女装</span>
+            <span style="width: 230px;border-bottom: 1px solid #e5e5e5;position: relative;top: -8px;"></span>
+            <!-- <a class=" col-30 col-offset-70 text-right trendMore" ng-href="{{trendurl.target_url}}" ng-click="statistic('首页分类导航','女装',userId)">更多</a> -->
+            <span style="width: 10px;border-bottom: 1px solid #e5e5e5;position: relative;top: -8px;margin-left: 10px;"></span>
+          </div>
+          <div class="main_advertising">
+            <a ng-href="{{trendurl.target_url}}" ng-click="statistic('首页分类导航','女装',userId)"><img ng-src="{{trendurl.link_url}}!750x350" ></a>
+          </div>
+          <section>
+      <ion-scroll direction="x">
+        <ul class="row row-no-padding" style="margin-left:2%;margin-top: 38px;margin-right: 3%">
+          <li class="col text_center col-38  newGoodList"  ng-repeat="digital in trendList" >
+            <div  class="text-center ">
+              <a  href="#/details?activityId={{digital.activity_id}}&newType=1" ng-click="statistic1('首页商品列表','潮流女装',userId,digital.activity_id)"><img class="newGoodsImg1"  ng-src="{{digital.item_pic}}!264x264" alt=""></a>
+            </div>
+            <p class="originalgoodsName">{{digital.item_name}}</p>
+            <div class="originalPriceText" style="margin-bottom: 18px;">￥{{digital.item_price /100 | number:2}}</div>
+          </li>
+        </ul>
+      </ion-scroll>
+    </section>
+    </div>
+
+    <div ng-if="fashionList.length!=0&&isShow==1">
+    <!--时尚男装-->
+    <div class="classifyheader">
+      <span style="width: 242px;border-bottom: 1px solid #e5e5e5;position: relative;top: -8px;"></span>
+      <span class="classifytitle" style="color: #0072f2; background: url(../../m/m_v2.0/img/classifyheader2.png) no-repeat 24px center;">时尚男装</span>
+      <span style="width: 230px;border-bottom: 1px solid #e5e5e5;position: relative;top: -8px;"></span>
+      <!-- <a class=" col-30 col-offset-70 text-right trendMore" ng-click="statistic('首页分类导航','男装',userId)"  ng-href="{{fashionurl.target_url}}">更多</a> -->
+      <span style="width: 10px;border-bottom: 1px solid #e5e5e5;position: relative;top: -8px;margin-left: 10px;"></span>
+    </div>
+    <div class="main_advertising">
+      <a ng-href="{{fashionurl.target_url}}" ng-click="statistic('首页分类导航','男装',userId)" ><img ng-src="{{fashionurl.link_url}}!750x350" ></a>
+    </div>
+    <section>
+      <ion-scroll direction="x">
+        <ul class="row row-no-padding" style="margin-left:2%;margin-top: 38px;margin-right: 3%">
+          <li class="col text_center col-38  newGoodList"  ng-repeat="digital in fashionList" >
+            <div  class="text-center ">
+              <a  href="#/details?activityId={{digital.activity_id}}&newType=1" ng-click="statistic1('首页商品列表','时尚男装',userId,digital.activity_id)"><img class="newGoodsImg1"  ng-src="{{digital.item_pic}}!264x264" alt=""></a>
+            </div>
+            <p class="originalgoodsName">{{digital.item_name}}</p>
+            <div class="originalPriceText" style="margin-bottom: 18px;">￥{{digital.item_price /100 | number:2}}</div>
+          </li>
+        </ul>
+      </ion-scroll>
+    </section>
+    </div>
+
+    <!--鞋子箱包-->
+    <div ng-if="shoesList.length!=0&&isShow==1">
+    <div class="classifyheader">
+      <span style="width: 242px;border-bottom: 1px solid #e5e5e5;position: relative;top: -8px;"></span>
+      <span class="classifytitle" style="color: #7a1aff; background: url(../../m/m_v2.0/img/classifyheader3.png) no-repeat 24px center;">鞋子箱包</span>
+      <span style="width: 230px;border-bottom: 1px solid #e5e5e5;position: relative;top: -8px;"></span>
+      <!-- <a class=" col-30 col-offset-70 text-right trendMore" ng-click="statistic('首页分类导航','箱包',userId)"  ng-href="{{shoesurl.target_url}}">更多</a> -->
+      <span style="width: 10px;border-bottom: 1px solid #e5e5e5;position: relative;top: -8px;margin-left: 10px;"></span>
+    </div>
+    <div class="main_advertising">
+      <a ng-href="{{shoesurl.target_url}}" ng-click="statistic('首页分类导航','箱包',userId)"><img ng-src="{{shoesurl.link_url}}!750x350" ></a>
+    </div>
+    <section>
+      <ion-scroll direction="x">
+        <ul class="row row-no-padding" style="margin-left:2%;margin-top: 38px;margin-right: 3%">
+          <li class="col text_center col-38  newGoodList"  ng-repeat="digital in shoesList" >
+            <div  class="text-center ">
+              <a  href="#/details?activityId={{digital.activity_id}}&newType=1" ng-click="statistic1('首页商品列表','鞋子箱包',userId,digital.activity_id)"><img class="newGoodsImg1"  ng-src="{{digital.item_pic}}!264x264" alt=""></a>
+            </div>
+            <p class="originalgoodsName">{{digital.item_name}}</p>
+            <div class="originalPriceText" style="margin-bottom: 18px;">￥{{digital.item_price /100 | number:2}}</div>
+          </li>
+        </ul>
+      </ion-scroll>
+    </section>
+    </div>
+
+    <!--居家日用-->
+    <div ng-if="homedailyList.length!=0&&isShow==1">
+    <div class="classifyheader">
+      <span style="width: 242px;border-bottom: 1px solid #e5e5e5;position: relative;top: -8px;"></span>
+      <span class="classifytitle" style="color: #ef4734; background: url(../../m/m_v2.0/img/classifyheader4.png) no-repeat 24px center;">居家日用</span>
+      <span style="width: 230px;border-bottom: 1px solid #e5e5e5;position: relative;top: -8px;"></span>
+      <!-- <a class=" col-30 col-offset-70 text-right trendMore" ng-click="statistic('首页分类导航','日用',userId)" ng-href="{{homedailyurl.target_url}}">更多</a> -->
+      <span style="width: 10px;border-bottom: 1px solid #e5e5e5;position: relative;top: -8px;margin-left: 10px;"></span>
+    </div>
+    <div class="main_advertising">
+      <a ng-href="{{homedailyurl.target_url}}" ng-click="statistic('首页分类导航','日用',userId)"><img ng-src="{{homedailyurl.link_url}}!750x350" ></a>
+    </div>
+    <section>
+      <ion-scroll direction="x">
+        <ul class="row row-no-padding" style="margin-left:2%;margin-top: 38px;margin-right: 3%">
+          <li class="col text_center col-38  newGoodList"  ng-repeat="digital in homedailyList" >
+            <div  class="text-center ">
+              <a  href="#/details?activityId={{digital.activity_id}}&newType=1" ng-click="statistic1('首页商品列表','居家日用',userId,digital.activity_id)"><img class="newGoodsImg1"  ng-src="{{digital.item_pic}}!264x264" alt=""></a>
+            </div>
+            <p class="originalgoodsName">{{digital.item_name}}</p>
+            <div class="originalPriceText" style="margin-bottom: 18px;">￥{{digital.item_price /100 | number:2}}</div>
+          </li>
+        </ul>
+      </ion-scroll>
+    </section>
+    </div>
+
+    <!--文娱运动-->
+    <div ng-if="recreationalList.length!=0&&isShow==1">
+    <div class="classifyheader">
+      <span style="width: 242px;border-bottom: 1px solid #e5e5e5;position: relative;top: -8px;"></span>
+      <span class="classifytitle" style="color: #1cae83; background: url(../../m/m_v2.0/img/classifyheader5.png) no-repeat 24px center;">文娱运动</span>
+      <span style="width: 230px;border-bottom: 1px solid #e5e5e5;position: relative;top: -8px;"></span>
+      <!-- <a class=" col-30 col-offset-70 text-right trendMore" ng-click="statistic('首页分类导航','运动',userId)" ng-href="{{recreationalurl.target_url}}">更多</a> -->
+      <span style="width: 10px;border-bottom: 1px solid #e5e5e5;position: relative;top: -8px;margin-left: 10px;"></span>
+    </div>
+    <div class="main_advertising">
+      <a ng-href="{{recreationalurl.target_url}}" ng-click="statistic('首页分类导航','运动',userId)"><img ng-src="{{recreationalurl.link_url}}!750x350" ></a>
+    </div>
+    <section>
+      <ion-scroll direction="x">
+        <ul class="row row-no-padding" style="margin-left:2%;margin-top: 38px;margin-right: 3%">
+          <li class="col text_center col-38  newGoodList"  ng-repeat="digital in recreationalList" >
+            <div  class="text-center ">
+              <a  href="#/details?activityId={{digital.activity_id}}&newType=1" ng-click="statistic1('首页商品列表','文娱运动',userId,digital.activity_id)"><img class="newGoodsImg1"  ng-src="{{digital.item_pic}}!264x264" alt=""></a>
+            </div>
+            <p class="originalgoodsName">{{digital.item_name}}</p>
+            <div class="originalPriceText" style="margin-bottom: 18px;">￥{{digital.item_price /100 | number:2}}</div>
+          </li>
+        </ul>
+      </ion-scroll>
+    </section>
+    </div>
+
+
+
+    <!--护肤彩妆-->
+    <div ng-if="skinList.length!=0&&isShow==1">
+    <div class="classifyheader">
+      <span style="width: 242px;border-bottom: 1px solid #e5e5e5;position: relative;top: -8px;"></span>
+      <span class="classifytitle" style="color: #ff366f; background: url(../../m/m_v2.0/img/classifyheader6.png) no-repeat 24px center;">护肤彩妆</span>
+      <span style="width: 230px;border-bottom: 1px solid #e5e5e5;position: relative;top: -8px;"></span>
+      <!-- <a class=" col-30 col-offset-70 text-right trendMore" ng-click="statistic('首页分类导航','彩妆',userId)" ng-href="{{skinurl.target_url}}">更多</a> -->
+      <span style="width: 10px;border-bottom: 1px solid #e5e5e5;position: relative;top: -8px;margin-left: 10px;"></span>
+    </div>
+    <div class="main_advertising">
+      <a ng-href="{{skinurl.target_url}}" ng-click="statistic('首页分类导航','彩妆',userId)"><img ng-src="{{skinurl.link_url}}!750x350" ></a>
+    </div>
+    <section>
+      <ion-scroll direction="x">
+        <ul class="row row-no-padding" style="margin-left:2%;margin-top: 38px;margin-right: 3%">
+          <li class="col text_center col-38  newGoodList"  ng-repeat="digital in skinList" >
+            <div  class="text-center ">
+              <a  href="#/details?activityId={{digital.activity_id}}&newType=1" ng-click="statistic1('首页商品列表','护肤彩妆',userId,digital.activity_id)"><img class="newGoodsImg1"  ng-src="{{digital.item_pic}}!264x264" alt=""></a>
+            </div>
+            <p class="originalgoodsName">{{digital.item_name}}</p>
+            <div class="originalPriceText" style="margin-bottom: 18px;">￥{{digital.item_price /100 | number:2}}</div>
+          </li>
+        </ul>
+      </ion-scroll>
+    </section>
+    </div>
+
+
+    <!--家纺家装-->
+    <div ng-if="homeimprovementList.length!=0&&isShow==1">
+    <div class="classifyheader">
+      <span style="width: 242px;border-bottom: 1px solid #e5e5e5;position: relative;top: -8px;"></span>
+      <span class="classifytitle" style="color: #ff7300; background: url(../../m/m_v2.0/img/classifyheader7.png) no-repeat 24px center;">家纺家装</span>
+      <span style="width: 230px;border-bottom: 1px solid #e5e5e5;position: relative;top: -8px;"></span>
+      <!-- <a class=" col-30 col-offset-70 text-right trendMore" ng-click="statistic('首页分类导航','家装',userId)" ng-href="{{homeimprovementurl.target_url}}">更多</a> -->
+      <span style="width: 10px;border-bottom: 1px solid #e5e5e5;position: relative;top: -8px;margin-left: 10px;"></span>
+    </div>
+    <div class="main_advertising">
+      <a ng-href="{{homeimprovementurl.target_url}}" ng-click="statistic('首页分类导航','家装',userId)"><img ng-src="{{homeimprovementurl.link_url}}!750x350" ></a>
+    </div>
+    <section>
+      <ion-scroll direction="x">
+        <ul class="row row-no-padding" style="margin-left:2%;margin-top: 38px;margin-right: 3%">
+          <li class="col text_center col-38  newGoodList"  ng-repeat="digital in homeimprovementList" >
+            <div  class="text-center ">
+              <a  href="#/details?activityId={{digital.activity_id}}&newType=1" ng-click="statistic1('首页商品列表','家纺家装',userId,digital.activity_id)"><img class="newGoodsImg1"  ng-src="{{digital.item_pic}}!264x264" alt=""></a>
+            </div>
+            <p class="originalgoodsName">{{digital.item_name}}</p>
+            <div class="originalPriceText" style="margin-bottom: 18px;">￥{{digital.item_price /100 | number:2}}</div>
+          </li>
+        </ul>
+      </ion-scroll>
+    </section>
+    </div>
+    <!--数码家电-->
+    <div ng-if="digitalList.length!=0&&isShow==1">
+    <div class="classifyheader">
+      <span style="width: 242px;border-bottom: 1px solid #e5e5e5;position: relative;top: -8px;"></span>
+      <span class="classifytitle" style="color: #6161fe; background: url(../../m/m_v2.0/img/classifyheader8.png) no-repeat 24px center;">数码家电</span>
+      <span style="width: 230px;border-bottom: 1px solid #e5e5e5;position: relative;top: -8px;"></span>
+      <!-- <a class=" col-30 col-offset-70 text-right trendMore" ng-click="statistic('首页分类导航','家电',userId)" ng-href="{{digitalurl.target_url}}">更多</a> -->
+      <span style="width: 10px;border-bottom: 1px solid #e5e5e5;position: relative;top: -8px;margin-left: 10px;"></span>
+    </div>
+    <div class="main_advertising">
+      <a ng-href="{{digitalurl.target_url}}" ng-click="statistic('首页分类导航','家电',userId)"><img ng-src="{{digitalurl.link_url}}!750x350" ></a>
+    </div>
+    <section>
+      <ion-scroll direction="x">
+        <ul class="row row-no-padding" style="margin-left:2%;margin-top: 38px;margin-right: 3%">
+          <li class="col text_center col-38  newGoodList"  ng-repeat="digital in digitalList" >
+            <div  class="text-center ">
+              <a  href="#/details?activityId={{digital.activity_id}}&newType=1" ng-click="statistic1('首页商品列表','数码家电',userId,digital.activity_id)"><img class="newGoodsImg1"  ng-src="{{digital.item_pic}}!264x264" alt=""></a>
+            </div>
+            <p class="originalgoodsName">{{digital.item_name}}</p>
+            <div class="originalPriceText" style="margin-bottom: 18px;">￥{{digital.item_price /100 | number:2}}</div>
+          </li>
+        </ul>
+      </ion-scroll>
+    </section>
+    </div>
+    <!--美食特产-->
+    <div ng-if="gourmetList.length!=0&&isShow==1">
+    <div class="classifyheader">
+      <span style="width: 242px;border-bottom: 1px solid #e5e5e5;position: relative;top: -8px;"></span>
+      <span class="classifytitle" style="color: #ff366f; background: url(../../m/m_v2.0/img/classifyheader9.png) no-repeat 24px center;">美食特产</span>
+      <span style="width: 230px;border-bottom: 1px solid #e5e5e5;position: relative;top: -8px;"></span>
+      <!-- <a class=" col-30 col-offset-70 text-right trendMore" ng-click="statistic('首页分类导航','美食',userId)" ng-href="{{gourmeturl.target_url}}">更多</a> -->
+      <span style="width: 10px;border-bottom: 1px solid #e5e5e5;position: relative;top: -8px;margin-left: 10px;"></span>
+    </div>
+    <div class="main_advertising">
+      <a ng-href="{{gourmeturl.target_url}}" ng-click="statistic('首页分类导航','美食',userId)"><img ng-src="{{gourmeturl.link_url}}!750x350" ></a>
+    </div>
+    <section>
+      <ion-scroll direction="x">
+        <ul class="row row-no-padding" style="margin-left:2%;margin-top: 38px;margin-right: 3%">
+          <li class="col text_center col-38  newGoodList"  ng-repeat="digital in gourmetList" >
+            <div  class="text-center ">
+              <a  href="#/details?activityId={{digital.activity_id}}&newType=1" ng-click="statistic1('首页商品列表','美食特产',userId,digital.activity_id)"><img class="newGoodsImg1"  ng-src="{{digital.item_pic}}!264x264" alt=""></a>
+            </div>
+            <p class="originalgoodsName">{{digital.item_name}}</p>
+            <div class="originalPriceText" style="margin-bottom: 18px;">￥{{digital.item_price /100 | number:2}}</div>
+          </li>
+        </ul>
+      </ion-scroll>
+    </section>
+    </div>
+       <section ng-show="isShow==1">
+         <div class="row row-no-padding"  style="background-color: #f6f6f6;" >
+                                 <!--<span class="col col-30 col-offset-5 highPriceTitle">好货精选</span>-->
+                                 <!--<a class="col col-30 col-offset-70 text-right highPriceMore"   ui-sref="tabs.goodList">更多>></a>-->
+                    <ul class="buttom_classify">
+                    <li class="lichecke">平台推荐</li>
+                    <li>高中奖率推荐</li>
+                    <li>高价值推荐</li>
+                    </ul>
+                  </div>
+                     <div class="itemDiv1"  >
+                     <div class="text-center itemDiv border_b_6 list-item" ng-repeat="goods in platformList track by $index">
+                                    <div class="itemList pt36 pb20">
+                                      <a  href="#/details?activityId={{goods.activity_id}}&newType=1"><img class="img80w" ng-src="{{goods.item_pic}}!325x315" alt=""></a>
+                                                  <div class="itemName" ><a class="itemName" href="#/details?activityId={{goods.activity_id}}&newType=1" ng-click="statistic1('首页推荐列表','平台推荐',userId,goods.activity_id)">{{goods.item_name}}</a></div>
+                                                  <div class="originalPriceText text_left">￥{{goods.item_price /100 | number:2}}</div>
+                                      <div class="text_left itemApply">{{goods.activity_stock_b_o.apply_member_count*3}}人已申请，还剩{{goods.activity_stock_b_o.sales_normal_stock}}份</div>
+                                                  <div class="mt10">
+                                                    <a class="home_shareMakeMoney_btn"  ng-if="$root.open_id==0 || $root.open_id==undefined" ng-href="#/details?activityId={{goods.activity_id}}&share=1" ng-click="statistic1('首页推荐列表','平台推荐领13元现金分享',userId,goods.activity_id)">领13元现金</a>
+                                                    <a class="home_shareMakeMoney_btn" ng-if="$root.open_id!=0 && $root.open_id!=undefined&&$root.isCode=='true'"  ng-href="#/loginbind">领13元现金</a>
+                                                    <a class="home_shareMakeMoney_btn" ng-if="$root.open_id!=0 && $root.open_id!=undefined&&$root.isCode=='false'"  ng-href="#/login?isState=1">领13元现金</a>
+                                                  <a class="home_freeGet_btn"  href="#/details?activityId={{goods.activity_id}}&newType=1" ng-click="statistic1('首页推荐列表','平台推荐',userId,goods.activity_id)">免费申请</a>
+                                                  </div>
+                                    </div>
+                           <div class="highValue" ng-if="goods.activity_type==4"></div>
+                         </div>
+                     </div>
+                     <div class="itemDiv2"  >
+                     <div class="text-center itemDiv border_b_6 list-item" ng-repeat="goods in highawardList track by $index">
+                                    <div class="itemList pt36 pb20">
+                                      <a  href="#/details?activityId={{goods.activity_id}}&newType=1"><img class="img80w" ng-src="{{goods.item_pic}}!325x315" alt=""></a>
+                                                  <div class="itemName" ><a class="itemName" href="#/details?activityId={{goods.activity_id}}&newType=1" ng-click="statistic1('首页推荐列表','高中奖率推荐',userId,goods.activity_id)">{{goods.item_name}}</a></div>
+                                                  <div class="originalPriceText text_left">￥{{goods.item_price /100 | number:2}}</div>
+                                      <div class="text_left itemApply">{{goods.activity_stock_b_o.apply_member_count*3}}人已申请，还剩{{goods.activity_stock_b_o.sales_normal_stock}}份</div>
+                                                  <div class="mt10">
+                                                    <a class="home_shareMakeMoney_btn"  ng-if="$root.open_id==0 || $root.open_id==undefined" ng-href="#/details?activityId={{goods.activity_id}}&share=1" ng-click="statistic1('首页推荐列表','高中奖率推荐领13元现金分享',userId,goods.activity_id)">领13元现金</a>
+                                                    <a class="home_shareMakeMoney_btn" ng-if="$root.open_id!=0 && $root.open_id!=undefined&&$root.isCode=='true'"  ng-href="#/loginbind">领13元现金</a>
+                                                    <a class="home_shareMakeMoney_btn" ng-if="$root.open_id!=0 && $root.open_id!=undefined&&$root.isCode=='false'"  ng-href="#/login?isState=1">领13元现金</a>
+                                                  <a class="home_freeGet_btn"  href="#/details?activityId={{goods.activity_id}}&newType=1" ng-click="statistic1('首页推荐列表','高中奖率推荐',userId,goods.activity_id)">免费申请</a>
+                                                  </div>
+                                    </div>
+                           <div class="highValue" ng-if="goods.activity_type==4"></div>
+                         </div>
+                     </div>
+                     <div class="itemDiv3"  >
+                       <div class="text-center itemDiv border_b_6 list-item"   ng-repeat="goods in highvalueList track by $index">
+              <div class="itemList pt36 pb20">
+                <a  href="#/details?activityId={{goods.activity_id}}&newType=1"><img class="img80w" ng-src="{{goods.item_pic}}!325x315" alt=""></a>
+                <div class="itemName" ><a class="itemName" href="#/details?activityId={{goods.activity_id}}&newType=1" ng-click="statistic1('首页推荐列表','高价值推荐',userId,goods.activity_id)">{{goods.item_name}}</a></div>
+                <div class="originalPriceText text_left">￥{{goods.item_price /100 | number:2}}</div>
+                <div class="text_left itemApply">{{goods.activity_stock_b_o.apply_member_count*3}}人已申请，还剩{{goods.activity_stock_b_o.sales_normal_stock}}份</div>
+                <!--<div class="text_left itemApply" ng-if="goods.activity_stock_b_o.apply_member_count!=true">0人已申请，还剩{{goods.activity_stock_b_o.sales_normal_stock}}份</div>-->
+                <div class="mt10">
+                  <a class="home_shareMakeMoney_btn"  ng-if="$root.open_id==0 || $root.open_id==undefined" ng-href="#/details?activityId={{goods.activity_id}}&share=1" ng-click="statistic1('首页推荐列表','高价值推荐领13元现金分享',userId,goods.activity_id)">领13元现金</a>
+                  <a class="home_shareMakeMoney_btn" ng-if="$root.open_id!=0 && $root.open_id!=undefined&&$root.isCode=='true'"  ng-href="#/loginbind">领13元现金</a>
+                  <a class="home_shareMakeMoney_btn" ng-if="$root.open_id!=0 && $root.open_id!=undefined&&$root.isCode=='false'"  ng-href="#/login?isState=1">领13元现金</a>
+                  <a class="home_freeGet_btn"  href="#/details?activityId={{goods.activity_id}}&newType=1" ng-click="statistic1('首页推荐列表','高价值推荐',userId,goods.activity_id)">免费申请</a>
+                </div>
+              </div>
+              <div class="highValue" ng-if="goods.activity_type==4"></div>
+            </div>
+                     </div>
+       </section>
+
+               <!--无限滚动:如果所有的页面都加载完了(例如，共30页)，则不再出现此组件-->
+                 <ion-infinite-scroll  on-infinite="isShowFunction()"   icon="icon ion-load-c" ng-if="isShow==0"  immediate-check="false">
+
+                  </ion-infinite-scroll>
+  </ion-content>
+
+</ion-view>

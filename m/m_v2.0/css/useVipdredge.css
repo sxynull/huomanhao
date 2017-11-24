@@ -1,0 +1,272 @@
+.userVip_top1 {
+  height: 207px;
+  width: 100%;
+  background: url(../img/account/userCenterbj_02.png) center;
+  overflow: hidden;
+}
+
+.userVip_top1 dl {
+  width: 646px;
+  height: 144px;
+  margin-left: 50px;
+  margin-top: 36px;
+}
+
+.userVip_top1 dl dd {
+  height: 144px;
+  width: 144px;
+  margin-right: 24px;
+}
+
+.userVip_top1 dl dd img {
+  height: 134px;
+  width: 134px;
+  border-radius: 50%;
+  display: block;
+  border: 5px solid #ffa9c1;
+}
+
+.userVip_top1 dl dt {
+  width: 474px;
+  height: 144px;
+  color: #ffffff;
+}
+
+.userVip_top1 .user_name1 {
+  height: 60px;
+  line-height: 60px;
+  margin-top: 14px;
+  font-size: 28px;
+}
+
+.userVip_top1 .user_namespan1 {
+  height: 60px;
+  margin-top: 14px;
+  width: 36px;
+  display: inline-block;
+  background: url(../img/apply/diamond.png) no-repeat right center;
+}
+
+.userVip_top1 .VIP_grade1 {
+  height: 60px;
+  line-height: 60px;
+  margin-top: 14px;
+  font-size: 24px;
+}
+
+.VIP_choice1 {
+  width: 100%;
+  padding-left: 4%;
+  padding-right: 4%;
+  background: #ffffff;
+}
+
+.VIP_choice1 .choice_title1 {
+  height: 88px;
+  line-height: 88px;
+  color: #333333;
+  font-size: 28px;
+}
+
+.VIP_choice1 .choice_detail1 {
+  height: 88px;
+  line-height: 88px;
+  border-top: 1px solid #e5e5e5;
+  width: 100%;
+  font-size: 26px;
+  color: #333333;
+
+}
+
+.VIP_choice1 .choice_detail1 .VIP_click1 {
+  margin-top: 25px;
+  margin-left: 46px;
+  height: 38px;
+  width: 38px;
+}
+
+.pay_choice1 {
+  width: 100%;
+  padding-left: 4%;
+  padding-right: 4%;
+  height: 178px;
+  background: #ffffff;
+  margin-top: 24px;
+}
+
+.pay_choice1 .pay_title1 {
+  height: 88px;
+  width: 100%;
+  line-height: 88px;
+  border-bottom: 1px solid #e5e5e5;
+  color: #333333;
+  font-size: 28px;
+}
+
+.pay_choice1 .pay_detail1 {
+  height: 89px;
+  line-height: 89px;
+  color: #333333;
+  font-size: 26px;
+  padding-left: 40px;
+  background: url(../img/funddetail/iconweixin.png) no-repeat left center;
+}
+
+.pay_choice1 .pay_click1 {
+  margin-top: 25px;
+  height: 38px;
+  width: 38px;
+}
+
+.VIP_privilege1 {
+  width: 100%;
+  padding-left: 4%;
+  padding-right: 4%;
+  background: #ffffff;
+  margin-top: 24px;
+}
+.VIP_privilege1 .privilege_title1{
+  height: 88px;
+  line-height: 88px;
+  color: #333333;
+  font-size: 28px;
+}
+.VIP_privilegetop1{
+  height: 56px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.VIP_privilegetop1 .vip1{
+  height: 48px;
+  width: 291px;
+  border-radius: 24px;
+  background: #d9b57d;
+  color: #ffffff;
+  font-size: 28px;
+  line-height: 48px;
+  text-align: center;
+  position: relative;
+}
+.VIP_privilegetop1 .vip1 em{
+background: url(../img/apply/vipjian.png) no-repeat;
+  width: 15px;
+  height: 8px;
+  position: absolute;
+  display: block;
+  left:134px;
+  top:48px;
+}
+.VIP_privilegetop1 .common1{
+  height: 48px;
+  width: 291px;
+  border-radius: 24px;
+  background: #b0b3b4;
+  color: #ffffff;
+  font-size: 28px;
+  line-height: 48px;
+  text-align: center;
+  position: relative;
+}
+.VIP_privilegetop1 .common1 em{
+  background: url(../img/apply/commonjian.png) no-repeat;
+  width: 15px;
+  height: 7px;
+  position: absolute;
+  display: block;
+  left:134px;
+  top:48px;
+}
+.privilegedetail{
+  height: 90px;
+  line-height: 90px;
+  background: #ffffff;
+  width: 100%;
+  padding-top: 20px;
+}
+.textleft{
+  position: relative;
+  top: 36px;
+  left: 0;
+  color: #d9b57d;
+  font-size: 24px;
+  z-index: 10;
+  line-height: 24px;
+}
+.textright{
+  position: relative;
+  top: 36px;
+  left: 164px;
+  color: #b0b3b4;
+  font-size: 24px;
+  z-index: 10;
+  line-height: 24px;
+}
+.privilegegrade{
+  width: 100%;
+  text-align: center;
+  line-height: 24px;
+  margin-top: 20px;
+  padding-bottom: 30px;
+  color: #666666;
+
+}
+.privilegedetail .circle{
+  height: 16px;
+  width: 16px;
+  border-radius: 8px;
+  background: #d9b57d;
+  margin-bottom: 34px;
+}
+.privilegedetail .line{
+  width: 258px;
+  height: 4px;
+  margin-right: 2px;
+  margin-left: 2px;
+  margin-bottom: 40px;
+  background: #d9b57d;
+}
+.privilegedetail .main_pic{
+  background: url(../img/apply/main_pic1.png) no-repeat;
+  height: 80px;
+  width: 80px;
+}
+.registerBtn7{
+  text-align: center;
+  line-height: 88px;
+  height: 88px;
+  width: 92%;
+  padding-left: 0;
+  background: #d9b57d;
+  color: #FFFFFF;
+  margin-left: 4%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: 36px;
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  border: none;
+}
+
+
+.succeed_contend{
+  width: 100%;
+  text-align: center;
+  margin-top: 140px;
+}
+.succeed_contend p{
+  font-size: 40px;
+  color: #666666;
+  line-height: 40px;
+}
+.succeed_contend a {
+  height: 65px;
+  width: 263px;
+  background: #38befd;
+  color: #ffffff;
+  display: block;
+  font-size: 30px;
+  border-radius: 6px;
+  text-align: center;
+  line-height: 65px;
+  margin: 120px auto;
+}

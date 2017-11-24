@@ -1,0 +1,219 @@
+<link rel="stylesheet" href="/../../m/m_v2.0/css/account.css?366">
+<style>
+  .top {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    border: 1px solid #eee;
+    border-radius: 50%;
+   /* border: 1px solid #f22260;
+    right: 60px;
+    bottom: 106px;
+    background-color: #fff;*/
+    font-size: 38px;
+    color: #f22260;
+    line-height: 85px;
+    text-align: center;
+    box-shadow:0 0 5px #f22260;
+  }
+  .backdrop .retainText{
+    width: 100%;
+  }
+</style>
+<ion-view>
+   <ion-content>
+     <ion-refresher pulling-text="下拉刷新" on-refresh="personalRefresh()"></ion-refresher>
+     <div class="center-top">
+          <div class="header-pic myfl" ng-if="dataList.avatar!=''"><img ui-sref="personalDate" ng-src="{{dataList.avatar}}" alt=""></div>
+          <div class="header-pic myfl" ng-if="dataList.avatar==''"><img ui-sref="personalDate" src="../../m/m_v2.0/img/apply/business_index_user.png" alt=""></div>
+          <div class="myfl ">
+            <h3 class="header-name">{{dataList.nick}}</h3>
+            <div ng-if="dataList.is_vip==1&&dataList.profile_is_finish==1">
+              <span class="user-level">会员用户</span>
+              <!--<a class="renewal-btn" ui-sref="useVipDredge">续费</a>-->
+              <span class="vip-time-end">{{dataList.vip_expire}}到期</span>
+            </div>
+            <div ng-if="dataList.is_vip==1&&dataList.profile_is_finish==0">
+              <span class="user-level">会员用户</span>
+              <!--<a class="renewal-btn" ui-sref="useVipDredge">续费</a>-->
+              <span class="vip-time-end">{{dataList.vip_expire}}到期</span>
+              <p class="coin-notice">完善资料可获得<em>5</em>金币，提升中奖率</p>
+            </div>
+            <div ng-if="dataList.is_vip==0&&dataList.profile_is_finish==0">
+              <span class="user-normal">普通用户</span>
+              <a class="open-btn" ui-sref="useVipDredge">开通会员</a>
+              <p class="coin-notice">完善资料可获得<em>5</em>金币，提升中奖率</p>
+            </div>
+            <div ng-if="dataList.is_vip==0&&dataList.profile_is_finish==1">
+              <span class="user-normal">普通用户</span>
+              <a class="open-btn" ui-sref="useVipDredge">开通会员</a>
+            </div>
+          </div>
+          <i ui-sref="newNotice" class="icon ion-ios-bell-outline alerts"></i>
+
+          <div class="row no-padding-row account-is">
+               <div ui-sref="fundall" class="col">
+                 <p>{{userList.disposable_amount/100 | number:2 }}</p>
+                 <p>余额</p>
+               </div>
+               <div class="col" ui-sref="withdrawIntoaccount">
+                 <p>{{userList.frozen_amount /100 | number:2 }}</p>
+                  <p>即将到账</p>
+               </div>
+               <div ui-sref="goidIndex" class="col">
+                 <p>{{userList.coin}}</p>
+                 <p>金币</p>
+               </div>
+               <div ui-sref="integralList" class="col">
+                 <p>{{userList.accumulated_points }}</p>
+                 <p>积分</p>
+               </div>
+
+          </div>
+        </div>
+     <ion-slide-box  does-continue="true" slide-interval="3000" auto-play="true" show-pager="false" >
+       <ion-slide>
+         <div class="new-notice border_b_25"><i class="icon ion-volume-high" style="color: #ff4e80;margin-left: 24px;margin-right: 15px;font-size: 30px;"></i>网站公告：邀请好友奖13元，上不封顶！</div>
+       </ion-slide>
+       <ion-slide>
+         <div class="new-notice border_b_25"><i class="icon ion-volume-high" style="color: #ff4e80;margin-left: 24px;margin-right: 15px;font-size: 30px;"></i>货蛮好用户官方交流群号:594132685</div>
+       </ion-slide>
+     </ion-slide-box>
+
+     <div class="account-list border_b_1" ui-sref="tabs.applyIndex">
+             <span class="account-list-left">我的申请</span><span class="account-list-right"><i class="icon ion-ios-arrow-right"></i></span>
+         </div>
+     <div class="row no-padding-row account-list-menu border_b_25" style="border-bottom: none;height: 140px">
+                   <div class="col" onclick="window.location.href='#/tabs/applyIndex?activityStatus=1'">
+                     <p><img src="../../m/m_v2.0/img/account/user-account-myapply_12.jpg" alt=""><i class="menu-number" ng-if="countList.commit_cont<100">{{countList.commit_cont}}</i><i class="menu-number" ng-if="countList.commit_cont>99">99+</i></p>
+                     <p class="menu-text">再获1次抽奖</p>
+                   </div>
+                   <div class="col" onclick="window.location.href='#/tabs/applyIndex?activityStatus=2'">
+                     <p><img src="../../m/m_v2.0/img/account/user-account-myapply_14.jpg" alt=""><i class="menu-number" ng-if="countList.winng_cont<100">{{countList.winng_cont}}</i><i class="menu-number" ng-if="countList.winng_cont>99">99+</i></p>
+                      <p class="menu-text">中奖啦</p>
+                   </div>
+                   <div class="col" onclick="window.location.href='#/tabs/applyIndex?activityStatus=3'">
+                     <p><img src="../../m/m_v2.0/img/account/user-account-myapply_05.jpg" alt=""><i class="menu-number" ng-if="countList.comment_cont<100">{{countList.comment_cont}}</i><i class="menu-number" ng-if="countList.comment_cont>99">99+</i></p>
+                     <p class="menu-text">待评论</p>
+                   </div>
+                   <div class="col" onclick="window.location.href='#/tabs/applyIndex?activityStatus=4'">
+                     <p><img src="../../m/m_v2.0/img/account/user-account-myapply_07.jpg" alt=""><i class="menu-number" ng-if="countList.amait_cont<100">{{countList.amait_cont}}</i><i class="menu-number" ng-if="countList.amait_cont>99">99+</i></p>
+                     <p class="menu-text">待抽奖</p>
+                   </div>
+                   <div class="col" onclick="window.location.href='#/tabs/applyIndex?activityStatus=5'">
+                     <p><img src="../../m/m_v2.0/img/account/user-account-myapply_09.jpg" alt=""><i class="menu-number" ng-if="countList.finish_count<100">{{countList.finish_count}}</i><i class="menu-number" ng-if="countList.finish_count>99">99+</i></p>
+                     <p class="menu-text">已完成</p>
+                   </div>
+
+              </div>
+     <div class="account-list border_b_1 clearfix" ui-sref="winningValue" style="border-bottom: 24px solid #e5e5e5;border-top: 1px solid #e5e5e5;height: 112px">
+       <span class="account-list-left">我的中奖值</span><span class="account-list-right">低于<em style="color: #FF366F">{{applyratio}}%</em>的用户<i class="icon ion-ios-arrow-right"></i></span>
+     </div>
+
+     <div class="account-list border_b_1" ui-sref="gradeRank">
+                  <span class="account-list-left" style="margin-right: 300px;">我的成就等级</span><span class="account-list-right"><em style="color: #FF366F">{{rankgrade.total_level}}</em>级<i class="icon ion-ios-arrow-right"></i></span>
+              </div>
+     <div class="row no-padding-row account-list-menu border_b_25" style="height: 200px;">
+                   <div class="col"  onclick="window.location.href='#/gradeRank?ranktype=1'">
+                       <img src="../../m/m_v2.0/img/account/rank00.png" ng-if="!rankgrade.applys[0]">
+                       <img src="../../m/m_v2.0/img/account/rank11.png" ng-if="rankgrade.applys[0]==1&&!rankgrade.applys[1]">
+                       <img src="../../m/m_v2.0/img/account/rank12.png" ng-if="rankgrade.applys[1]==2&&!rankgrade.applys[2]">
+                       <img src="../../m/m_v2.0/img/account/rank13.png" ng-if="rankgrade.applys[2]==3">
+                     <p class="menu-text">申请成就</p>
+                     <p class="grade_rank" ng-if="!rankgrade.applys[0]">0级</p>
+                     <p class="grade_rank" ng-if="rankgrade.applys[0]==1&&!rankgrade.applys[1]">1级</p>
+                     <p class="grade_rank" ng-if="rankgrade.applys[1]==2&&!rankgrade.applys[2]">2级</p>
+                     <p class="grade_rank" ng-if="rankgrade.applys[2]==3">3级</p>
+                   </div>
+                   <div class="col"  onclick="window.location.href='#/gradeRank?ranktype=2'">
+                       <img src="../../m/m_v2.0/img/account/rank00.png" ng-if="!rankgrade.orders[0]">
+                       <img src="../../m/m_v2.0/img/account/rank21.png" ng-if="rankgrade.orders[0]==1&&!rankgrade.orders[1]">
+                       <img src="../../m/m_v2.0/img/account/rank22.png" ng-if="rankgrade.orders[1]==2&&!rankgrade.orders[2]">
+                       <img src="../../m/m_v2.0/img/account/rank23.png" ng-if="rankgrade.orders[2]==3">
+                      <p class="menu-text">订单成就</p>
+                     <p class="grade_rank" ng-if="!rankgrade.orders[0]">0级</p>
+                     <p class="grade_rank" ng-if="rankgrade.orders[0]==1&&!rankgrade.orders[1]">1级</p>
+                     <p class="grade_rank" ng-if="rankgrade.orders[1]==2&&!rankgrade.orders[2]">2级</p>
+                     <p class="grade_rank" ng-if="rankgrade.orders[2]==3">3级</p>
+                   </div>
+                   <div class="col" onclick="window.location.href='#/gradeRank?ranktype=3'">
+                       <img src="../../m/m_v2.0/img/account/rank00.png" ng-if="!rankgrade.fans[0]">
+                       <img src="../../m/m_v2.0/img/account/rank31.png" ng-if="rankgrade.fans[0]==1&&!rankgrade.fans[1]">
+                       <img src="../../m/m_v2.0/img/account/rank32.png" ng-if="rankgrade.fans[1]==2&&!rankgrade.fans[2]">
+                       <img src="../../m/m_v2.0/img/account/rank33.png" ng-if="rankgrade.fans[2]==3">
+                     <p class="menu-text">粉丝成就</p>
+                     <p class="grade_rank" ng-if="!rankgrade.fans[0]">0级</p>
+                     <p class="grade_rank" ng-if="rankgrade.fans[0]==1&&!rankgrade.fans[1]">1级</p>
+                     <p class="grade_rank" ng-if="rankgrade.fans[1]==2&&!rankgrade.fans[2]">2级</p>
+                     <p class="grade_rank" ng-if="rankgrade.fans[2]==3">3级</p>
+                   </div>
+                   <div class="col" onclick="window.location.href='#/gradeRank?ranktype=4'">
+                       <img src="../../m/m_v2.0/img/account/rank00.png" ng-if="!rankgrade.spokes[0]">
+                       <img src="../../m/m_v2.0/img/account/rank41.png" ng-if="rankgrade.spokes[0]==1&&!rankgrade.spokes[1]">
+                       <img src="../../m/m_v2.0/img/account/rank42.png" ng-if="rankgrade.spokes[1]==2&&!rankgrade.spokes[2]">
+                       <img src="../../m/m_v2.0/img/account/rank43.png" ng-if="rankgrade.spokes[2]==3">
+                     <p class="menu-text">代言人成就</p>
+                     <p class="grade_rank" ng-if="!rankgrade.spokes[0]">0级</p>
+                     <p class="grade_rank" ng-if="rankgrade.spokes[0]==1&&!rankgrade.spokes[1]">1级</p>
+                     <p class="grade_rank" ng-if="rankgrade.spokes[1]==2&&!rankgrade.spokes[2]">2级</p>
+                     <p class="grade_rank" ng-if="rankgrade.spokes[2]==3">3级</p>
+                   </div>
+                   <div class="col" onclick="window.location.href='#/gradeRank?ranktype=5'">
+                     <img src="../../m/m_v2.0/img/account/rank00.png" ng-if="!rankgrade.coins[0]">
+                     <img src="../../m/m_v2.0/img/account/rank51.png" ng-if="rankgrade.coins[0]==1&&!rankgrade.coins[1]">
+                     <img src="../../m/m_v2.0/img/account/rank52.png" ng-if="rankgrade.coins[1]==2&&!rankgrade.coins[2]">
+                     <img src="../../m/m_v2.0/img/account/rank53.png" ng-if="rankgrade.coins[2]==3">
+                     <p class="menu-text">金币成就</p>
+                     <p class="grade_rank" ng-if="!rankgrade.coins[0]">0级</p>
+                     <p class="grade_rank" ng-if="rankgrade.coins[0]==1&&!rankgrade.coins[1]">1级</p>
+                     <p class="grade_rank" ng-if="rankgrade.coins[1]==2&&!rankgrade.coins[2]">2级</p>
+                     <p class="grade_rank" ng-if="rankgrade.coins[2]==3">3级</p>
+                   </div>
+              </div>
+
+
+     <div class="account-list border_b_1" ui-sref="tabs.spokesmanPage">
+       <span class="account-list-left" style="margin-right: 300px;">我是代言人</span><span class="account-list-right">邀请好友送13元<i class="icon ion-ios-arrow-right"></i></span>
+     </div>
+     <div class="row no-padding-row account-list-menu border_b_25">
+       <div class="col"  ui-sref="spokesmanDetail({step:1})">
+         <p class="menu-price">{{dataList.accumulated_rebate/100 | number:2}}</p>
+         <p class="menu-text">邀请奖励</p>
+       </div>
+       <div class="col"  ui-sref="spokesmanDetail({step:2})">
+         <p class="menu-price">{{dataList.accumulated_coin}}</p>
+         <p class="menu-text">金币奖励</p>
+       </div>
+       <div class="col" ui-sref="spokesmanDetail({step:1})">
+         <p class="menu-price" >{{dataList.fans_count}}</p>
+         <p class="menu-text">我的粉丝</p>
+       </div>
+       <div class="col" ui-sref="spokesmanDetail({step:3})">
+         <p class="menu-price" >{{dataList.accumulated_reward_amount/100 | number:2}}</p>
+         <p class="menu-text">粉丝订单提成</p>
+       </div>
+     </div>
+
+
+     <div  class="account-list border_b_1 clearfix">
+                       <span class="account-list-left">淘宝账户绑定</span><a class="account-list-right" ng-if="dataList.taobao_binded_status==1" href="#/taobaoaccoutSucceed">绑定成功<i class="icon ion-ios-arrow-right"></i></a><a href="#/taobaoaccountBind" class="account-list-right" ng-if="dataList.taobao_binded_status==0">未绑定<i class="icon ion-ios-arrow-right"></i></a><a class="account-list-right" href="#/taobaoaccoutReject" ng-if="dataList.taobao_binded_status==2">驳回<i class="icon ion-ios-arrow-right"></i></a>
+     </div>
+     <div class="account-list border_b_1 clearfix" ui-sref="tabs.spokesmanPage">
+                       <span class="account-list-left">如何推广</span><span class="account-list-right">代言人赚钱，从这里开始<i class="icon ion-ios-arrow-right"></i></span>
+      </div>
+     <div ui-sref="helpcenterIndex" class="account-list border_b_1 clearfix">
+                       <span class="account-list-left">客服与帮助</span><span class="account-list-right"><i class="icon ion-ios-arrow-right"></i></span>
+     </div>
+     <div ui-sref="feedBack" class="account-list border_b_1 clearfix">
+     <span class="account-list-left">意见与反馈</span><span class="account-list-right"><i class="icon ion-ios-arrow-right"></i></span>
+     </div>
+
+   </ion-content>
+  <div class="top" ng-show="dataList.checked_today==0" on-touch="signin()" style="line-height: 60px;">
+    签
+  </div>
+</ion-view>
+
+
+
+

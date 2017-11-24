@@ -1,0 +1,79 @@
+
+<link rel="stylesheet" href="/../../m/m_v2.0/css/addvalueservices.css?366">
+<ion-view style="background: #f6f6f6">
+  <ion-content>
+<p class="top_hint1">务必按照要求进行评价，否则会被驳回。可获得150积分奖励。</p>
+<div class="commodity_show1">
+  <h2 class="show_title1">店铺：{{shop_name}}</h2>
+  <dl>
+    <dd class="myfl"><img ng-src="{{items.item_b_o.item_pic}}">
+      <p class="pic_text1">淘宝主图</p>
+    </dd>
+    <dt class="myfl">
+    <p class="goodsName1">{{items.item_b_o.item_name}}</p>
+    <p class="wangwangname1">掌柜旺旺：{{wangwang_name}}</p>
+    <p class="goodsSku1">商品规格：{{sku1}}&nbsp;&nbsp;&nbsp;&nbsp;{{sku2}}</p>
+    <p class="goodsNum1">商品数量：{{items.item_b_o.buy_number}}件</p>
+    <p class="goodsPrice1">{{items.item_b_o.item_price/100.00|currency:'￥'}}</p>
+    </dt>
+  </dl>
+</div>
+<div class="applyStep1" style="height: 780px;">
+  <div class="line1 myfl" style="margin-top: 8px">
+    <div class="line_top1"></div>
+    <div class="line_strip1" style="height: 364px;"></div>
+    <div class="line_top1" ></div>
+    <div class="line_strip1" style="height: 330px"></div>
+  </div>
+  <div class="step_describe1 myfl">
+    <div class="step_describetop1" style="height: 340px;">
+      <p class="findbei1">评价商品</p>
+      <p class="find_hint2">上传评价之前，请核对信息，确认无误<br>
+        核对无误后，请按照以下关键词进行评价并晒图</p>
+      <p class="find_hint2" style="margin-top: 24px;">评价关键词</p>
+      <input type="text" class="random_key" disabled="disabled" value="{{key}}">
+      <p class="find_hint2" style="color: #FF366F;clear: both;padding-top: 20px">注意：去淘宝评价必须带至少3张商品图片（不露脸）</p>
+    </div>
+    <div class="step_describebuttom1" style="height: 430px;">
+      <p class="findbei1" style="margin-top: 32px">上传你的评价内容截图</p>
+      <div class="upload_reminder1 clearfix">
+        <p class="upload_reminderleft1 myfl">截图必须凸显出你评论的内容 </p>
+        <a href="javascript:;" class="upload_reminderright1 myfr" ng-click="modal.show()">查看截图示例</a>
+      </div>
+      <div class="upload_photo clearfix">
+        <!--accept="image/jpeg,image/jpg, image/png"-->
+        <input type="file" style="opacity: 0;height: 118px;width: 118px;position: relative;left: -128px;z-index: 10;"  id="imgUrl081">
+        <div class="pic wu-example" id="imgUrl81">
+          <img class="imgUrl1" id="preview81" src="../../m/m_v2.0/img/apply/upload_photo.png" />
+        </div>
+      </div>
+      <div style="height: 46px;width: 70%;" >
+        <p class="error_texta" ng-if="flog1" style="font-size: 24px; height: 46px; line-height: 46px;color: #FF366F;padding-left: 34px;background: url(../../m/m_v2.0/img/apply/error_bg.png) no-repeat left center;">请上传图片！</p>
+        <p class="error_texta" ng-if="flog2" style="font-size: 24px; height: 46px; line-height: 46px;color: #dda90c;padding-left: 34px;background: url(../../m/m_v2.0/img/apply/timeing1.png) no-repeat left center;">上传图片中...</p>
+        <p class="error_texta" ng-if="flog3" style="font-size: 24px; height: 46px; line-height: 46px;color: #2EA725;padding-left: 34px;background: url(../../m/m_v2.0/img/apply/icon_right3.png) no-repeat left center;">上传成功！</p>
+      </div>
+    </div>
+  </div>
+</div>
+  </ion-content>
+  <div class="bar bar-footer apply_Btn1" ng-style="setbackgroundColor(flog3)">
+    <div class="title" ng-if="flog3" ng-click="toLink();statistic1('用户任务提交','晒图好评',userId,items.item_b_o.activity_id)" style=" font-size: 30px; height: 97px; line-height: 97px;">提交</div>
+    <div class="title" ng-if="!flog3" style=" font-size: 30px; height: 97px; line-height: 97px;">提交</div>
+  </div>
+</ion-view>
+<script id="templates/modalshowpic.html" type="text/ng-template">
+  <ion-modal-view style="display: block;
+    position: absolute;
+    top: 25%;
+    z-index: 10;
+    overflow: hidden;
+    min-height: 100%;
+    width: 564px;
+    margin-left: 93px;
+    text-align: center;
+    background-color: #fff;">
+    <ion-content">
+    <span style="height:100%;display: inline-block;vertical-align: top;"></span><img src="../../m/m_v2.0/img/apply/showpic.jpg" style="display: inline-block;margin-top: 0%;height: 75%;">
+    </ion-content>
+  </ion-modal-view>
+</script>

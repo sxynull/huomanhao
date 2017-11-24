@@ -1,0 +1,107 @@
+/*货蛮好公告*/
+.notice{font-size:28px;color:#ff366f;line-height: 62px;height: 62px;text-align: left;flex: 0 0 25%;max-width: 25%;}
+.notice i{font-style:oblique;background-color: #ff366f;color: #ffffff;padding:0 8px;border-radius: 3px;line-height: 32px;height: 32px;margin-top: -5px;}
+.notice_text{height: 62px;}
+.notice_text li{overflow: hidden;white-space: nowrap;text-overflow: ellipsis;line-height: 62px;height: 62px;text-align: left;margin-right: 6%;font-size: 24px;font-family: "Hiragino Sans GB W3"}
+.notice_text li a{display: inline-block;color: #404040;text-decoration: none;font-size: 24px}
+/*新人专享*/
+.new_user_title{line-height: 104px;font-size: 32px;font-weight: bold}
+.originalPriceText{color:#ff0b29;text-decoration: line-through;line-height: 33px;font-size: 24px}
+.backPrice{line-height: 33px;color:#ff0b29;font-size: 24px}
+.backPrice span{background-color:#ff0b29;color: #fff;border-radius: 3px;line-height: 24px!important;width: 24px;height: 24px!important;}
+.newGoodsImg{width: 76%;height: 160px;}
+.newGoodsImg1{width: 88%;height: 264px;}
+.newGoodList{position: relative}
+/*高价值*/
+.highValue{width: 35%;height:48px;background: url(../img/highValue_09.png) no-repeat;  position: absolute;  top: 46px;  left: 22px;  z-index: 2;background-size: contain}
+.highawrd{width: 160px;height:48px;background: url(../img/highawrdbg.png) no-repeat;  position: absolute;  top: 46px;  left: 22px;  z-index: 2;background-size: contain}
+.highPriceTitle{font-size: 32px;line-height: 90px;height: 90px;font-weight: bold}
+.highPriceMore{font-size: 24px;line-height: 90px;height: 90px;color: #FF366F;text-align: right;padding-right: 52px!important;
+background: url(../img/rightmore.png) no-repeat right 24px center;
+}
+.trendMore{
+  margin-left: 10px;
+  font-size: 24px;line-height: 94px;height: 94px;color: #999999;text-align: right;padding-right: 28px!important;
+  background: url(../img/rightmore.png) no-repeat right center;
+}
+.classifyheader{
+  height: 94px;
+  width: 100%;
+  background: #f6f6f6;
+  margin-top: 32px;
+  line-height: 94px;
+}
+.originalgoodsName{
+  font-size: 26px;
+  color: #333333;
+  height: 42px;
+  line-height: 42px;
+  margin-top: 4px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 264px;
+  margin-left: 18px;
+}
+.classifyheader .classifytitle{
+  color: #FF366F;font-size: 32px;padding-right: 68px;padding-left: 68px;
+  background: url(../img/classifyheader1.png) no-repeat 24px center;
+}
+.main_advertising img{
+  height: 350px;
+  width: 100%;
+}
+.buttom_classify{
+  height: 87px;
+  width: 100%;
+  background: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+  line-height: 88px;
+  font-size: 28px;
+  color: #666666;
+  margin-bottom: 3px;
+}
+.buttom_classify li{
+  margin-bottom: 3px;
+}
+.lichecke{
+  color: #FF366F;
+  border-bottom: 3px solid #FF366F;
+}
+.floating_collar{
+  position: absolute;
+  width: 114px;
+  height: 154px;
+  left: 632px;
+  /*left: 484px;*/
+  bottom: 200px;
+  z-index: 200;
+}
+
+
+/*好货精选*/
+.itemDiv{width: 50%;display: inline-block;    margin-top: -5px;  padding-top: 0;position: relative}
+.itemDiv:nth-child(n+1){border-right: 6px solid #f6f6f6}
+.itemName{overflow: hidden;white-space: nowrap;text-overflow: ellipsis;text-align: left;font-size: 24px;line-height: 38px;height: 38px;color: #000;}
+.itemApply{color: #b3b3b3;font-size: 20px;line-height: 30px;height: 30px;}
+.home_freeGet_btn{
+  display: inline-block;
+  width: 43%;
+  height: 45px;
+  background: #ff366f;
+  border-radius: 24px;
+  -moz-border-radius: 24px;
+  -o-border-radius: 24px;
+  -webkit-border-radius: 24px;
+  color: #fff;
+  text-align: center;
+  line-height: 45px;
+  font-size: 22px;
+}
+.home_shareMakeMoney_btn {font-size: 22px;  display: inline-block;  width: 43%;  height: 45px;  background: #e1e1e1;  border:1px solid #999 ;  border-radius: 24px;  -moz-border-radius: 24px; -o-border-radius: 24px;  -webkit-border-radius: 24px;  color: #363636;  text-align: center;line-height: 45px;margin-right: 6%  }
+/*搜索*/
+/*.search{height: 90px;font-size: 28px}
+.search input,i{height:55px;line-height: 55px;font-size: 28px;border-radius: 22px;}*/
+

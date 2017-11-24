@@ -1,0 +1,104 @@
+.withdraw_content4{
+  width: 100%;
+  padding-left: 4%;
+  background: #ffffff;
+}
+.withdraw_content4 p{
+  height: 100px;
+  width: 100%;
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 28px;
+  color: #333333;
+  line-height: 100px;
+}
+.withdraw_balance4 span{
+  margin-left: 28px;
+  color: #FF366F;
+}
+.bind_withdrawaccount4 .bind_withdrawaccountinput4{
+  width: 576px;
+  padding-left: 76px;
+  height: 98px;
+  font-size: 30px;
+  color: #666666;
+  line-height:normal;
+  display: inline-block;
+  vertical-align: baseline;
+  padding-top: 0;
+}
+.bind_withdrawmoney4 .bind_withdrawmoneyinput4{
+  width: 576px;
+  padding-left: 76px;
+  height: 98px;
+  font-size: 28px;
+  line-height:normal;
+  display: inline-block;
+  vertical-align: baseline;
+  padding-top: 0;
+}
+.pay_password4 .pay_passwordinput4{
+  width: 576px;
+  padding-left: 76px;
+  height: 98px;
+  font-size: 28px;
+  line-height:normal;
+  border: none;
+  outline: none;
+  display: inline-block;
+  vertical-align: baseline;
+  padding-top: 0;
+}
+.arrival_amount4 span{
+  margin-left: 79px;
+}
+.error_text4 {
+  font-size: 26px;
+  color: #FF366F;
+  margin-left:4%;
+}
+.attention4{
+  color: #a9a9a9;
+  width: 100%;
+  margin-left: 4%;
+  margin-right: 6%;
+  padding-top: 60px;
+}
+.attention4 .attention_notice4{
+  margin-bottom: 24px;
+  font-size: 24px;
+}
+.attention4 p{
+  line-height: 36px;
+  font-size: 24px;
+  margin-right: 4%;
+}
+.registerBtn4 {
+  text-align: center;
+  line-height: 88px;
+  height: 88px;
+  width: 92%;
+  padding-left: 0;
+  background: #FF366F;
+  color: #FFFFFF;
+  margin-left: 4%;
+  margin-top: 152px;
+  font-size: 36px;
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  border: none;
+}
+.registerBtn44 {
+  text-align: center;
+  line-height: 88px;
+  height: 88px;
+  width: 92%;
+  padding-left: 0;
+  background: #666666;
+  color: #FFFFFF;
+  margin-left: 4%;
+  margin-top: 152px;
+  font-size: 36px;
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  border: none;
+}

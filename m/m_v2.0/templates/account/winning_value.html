@@ -1,0 +1,146 @@
+<link rel="stylesheet" href="/../../m/m_v2.0/css/account.css?366">
+<style>
+  .win_text{
+    height: 66px;
+    line-height: 66px;
+    width: 100%;
+    padding-left: 60px;
+    background: url(../../m/m_v2.0/img/apply/wintextbg.png) no-repeat 24px center;
+    color: #333333;
+    font-size: 24px;
+  }
+  .winlist{
+    height: 160px;
+    border-top: 1px solid #e5e5e5;
+    width: 100%;
+    padding-left: 24px;
+    padding-right: 24px;
+    background: #ffffff;
+  }
+  .winlist .winlist_left{
+    width: 484px;
+    float: left;
+  }
+  .winlist_left p{
+    height: 76px;
+    line-height: 76px;
+    color: #333333;
+    margin-top: 18px;
+    font-size: 24px;
+  }
+  .strip_outside{
+    height: 8px;
+    width: 100%;
+    border: 1px solid #FF366F;
+    border-radius: 4px;
+  }
+  .strip_inside{
+    height: 100%;
+    width: 200px;
+    background: #FF366F;
+  }
+  .winlist .winlist_right{
+    width: 162px;
+    float: right;
+  }
+  .winlist_right .go_outside{
+    height: 48px;
+    width: 100%;
+    display: block;
+    line-height: 48px;
+    text-align: center;
+    color: #ffffff;
+    background: #FF366F;
+    font-size: 26px;
+    border-radius: 4px;
+    margin-top: 48px;
+  }
+</style>
+<ion-view>
+  <ion-content>
+       <p class="win_text">以下任何一项权重偏低，都会影响你的中奖率哦~</p>
+       <div class="winlist">
+            <div class="winlist_left">
+              <p>完善资料 + 绑定淘宝 + 绑定微信：<em style="color: #FF366F">{{user1}}%</em></p>
+              <div class="strip_outside">
+                <div class="strip_inside" style="width: {{user1}}%">
+                </div>
+              </div>
+            </div>
+            <div class="winlist_right">
+                 <a class="go_outside" ng-if="user==0" ui-sref="tabs.personalCenter">立即完善</a>
+                 <a class="go_outside" ng-if="user==1" ui-sref="personalDate">立即完善</a>
+                 <a class="go_outside" ng-if="user==2" ui-sref="taobaoaccountBind">立即完善</a>
+                 <a class="go_outside" ng-if="user==3">立即完善</a>
+            </div>
+       </div>
+    <div class="winlist">
+      <div class="winlist_left">
+        <p>近7天活动申请数：<em style="color: #FF366F">{{apply}}</em>，低于<em style="color: #FF366F">{{apply1}}%</em>的用户</p>
+        <div class="strip_outside">
+          <div class="strip_inside" style="width: {{100-apply1}}%">
+          </div>
+        </div>
+      </div>
+      <div class="winlist_right">
+        <a class="go_outside" ui-sref="tabs.goodList">立即申请</a>
+      </div>
+    </div>
+    <div class="winlist">
+      <div class="winlist_left">
+        <p>连续申请天数：<em style="color: #FF366F">{{continue}}</em>，低于<em style="color: #FF366F">{{continue1}}%</em>的用户</p>
+        <div class="strip_outside">
+          <div class="strip_inside" style="width: {{100-continue1}}%">
+          </div>
+        </div>
+      </div>
+      <div class="winlist_right">
+        <a class="go_outside" ui-sref="tabs.goodList" >立即申请</a>
+      </div>
+    </div>
+    <div class="winlist">
+      <div class="winlist_left">
+        <p>近7天粉丝邀请数：<em style="color: #FF366F">{{fans}}</em>，低于<em style="color: #FF366F">{{fans1}}%</em>的用户</em></p>
+        <div class="strip_outside">
+          <div class="strip_inside" style="width: {{100-fans1}}%">
+          </div>
+        </div>
+      </div>
+      <div class="winlist_right">
+        <a class="go_outside" ui-sref="tabs.spokesmanPage">立即邀请</a>
+      </div>
+    </div>
+    <div class="winlist">
+      <div class="winlist_left">
+        <p>近7天金币充值数：<em style="color: #FF366F">{{coins}}</em>，低于<em style="color: #FF366F">{{coins1}}%</em>的用户</p>
+        <div class="strip_outside">
+          <div class="strip_inside" style="width: {{100-coins1}}%">
+          </div>
+        </div>
+      </div>
+      <div class="winlist_right">
+        <a class="go_outside" ui-sref="goldDeposits">立即充值</a>
+      </div>
+    </div>
+    <div class="winlist">
+      <div class="winlist_left">
+        <p>会员等级：<em style="color: #FF366F" ng-if="level==0">普通用户</em>
+          <em style="color: #FF366F" ng-if="level==1">月度会员</em>
+          <em style="color: #FF366F" ng-if="level==2">季度会员</em>
+          <em style="color: #FF366F" ng-if="level==3">年度会员</em>
+          ，低于<em style="color: #FF366F">{{level1}}%</em>的用户</em></p>
+        <div class="strip_outside">
+          <div class="strip_inside" style="width: {{100-level1}}%">
+          </div>
+        </div>
+      </div>
+
+      <div class="winlist_right">
+        <a class="go_outside" ui-sref="useVipDredge">立即开通</a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
+
+
+

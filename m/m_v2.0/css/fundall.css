@@ -1,0 +1,82 @@
+.remaining_sum{
+  height: 203px;
+  width: 100%;
+  text-align: center;
+  background: #ffffff;
+  overflow: hidden;
+}
+.remaining_sum .remaining_hint{
+  font-size: 26px;
+  margin-top: 42px;
+  color: #666666;
+}
+.remaining_sum .remaining_num{
+  font-size: 76px;
+  margin-top: 24px;
+  line-height: 76px;
+  color: #ff0b29;
+}
+.fund_content{
+  width: 100%;
+  background: #ffffff;
+  margin-top: 24px;
+  margin-bottom: 97px;
+}
+.fund_content .fundtype{
+  height: 67px;
+  width: 100%;
+}
+.fund_content .fundtype li{
+  height: 67px;
+  border-bottom: 1px solid #e5e5e5;
+  text-align: center;
+  line-height: 67px;
+  color: #333333;
+  font-size: 28px;
+}
+.current{
+  border-bottom: 2px solid #FF366F!important;
+  color: #FF366F!important;
+  height: 66px!important;
+}
+.fundcontent_detail{
+  height: 100px;
+  border-bottom: 1px solid #e5e5e5;
+  width: 100%;
+  padding-left: 4%;
+  padding-right: 4%;
+}
+.fundcontent_detail .fundcontent_detailf{
+  width: 70%;
+  height: 100%;
+  overflow: hidden;
+}
+.fundcontent_detail .fundcontent_detailf p{
+  line-height: 36px;
+  font-size: 26px;
+  color: #333333;
+  margin-top: 18px;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.fundcontent_detail .fundcontent_detailf p span{
+  line-height: 36px;
+  font-size: 22px;
+  color: #999999;
+}
+.fundcontent_detail .fundcontent_detailr{
+  width: 30%;
+  height: 100%;
+  line-height: 100px;
+  text-align: right;
+  font-size: 28px;
+  color: #ff0b29;
+}
+.apply_Btn2{
+  background: #FF366F;
+  height: 97px;
+  width: 100%;
+  color: #ffffff;
+}

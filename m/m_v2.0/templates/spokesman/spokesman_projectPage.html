@@ -1,0 +1,166 @@
+<link rel="stylesheet" href="/../../m/m_v2.0/css/pagestyle.css?366">
+<style>
+  .box1{display: inline-block;width: 100%;height:100%;}
+   .full-image{width: 750px;height: 300px;display: inline-block;    -webkit-user-drag: none}
+  .spoken_mode_true{width: 100%;margin: 10px auto 0;height: 170px;position: relative;background: #ffffff;}
+  .spoken_mode_true span{width: 100%;height: 234px;position: absolute;}
+  .spoken_mode_true a{position: absolute;top: 50px;left: 30%;right: 0;bottom: 0;margin: auto}
+  .spoken_mode_true p{text-align: center;position: relative;top: 140px;font-size: 20px;color: #363636;}
+</style>
+<ion-view>
+  <ion-content>
+    <!--头部展示部分-->
+    <section>
+      <ion-slide-box ng-if="adsList.length>0"  auto-play="true"  does-continue="true" slide-interval="3000"  show-pager="true" on-slide-changed="slideChange($index)">
+                                         <ion-slide ng-repeat="ads in adsList" repeat-done="repeatDone()"><a class="box1" ng-href="{{ads.target_url}}"><img class="full-image" ng-src="{{ads.link_url}}" ></a></ion-slide>
+          </ion-slide-box>
+    </section>
+
+    <!--本页面说明-->
+    <div class="myspokes_titleExplain clearfix">
+      <p class="myfl mar_left20">代言人邀请流程</p>
+      <span class="myfr font_color6 wire_underline mar_right20" ui-sref="tabs.spokesmanWhat">什么是代言人？如何成为代言人？</span>
+    </div>
+    <!--流程图展示-->
+    <div>
+      <!--上面的流程展示-->
+      <div class="myspokes_flowsheet box_center mar_top40">
+        <span class="font-size24 padding_leftright10 font_colorF"><i>1</i>分享自己的专属二维码给朋友</span>
+        <em></em>
+        <span class="font-size24 padding_leftright10 font_colorF"><i>2</i>通过你的二维码注册并下单成功</span>
+        <em></em>
+        <span class="font-size24 line_height_top box_center font_colorF"><i>3</i>成功领取<br>邀请奖励</span>
+      </div>
+      <!--下面的步骤展示-->
+<!--       <div class="myspokes_flowwire box_center mar_top12">
+  <i class="box_bagFFABC3"></i>
+  <span></span>
+  <em class="box_bagFF366F"></em>
+  <span></span>
+  <em class="box_bagFF366F"></em>
+  <span></span>
+  <i class="box_bagFFABC3"></i>
+</div> -->
+    </div>
+    <!--二维码部分-->
+    <div ng-if="$root.open_id==0 || $root.open_id==undefined" class="spokens_invite">
+      分享邀请二维码两种方式：
+    </div>    
+    <div ng-if="$root.open_id==0 || $root.open_id==undefined" class="myspokes_qrcode padding_buttom30 border_bottom">
+      <div>
+        <span>
+          <img  ng-src="{{spokesmanData.qr_invite_path}}" alt="二维码加载失败" style="width: 100%;">
+        </span>
+      </div>
+      <div class="clearfix" style="flex:2">
+        <p class="font-size24">1、长按旁边二维码，然后保存，再分享<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;给好友。</p>
+        <p class="font-size24" style="margin-top: 20px;">2、点击下面红色按钮转发朋友圈，好友。</p>
+      </div>
+    </div>
+    <div ng-if="$root.open_id==0 || $root.open_id==undefined" class="spokens_share">
+      <span style="display: inline-block;width: 352px;height: 76px;line-height: 76px;border-radius: 6px;background:url(/m/m_v2.0/img/spokesman/spoken_share.png) no-repeat center;" on-touch="action()">
+      </span>      
+    </div>
+ 
+    <!--游客部分-->
+    <div class="spoken_mode_true" ng-if="$root.open_id!=0 && $root.open_id!=undefined&&$root.isCode=='true'">
+               <span></span>
+               <a href="#/loginbind"><img src="../../m/m_v2.0/img/spokesman/spoken_bottom.png" alt=""/></a>
+               <p>邀请1人送<em style="float:none;">10元</em>现金<em style="float:none;"></em>，上不封顶</p>
+           </div>
+    <div class="spoken_mode_true" ng-if="$root.open_id!=0 && $root.open_id!=undefined&&$root.isCode=='false'">
+                   <span></span>
+                   <a href="#/login?isState=1"><img src="../../m/m_v2.0/img/spokesman/spoken_bottom.png" alt=""/></a>
+                   <p>邀请1人送<em style="float:none;">10元</em>现金<em style="float:none;"></em>，上不封顶</p>
+               </div>
+
+  <!--旗子部分-->
+    <div class="myspokes_Flag mar_top40">
+      <div class="box_center">
+        <p class="padding_top20">
+          <span class="display_box box_center font-size30 font_colorwhite border_none">累计邀请奖励</span>
+          <span class="font-size30 font_colorwhite padding_top30 border_none">
+            <em ng-if="$root.open_id==0 || $root.open_id==undefined" class="font-size40 font_weight">{{spokesmanData.moneys /100 | number:2 }}</em>
+            <em ng-if="$root.open_id!=0 && $root.open_id!=undefined" class="font-size40 font_weight">0.00</em><br>元
+          </span>
+        </p>
+      </div>
+      <div class="box_center">
+        <p class="padding_top20">
+          <span class="display_box box_center font-size30 font_colorwhite">累计邀请粉丝</span>
+          <span class="font-size30 font_colorwhite padding_top30">
+            <em ng-if="$root.open_id==0 || $root.open_id==undefined" class="font-size40 font_weight">{{spokesmanData.fans}}</em>
+            <em ng-if="$root.open_id!=0 && $root.open_id!=undefined" class="font-size40 font_weight">0</em><br>人
+          </span>
+        </p>
+      </div>
+    </div>
+    <span  class="my_spokesman_btnlink box_center font_colorF font-size25" ng-if="$root.open_id==0 || $root.open_id==undefined" ui-sref="spokesmanDetail({step:1})"></span>
+    <span  class="my_spokesman_btnlink box_center font_colorF font-size25" ng-if="$root.open_id!=0&& $root.open_id!=undefined" ui-sref="loginbind"><!-- 查看我的奖励明细 --></span>
+    <p class="my_spokesman_rule font-size30 box_bagF6F6F6 font_color3 mar_top40">在代言人有效期内，您可以获得以下奖励</p>
+    <div class="my_spokesman_rule_content">
+      <h3><em class="mar_right10">&nbsp;</em>邀请粉丝奖</h3>
+      <p class="padding_left24"> 邀请一度粉丝A，粉丝A完成首单后您可获得10元；一度粉丝A邀请二度粉丝B，粉丝B完成首单后您可获得3金币；</p>
+      <!--<h3><em class="mar_right10">2</em>梅开二度奖</h3>
+      <p class="padding_left24">邀请一度粉丝A，粉丝A完成第二单后，A可获得<span class="font_colorF">3元</span>现金奖励；</p>-->
+      <h3><em class="mar_right10">&nbsp;</em>四连超凡奖</h3>
+      <p class="padding_left24">邀请一度粉丝A，粉丝A完成第四单后，你可获得3元现金奖励；A可获得5金币，可兑换50元商品的必中资格；</p>
+      <h3><em class="mar_right10">&nbsp;</em>粉丝下单奖</h3>
+      <p class="padding_left24"> 一度粉丝下单成功后，您可获得粉丝下单价的1%返现奖励；</p>
+      <h3><em class="mar_right10">&nbsp;</em>粉丝充值奖</h3>
+      <p class="padding_left24">累计奖励：邀请的粉丝累积充值500金币，您可获得一张必中劵(100元价值以下)；<br>
+        充值返现奖：邀请的一度粉丝充值金币，您可获得10%的金币返点。例如：粉丝A充值了100元金币，您就可获得10金币；</p>
+      <h3><em class="mar_right10">&nbsp;</em>粉丝必中奖</h3>
+      <p class="padding_left24">邀请的粉丝第一次注册货蛮好，即可享有新人专享频道中的任何商品申请必中资料！无须等待抽奖审核！</p>
+
+    </div>
+    <p class="my_spokesman_rule font-size30 box_bagF6F6F6 font_color3 mar_top40">奖励说明</p>
+    <div class="my_spokesman_winExplain">
+      <p>张三成功在货蛮好免费领取成功商品，即可成为代言人；</p>
+      <p>张三去邀请李四成功领取商品，张三获得10元现金;李四下第4单，张三再获3元现金；</p>
+      <p>李四邀请王五成功领取商品，李四获得10元现金，张三获得3金币；</p>
+      <p>李四充值100金币，张三获得100金币*10%=10金币返利奖励；</p>
+      <p>
+        <em class="line_height_top font_color6 box_center">PS:</em>中奖去淘宝店下单后，一定要将淘宝订单号上传到货蛮好网，不然无法识别是否下单；<br>
+        奖励的现金可提现，奖励的金币可以直接兑换商品的<br>
+        100%中奖资格。
+      </p>
+      <!--<p><em class="line_height_top font_color6 box_center visibility_hide">PS:</em>3、当月邀请的粉丝中，有20人以上成为代言人，奖励</p>-->
+      <!--<p><em class="line_height_top font_color6 box_center visibility_hide">PS:</em>奖励的现金可提现，奖励的金币可直接兑换货蛮好网上面的商品<span class="font_colorF">100%</span>中奖资格</p>-->
+    </div>
+    <p class="my_spokesman_rule font-size30 box_bagF6F6F6 font_color3 mar_top40">代言人失效规则</p>
+    <div class="my_spokesman_winExplain">
+      <p style="color: #333333;font-weight: 600;">为确保代言人对上下级认真负责，粉丝可以持续下单，平台将执行以下规则</p>
+      <p style="line-height: 52px;">一级或者二级粉丝注册7天内不下单，将解除代言人关系<br>
+         代言人注册时间开始，60天内拥有代言人资格期间不下任何订单代言人奖励资格将消失期间下单（无论新人专享还是好货精选）将重置时间新的失效日期是最近1笔订单之后的60天<br>
+         代言人资格失效后，可以正常邀请但是失效期间无法获得粉丝的任何奖励（无论是首单还是提成）失效并恢复后，失效期间的奖励不会补发！<br></p>
+     </div>
+  </ion-content>
+</ion-view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

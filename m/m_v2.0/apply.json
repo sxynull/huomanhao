@@ -1,0 +1,61 @@
+{
+  "totalPages": 10,
+  "currentPage": 1,
+  "data": {
+    "token": null,
+    "activityType": 1,
+    "siteType": 1,
+    "taoName": "chaosiling",
+    "keyword": [
+      {
+        "keyword": "11111",
+        "ratio": "50"
+      },
+      {
+        "keyword": "22222",
+        "ratio": "40"
+      },
+      {
+        "keyword": "33333",
+        "ratio": "42"
+      },
+      {
+        "keyword": "44444",
+        "ratio": "60"
+      }
+    ],
+    "qrkeyWords": "@@",
+    "sort": 4,
+    "itemCategory": "鞋子箱包",
+    "priceLow": null,
+    "priceHeight": "30000",
+    "province": "江西-宜春",
+    "discountService": null,
+    "shopName": "砚秋洗护旗舰店",
+    "wwName": "lining李宁图漫专卖店",
+    "itemPrice": "1899",
+    "itemSearchPic": "http://laquimage.b0.upaiyun.com/laqu/images/img1494485478480_186.jpg",
+    "qrPic":"http://laquimage.b0.upaiyun.com/laqu/images/img1497344818739_105.png@@http://laquimage.b0.upaiyun.com/laqu/images/img1497344819789_848.png",
+    "itemName": "香奈儿正品香水50ml",
+    "goodstitle": "Chanel香奈儿正品香水50ml",
+    "taobaoCode": "【Beats Solo3 Wireless三代无线蓝牙耳麦头戴耳机solo2升级版魔音】http://c.b2wv.com/h.dSvBwh?cv=QCX88uifW2&sm=9ba0f2 点击链接，再选择浏览器打开；或复制这条信息，打开手机淘宝￥QCX88uifW2￥",
+    "itemSku": "22cm 蓝牙 红色",
+    "freeServiceBO": {
+      "relevancePicUrl": "http://laquimage.b0.upaiyun.com/laqu/images/img1491644355494_899.jpg",
+      "relevanceItemName": "伊然美家居1688",
+      "relevanceItemPrice": "8924",
+      "relevanceItemSku": "无线 带麦 蓝牙 白色"
+    },
+    "discountService":{
+      "free_delivery": 1,
+      "present_back_insurance": 1,
+      "item_off_pay": 1,
+      "tmall": 1,
+      "real_item": 0,
+      "seven_back": 0
+    },
+    "questions": "鞋子的尺码是欧美款的吗？@@这鞋子色差大吗？@@这鞋子保质期多长？",
+    "activityId": "3652",
+    "applyType": 3
+  }
+}

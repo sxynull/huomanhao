@@ -1,0 +1,55 @@
+/*写页面的时候自己所需要的相应的样式*/
+.font-size24{font-size: 24px;}.font-size30{font-size: 30px;}.font-size40{font-size: 40px;}.font-size25{font-size: 28px;}
+.font_color3{color: #333}.font_color6{color: #666}.font_color9{color: #999}.font_colorF{color: #FF366F}.font_colorwhite{color: white}.font_coloryellow{color: yellow;}.font-color0075ec{color: #0075ec}
+.box_bagFF366F{background: #FF366F}.box_bagFFABC3{background: #FFABC3}.box_bagF6F6F6{background: #f6f6f6}
+.box_center{text-align: center;}
+.line_height_top{vertical-align: top;}
+.padding_leftright10{padding: 0 10px;}.padding_left24{padding-left: 58px;}
+.padding_buttom30{padding-bottom: 20px;}.padding_top20{padding-top: 20px;}.padding_top30{padding-top: 20px;}
+.mar_top50{margin-top: 50px;}.mar_top40{margin-top: 40px;}.mar_top12{margin-top: 12px;}.mar_top6{margin-top: 6px;}.mar_right10{margin-right: 10px;}
+.mar_bottom25{margin-bottom: 25px;}
+.mar_left20{margin-left: 20px;}
+.mar_right20{margin-right: 20px;}
+.font_weight{font-weight: bold;}
+/*.border_bottom{border-bottom: 1px solid #e5e5e5}*/
+.display_box{display: block;}.display_inline_block{display: inline-block}.visibility_hide{visibility: hidden;}
+.border_none{border: none}
+/*我的代言人页面的CSS样式设置*/
+.myspokes_titlephoto{width: 100%;height:300px;background: url("../img/home_1.jpg") no-repeat center;}
+.myspokes_titleExplain{width: 100%;height: 86px;background:#F6F6F6;padding-top: 38px;}
+.myspokes_titleExplain p{display: inline-block;font-size: 32px;color: #ff2464;font-weight: bold;}
+.myspokes_flowsheet span{width: 208px;border-radius:6px;height: 124px;line-height: 34px;box-shadow: 0 0 10px rgba(0,0,0,0.2);-webkit-box-shadow:0 0 10px rgba(0,0,0,0.2);}
+.myspokes_flowsheet span i{width:100%;}
+.myspokes_flowsheet em{background: url("../img/spokesman/my_spokesman_iconright.png") no-repeat;width: 10px;height: 20px;display: inline-block;vertical-align: top;margin: 48px 8px 0;}
+.myspokes_flowwire,.myspokes_qrcode,.myspokes_Flag {width: 100%;display: flex;}
+.spokens_invite,.spokens_share{line-height: 90px;margin-left: 20px;font-size: 28px;color:#ff2464;font-weight: bold;}
+.spokens_share{line-height: 40px;text-align: center;}
+.myspokes_flowwire i{flex: 2;height: 2px;margin-top: 21px;}
+.myspokes_flowwire em{flex: 4;height: 2px;margin-top: 21px;}
+.myspokes_flowwire span{width: 44px;height: 44px;}
+.myspokes_flowwire span:nth-child(2){background: url("../img/spokesman/my_spokesman_iconnum1.png") no-repeat center;}
+.myspokes_flowwire span:nth-child(4){background: url("../img/spokesman/my_spokesman_iconnum2.png") no-repeat center;}
+.myspokes_flowwire span:nth-child(6){background: url("../img/spokesman/my_spokesman_iconnum3.png") no-repeat center;}
+.myspokes_qrcode div,.myspokes_Flag div{flex:1;}
+.myspokes_qrcode div:nth-child(1) span{border: 1px solid #e5e5e5;border-radius: 6px;width: 80%;height: 100%;margin-left: 10%;}
+/*.myspokes_qrcode div:nth-child(2){background: url("../img/spokesman/my_spokesman_iconleft.png") no-repeat 0 20px;}*/
+.myspokes_qrcode div p{margin-top: 34px;width: 95%;float: right;line-height: 38px;}
+.myspokes_qrcode div a{display: inline-block;width: 352px;height: 76px;line-height: 76px;border-radius:6px;}
+.myspokes_Flag div span{display: inline-block;width:56%;border-radius: 16px;height: 64px;line-height:40px;margin: auto;}
+.myspokes_Flag div .myspokes_Flag_wirea{border: 4px solid #FF8D7C;}
+.myspokes_Flag div .myspokes_Flag_wireb{border: 4px solid #2DCFFF;}
+.myspokes_Flag div p{width: 70px;height: 260px;margin: auto;margin-top: 6px;}
+.myspokes_Flag div:nth-child(1) p{width:70%;background:url("../img/spokesman/my_spokesman_iconflayb.png") no-repeat center;}
+.myspokes_Flag div:nth-child(2) p{width: 70%;background: url("../img/spokesman/my_spokesman_iconflaya.png") no-repeat center;}
+.my_spokesman_btnlink{display: block;margin:40px auto 0; width: 37%;height: 53px;line-height: 53px;border-radius: 37px;color: #fff;background: url("../img/spokesman/spoken_more.png") no-repeat center;}
+.my_spokesman_rule{width: 100%;padding-left: 5%;line-height: 89px;color:#ff2464;font-size: 32px;font-weight: bold;}
+.my_spokesman_rule_content,.my_spokesman_winExplain{width: 88%;margin:30px 50px;}
+.my_spokesman_rule_content h3{font-size: 30px;color: #ff2464;line-height:40px;}
+
+.my_spokesman_rule_content h3 em{display: inline-block;width: 46px;height: 46px;line-height: 46px;text-align: center;background: #FF366F;color: white;border-radius: 14px;}
+.my_spokesman_rule_content p,.my_spokesman_winExplain p{font-size: 26px;color: #363636;line-height: 40px;margin-bottom: 20px;margin-top: 10px;}
+.my_spokesman_rule_content h3:nth-of-type(1) em{background:url("../img/spokesman/my_spokesman_ans1.png") no-repeat center;}
+.my_spokesman_rule_content h3:nth-of-type(2) em{background:url("../img/spokesman/my_spokesman_ans2.png") no-repeat center;}
+.my_spokesman_rule_content h3:nth-of-type(3) em{background:url("../img/spokesman/my_spokesman_ans3.png") no-repeat center;}
+.my_spokesman_rule_content h3:nth-of-type(4) em{background:url("../img/spokesman/my_spokesman_ans4.png") no-repeat center;}
+.my_spokesman_rule_content h3:nth-of-type(5) em{background:url("../img/spokesman/my_spokesman_ans5.png") no-repeat center;}

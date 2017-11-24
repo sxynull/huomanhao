@@ -1,0 +1,112 @@
+<link rel="stylesheet" href="/../../m/m_v2.0/css/withdrawbind.css?366">
+<link rel="stylesheet" href="/../../m/m_v2.0/css/withdrawbindsubmit.css?366">
+<style>
+  .bind_name2 .bind_nameinput2 {
+    width: 100%;
+    line-height:normal;
+    background: url(../../m/m_v2.0/img/apply/account_number.png) no-repeat left center;
+  }
+  .bind_loginpassword3 .bind_loginpasswordinput3{
+    width: 100%;
+    line-height:normal;
+    background: url(../../m/m_v2.0/img/apply/password.png) no-repeat left center;
+  }
+  .bind_phone2 .bind_phoneinput2{
+    width: 100%;
+    line-height:normal;
+    background: url(../../m/m_v2.0/img/apply/phone_bg.png) no-repeat left center;
+  }
+  .bind_code2 .bind_codeinput2{
+    width: 490px;
+    line-height:normal;
+    background: url(../../m/m_v2.0/img/apply/code_bg.png) no-repeat left center;
+  }
+  .bind_code2 .getCode {
+    display: inline-block;
+    width: 190px;
+    height: 46px;
+    line-height: 100px;
+    text-align: center;
+    font-size: 26px;
+    color: #ff366f;
+    border: 1px solid #FF366F;
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -o--border-radius: 6px;
+    position: relative;
+    top: 16px;
+  }
+  .bind_code2 .getCode i{
+    line-height: 46px;
+  }
+</style>
+<ion-view style="background: #f6f6f6">
+  <ion-content>
+    <form name="loginregisterForm">
+      <div class="bind_content2">
+        <p class="bind_name2"><input type="text" name="text3" ng-model="bind_nameinput2" class="bind_nameinput2" required placeholder="请输入账户名称" ng-pattern="/^[0-9a-zA-Z-_ \u4e00-\u9fa5]*$/" ng-minlength="4" ng-maxlength="21" ng-change="flog1false();flog1false1()" ng-focus/></p>
+        <p ng-if="$root.phone==undefind" class="bind_phone2"><input type="number" name="text1" class="bind_phoneinput2" required ng-pattern="/^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|17[0|1|2|3|5|6|7|8]|18[0|1|2|3|4|5|6|7|8|9])\d{8}$/" ng-change="flog1false()" placeholder="请输入手机号" ng-model="bind_phoneinput2" ng-focus/></p>
+        <p ng-if="$root.phone==undefind" class="bind_code2" ><input type="number" name="text2" ng-model="bind_codeinput2" ng-change="flog1false()" required class="bind_codeinput2" placeholder="请输入短信验证码" ng-focus/>
+          <span class="getCode">
+            <i class="note_click" ng-click="sendcode1()"  style="font-style: normal; margin-left: 28px; float: left">获取验证码</i>
+    <i id="note_time" style="float: left; font-style: normal;margin-left: 26px;display: none;">60</i><i class="note_time1" style="color: #FF366F;float: left;font-style: normal;display: none;">秒后重发</i> </span></p>
+        <p class="bind_loginpassword3"><input type="password" name="text4" required ng-change="flog1false()" ng-pattern="/^(?!(?:\d*$))[A-Za-z0-9]{6,16}$/" ng-model="bind_loginpasswordinputb" class="bind_loginpasswordinput3 onepass" placeholder="请设置登录密码"  ng-focus/></p>
+        <p class="bind_loginpassword3" style="border-bottom: none;"><input type="password" ng-change="flog1false()" style="background: url(../../m/m_v2.0/img/apply/password1.png) no-repeat left center;" name="text5" required ng-pattern="/^(?!(?:\d*$))[A-Za-z0-9]{6,16}$/" ng-model="bind_loginpasswordinputc" class="bind_loginpasswordinput3 secondpass" placeholder="请重复登录密码" equals="bind_loginpasswordinputb" ng-focus/></p>
+      </div>
+
+      <div style="height: 30px;margin-top: 20px;" ng-if="!flog1">
+        <p class="error_text2" ng-show="loginregisterForm.text1.$focused&&loginregisterForm.text1.$error.required">手机号不能为空</p>
+        <p class="error_text2" ng-show="loginregisterForm.text3.$focused&&loginregisterForm.text3.$error.required">昵称不能为空</p>
+        <!--<p class="error_text2" ng-show="loginregisterForm.text3.$focused&&loginregisterForm.text3.$error.minlength">昵称长度不能小于4</p>-->
+        <!--<p class="error_text2" ng-show="loginregisterForm.text3.$focused&&loginregisterForm.text3.$error.maxlength">昵称长度不能大于21</p>-->
+        <p class="error_text2" ng-show="((loginregisterForm.text3.$focused&&loginregisterForm.text3.$error.pattern)||(loginregisterForm.text3.$focused&&loginregisterForm.text3.$error.minlength)||(loginregisterForm.text3.$focused&&loginregisterForm.text3.$error.maxlength))||flog3">昵称长度4-21位，不能包含特殊字符、空格</p>
+        <p class="error_text2" ng-show="loginregisterForm.text1.$focused&&loginregisterForm.text1.$error.pattern">手机号格式不正确</p>
+        <p class="error_text2" ng-show="loginregisterForm.text2.$focused&&loginregisterForm.text2.$error.required">验证码不能为空</p>
+        <p class="error_text2" ng-show="loginregisterForm.text4.$focused&&loginregisterForm.text4.$error.required">登录密码不能为空</p>
+        <p class="error_text2" ng-show="loginregisterForm.text4.$focused&&loginregisterForm.text4.$error.pattern">请设置6-16位，数字、字母组合密码</p>
+        <p class="error_text2" ng-show="loginregisterForm.text5.$focused&&loginregisterForm.text5.$error.required">重复登录密码不能为空</p>
+        <p class="error_text2" ng-show="loginregisterForm.text5.$focused&&loginregisterForm.text5.$error.pattern">请设置6-16位，数字、字母组合密码</p>
+        <p class="error_text3" ng-show="(bind_loginpasswordinputb!=bind_loginpasswordinputc)&&
+!loginregisterForm.text4.$error.required&&
+!loginregisterForm.text4.$error.pattern&&
+!loginregisterForm.text5.$error.required&&
+!loginregisterForm.text5.$error.pattern">两次登录密码不一致</p>
+      </div>
+      <div style="height: 30px;margin-top: 20px;" ng-if="flog1">
+        <p class="error_text2" ng-if="flog2">手机号不能为空</p>
+        <p class="error_text2" ng-if="flog4">手机号格式不正确</p>
+        <p class="error_text2" ng-if="flog5">昵称长度4-21位，不能包含特殊字符、空格</p>
+        <p class="error_text2" ng-if="flog6">请输入格式正确的手机号</p>
+        <p class="error_text2" ng-if="flog7">验证码不能为空</p>
+        <p class="error_text2" ng-if="flog8">请设置6-16位，数字、字母组合密码</p>
+        <p class="error_text2" ng-if="flog9">两次输入密码不一致</p>
+      </div>
+
+      <button ng-if="$root.phone==undefind" ng-class="{registerBtn2:
+!loginregisterForm.text1.$error.required&&
+!loginregisterForm.text2.$error.required&&
+!loginregisterForm.text3.$error.required&&
+!loginregisterForm.text4.$error.required&&
+!loginregisterForm.text5.$error.required
+,
+registerBtn22:
+loginregisterForm.text1.$error.required||
+loginregisterForm.text2.$error.required||
+loginregisterForm.text3.$error.required||
+loginregisterForm.text4.$error.required||
+loginregisterForm.text5.$error.required}" ng-click="loginregister(bind_phoneinput2)">确定</button>
+
+      <button ng-if="$root.phone!=undefind" ng-class="{registerBtn2:
+!loginregisterForm.text3.$error.required&&
+!loginregisterForm.text4.$error.required&&
+!loginregisterForm.text5.$error.required
+,
+registerBtn22:
+loginregisterForm.text3.$error.required||
+loginregisterForm.text4.$error.required||
+loginregisterForm.text5.$error.required}" ng-click="loginregister()">确定</button>
+    </form>
+  </ion-content>
+</ion-view>

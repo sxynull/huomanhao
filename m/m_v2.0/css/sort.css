@@ -1,0 +1,14 @@
+.sort{line-height: 73px;font-size: 28px;}
+.sortActive{color: #ff366f}
+.top i {
+    // margin-top: 10px;
+}
+.back-home{
+  color: #fff;
+  background-color: #ff366f;
+  width: 100%;
+  height: 80px;
+  font-size: 30px;
+  position: fixed;
+  bottom: 0;
+}

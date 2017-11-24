@@ -1,0 +1,25 @@
+{
+  "totalPages": 10,
+  "currentPage": 1,
+  "data": {
+    "avatar":"http://laquimage.b0.upaiyun.com/laqu/images/img1491564461348_758.jpg",
+    "nick":"超司令",
+    "gmtCreated":"2017-04-07 19:18:06",
+    "gender":"1",
+    "qq":"959985668",
+    "year1":1993,
+    "month1":1,
+    "day1":10,
+    "email":"88951554@qq.com",
+    "interests":"1,4,5,6",
+    "stature":null,
+    "weight":80,
+    "shoeSize":42,
+    "marriageStatus":1,
+    "income":4,
+    "culture":5,
+    "industry":4,
+    "provinceCode":"江西",
+    "cityCode":"宜春"
+  }
+}
